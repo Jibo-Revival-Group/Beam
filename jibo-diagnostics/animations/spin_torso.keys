@@ -1,0 +1,145 @@
+{
+    "framerate": 30,
+    "duration": 475,
+    "layers": [
+        {
+            "id": "c46383a48f9b4e56ae49421d59e7f6ef",
+            "name": "torso",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 720,
+                        "Pelvis": 0
+                    },
+                    "time": 90
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 720,
+                        "Pelvis": 0
+                    },
+                    "time": 100
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 190
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 200
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 360,
+                        "Pelvis": 0
+                    },
+                    "time": 260
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 360,
+                        "Pelvis": 0
+                    },
+                    "time": 270
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 330
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 340
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 180,
+                        "Pelvis": 0
+                    },
+                    "time": 370
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 180,
+                        "Pelvis": 0
+                    },
+                    "time": 380
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 410
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 420
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 90,
+                        "Pelvis": 0
+                    },
+                    "time": 440
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 90,
+                        "Pelvis": 0
+                    },
+                    "time": 450
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 470
+                }
+            ]
+        }
+    ],
+    "version": "0.5.0",
+    "scale": 1
+}

@@ -1,0 +1,43 @@
+{
+    "version": "0.5.0",
+    "framerate": 30,
+    "duration": 90,
+    "scale": 1,
+    "layers": [
+        {
+            "id": "34579358cf5e44cc91e51a7f08beed5c",
+            "name": "Torso",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 360,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 89
+                }
+            ]
+        }
+    ]
+}

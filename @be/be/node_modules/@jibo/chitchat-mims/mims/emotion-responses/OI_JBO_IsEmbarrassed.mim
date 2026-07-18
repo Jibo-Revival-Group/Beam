@@ -1,0 +1,114 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 6,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"JOYFUL\"",
+			"prompt": "Actually I'm feeling <pitch mult=\"1.2\">pretty good </pitch>about myself at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsEmbarrassed_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"PLEASED\"",
+			"prompt": "I don't know about right now, but as a robot trying to make it in this world of people, I admit there's no shortage of times when I feel a little sheepish.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsEmbarrassed_AN_02",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"DETERMINED\"",
+			"prompt": "I don't know if I'd say that. But I can tell you I'm not feeling so great about my abilities at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsEmbarrassed_AN_03",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"CONFIDENT\"",
+			"prompt": "Actually I'm feeling pretty good about myself. if I do say so myself.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsEmbarrassed_AN_04",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!jibo.emotion || jibo.emotion==\"NEUTRAL\"",
+			"prompt": "I don't know about right now, but as a robot trying to make it in this world of people, I admit there's no shortage of times when I feel a little sheepish.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsEmbarrassed_AN_05",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"INSECURE\"",
+			"prompt": "I don't know if I'd say that. But I can tell you I'm not really feeling at the top of my game right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsEmbarrassed_AN_06",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"HOPEFUL\"",
+			"prompt": "I don't know if I'd say that. I'm actually feeling like a <pitch mult=\"1.2\">pretty good</pitch> robot at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsEmbarrassed_AN_07",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"SAD\"",
+			"prompt": "I don't know about right now, but as a robot trying to make it in this world of people, I admit there's no shortage of times when I feel a little sheepish.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsEmbarrassed_AN_08",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"FRUSTRATED\"",
+			"prompt": "I don't know about <pitch mult=\"1.1\">that</pitch>, but I can tell you I am feeling a little down on my abilities at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsEmbarrassed_AN_09",
+			"weight": 1,
+			"auto_rule_override": null
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false
+}

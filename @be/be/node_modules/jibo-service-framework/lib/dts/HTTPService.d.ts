@@ -1,0 +1,40 @@
+/// <reference types="node" />
+import { ServiceOptions, JiboServerRequest, JiboServerResponse } from './index';
+import * as connect from 'connect';
+import * as http from 'http';
+import Router = require('router');
+import { EventEmitter } from 'events';
+import { RegistrationRecord } from 'jibo-client-framework';
+export default class HTTPService extends EventEmitter {
+    app: connect.Server;
+    server: http.Server;
+    staticDir: string;
+    router: Router;
+    record: RegistrationRecord;
+    name: string;
+    options: ServiceOptions;
+    rootDir: string;
+    private _intervalId;
+    static getPort(firstPortToTry?: number): Promise<number>;
+    private static _testPort(port);
+    private static readonly _onRobot;
+    constructor(name: string, options: ServiceOptions, rootDir?: string);
+    init(callback: (err?: Error) => void): void;
+    refresh(): void;
+    port: number;
+    enableDebug(): void;
+    parseQueryString(req: JiboServerRequest, res: any, next: any): void;
+    parseBody<T = any>(req: JiboServerRequest, cb: (err?: string | Error, data?: T) => void): void;
+    routes(url: Router): void;
+    finish(res: JiboServerResponse, err?: Error | string, data?: any, contentType?: string, statusCode?: number): void;
+    finishNoContent(res: JiboServerResponse, status?: number, err?: Error | string): void;
+    sendFile(res: JiboServerResponse, filename: string, contentType?: string): void;
+    sendJson(res: JiboServerResponse, json: Object | string, statusCode?: number): void;
+    destroy(callback?: (err?: Error | string) => void): void;
+    protected onErrors(req: JiboServerRequest, res: JiboServerResponse): void;
+    protected onHealth(req: JiboServerRequest, res: JiboServerResponse): void;
+    protected onBackupRequest(req: JiboServerRequest, res: JiboServerResponse): void;
+    protected onWipeRequest(req: JiboServerRequest, res: JiboServerResponse): void;
+    protected onRestoreRequest(req: JiboServerRequest, res: JiboServerResponse): void;
+    private _register(callback);
+}

@@ -1,0 +1,26 @@
+{
+  "name": "stats-js",
+  "version": "1.0.0-alpha1",
+  "description": "JavaScript Performance Monitor",
+  "main": "build/stats.min.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Kevnz/stats.js.git"
+  },
+  "keywords": [
+    "stats",
+    "webgl"
+  ],
+  "author": "Kevin Isom <kevin.isom@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kevnz/stats.js/issues"
+  },
+  "homepage": "https://github.com/Kevnz/stats.js"
+}

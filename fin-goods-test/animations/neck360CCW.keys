@@ -1,0 +1,43 @@
+{
+    "version": "0.5.0",
+    "framerate": 30,
+    "duration": 90,
+    "scale": 1,
+    "layers": [
+        {
+            "id": "505d4e5230d4401dab601265c0e6a13d",
+            "name": "Head",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 360,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 89
+                }
+            ]
+        }
+    ]
+}

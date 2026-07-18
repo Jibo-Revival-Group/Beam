@@ -1,0 +1,55 @@
+{
+	"skill_id": "chitchat",
+	"mim_type": "announcement",
+	"rule_name": "",
+	"rule_slots": "",
+	"screen_slots_available": false,
+	"timeout": 2,
+	"max_tries": null,
+	"force_confirmation": false,
+	"barge_in": false,
+	"photo_quality_light": false,
+	"notes": "",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Here are the headlines from the associated press.",
+			"media": "TTS",
+			"extra": "",
+			"prompt_id": "CC_GQA_NewsPreamble_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "The associated press says.",
+			"media": "TTS",
+			"extra": "",
+			"prompt_id": "CC_GQA_NewsPreamble_AN_02",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "According to the associated press.",
+			"media": "TTS",
+			"extra": "",
+			"prompt_id": "CC_GQA_NewsPreamble_AN_03",
+			"weight": 1
+		}
+	],
+	"es_auto_tagging": true,
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"ignore_no_match": false,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore"
+}

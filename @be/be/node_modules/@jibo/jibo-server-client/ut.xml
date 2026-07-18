@@ -1,0 +1,458 @@
+<testsuite name="Mocha Tests" tests="456" failures="0" errors="0" skipped="0" timestamp="Wed, 28 Mar 2018 14:34:23 GMT" time="0.909">
+<testcase classname="AWS.JSON.Builder build" name="returns an empty document when there are no params" time="0.002"/>
+<testcase classname="AWS.JSON.Builder build" name="translates nested maps" time="0.003"/>
+<testcase classname="AWS.JSON.Builder build" name="traslates nested timestamps" time="0.002"/>
+<testcase classname="AWS.JSON.Builder build" name="translates integers formatted as strings" time="0.001"/>
+<testcase classname="AWS.JSON.Builder build" name="translates floats formatted as strings" time="0"/>
+<testcase classname="AWS.JSON.Builder build" name="ignores nulls null as null" time="0"/>
+<testcase classname="AWS.JSON.Builder build structures" name="translates input" time="0"/>
+<testcase classname="AWS.JSON.Builder build structures" name="ignores undefined" time="0.001"/>
+<testcase classname="AWS.JSON.Builder build lists" name="translates input" time="0"/>
+<testcase classname="AWS.JSON.Builder build lists" name="ignores undefined" time="0"/>
+<testcase classname="AWS.JSON.Builder build maps" name="translates maps" time="0"/>
+<testcase classname="AWS.JSON.Builder build maps" name="ignores undefined" time="0.001"/>
+<testcase classname="AWS.JSON.Parser parse" name="returns an empty document when there are no params" time="0.002"/>
+<testcase classname="AWS.JSON.Parser parse" name="translates nested maps" time="0.001"/>
+<testcase classname="AWS.JSON.Parser parse" name="traslates nested timestamps" time="0.001"/>
+<testcase classname="AWS.JSON.Parser parse" name="translates binary types" time="0.001"/>
+<testcase classname="AWS.JSON.Parser parse structures" name="translates input" time="0.001"/>
+<testcase classname="AWS.JSON.Parser parse structures" name="ignores null" time="0"/>
+<testcase classname="AWS.JSON.Parser parse lists" name="translates input" time="0"/>
+<testcase classname="AWS.JSON.Parser parse lists" name="ignores null" time="0"/>
+<testcase classname="AWS.JSON.Parser parse maps" name="translates maps" time="0.001"/>
+<testcase classname="AWS.JSON.Parser parse maps" name="ignores null" time="0"/>
+<testcase classname="AWS.Model.Api loading" name="loads properties from metadata" time="0"/>
+<testcase classname="AWS.Model.Api isApi" name="is an API" time="0"/>
+<testcase classname="AWS.Model.Api className" name="generates the correct class name from fullName" time="0"/>
+<testcase classname="AWS.Model.Api className" name="uses abbreviation if supplied" time="0"/>
+<testcase classname="AWS.Model.Api className" name="special cases ELB" time="0"/>
+<testcase classname="AWS.Model.Api className" name="handles lack of service name" time="0.001"/>
+<testcase classname="AWS.Model.Api documentation" name="does not provide documentation by default" time="0"/>
+<testcase classname="AWS.Model.Api documentation" name="can attach documentation if option is enabled" time="0.001"/>
+<testcase classname="AWS.Model.Api shapes" name="creates a set of shapes" time="0.001"/>
+<testcase classname="AWS.Model.Shape Traits" name="inherits streaming trait" time="0.001"/>
+<testcase classname="AWS.Model.Shape TimestampShape toType()" name="converts unix timestamps" time="0"/>
+<testcase classname="AWS.Model.Shape TimestampShape toType()" name="converts iso8601 timestamps" time="0"/>
+<testcase classname="AWS.Model.Shape TimestampShape toType()" name="converts rfc822 timestamps" time="0"/>
+<testcase classname="AWS.Model.Shape TimestampShape toWireFormat()" name="converts all header shapes to rfc822" time="0"/>
+<testcase classname="AWS.Model.Shape TimestampShape toWireFormat()" name="converts all timestamps in JSON protocol to unixTimestamp" time="0"/>
+<testcase classname="AWS.Model.Shape TimestampShape toWireFormat()" name="converts all timestamps in XML/query protocol to iso8601" time="0.001"/>
+<testcase classname="AWS.Model.Shape TimestampShape BooleanShape toType()" name="converts true / false booleans" time="0"/>
+<testcase classname="AWS.Model.Shape TimestampShape BooleanShape toType()" name="converts string &#x22;true&#x22; and &#x22;false&#x22; to boolean" time="0"/>
+<testcase classname="AWS.Model.Shape TimestampShape BooleanShape toType()" name="converts other strings to false" time="0"/>
+<testcase classname="AWS.Model.Shape TimestampShape BooleanShape toType()" name="converts null/undefined to null" time="0"/>
+<testcase classname="AWS.Protocol.Json buildRequest" name="should use POST method requests" time="0"/>
+<testcase classname="AWS.Protocol.Json buildRequest" name="should perform all operations on root (/)" time="0"/>
+<testcase classname="AWS.Protocol.Json buildRequest" name="allows mounted path to be specified" time="0"/>
+<testcase classname="AWS.Protocol.Json buildRequest" name="should set Content-Type header" time="0"/>
+<testcase classname="AWS.Protocol.Json buildRequest" name="should set X-Amz-Target header" time="0"/>
+<testcase classname="AWS.Protocol.Json buildRequest" name="should set the body to JSON serialized params" time="0"/>
+<testcase classname="AWS.Protocol.Json buildRequest" name="should preserve numeric types" time="0"/>
+<testcase classname="AWS.Protocol.Json extractError" name="removes prefixes from the error code" time="0.001"/>
+<testcase classname="AWS.Protocol.Json extractError" name="returns the full code when a # is not present" time="0.001"/>
+<testcase classname="AWS.Protocol.Json extractError" name="returns the status code when the body is blank" time="0"/>
+<testcase classname="AWS.Protocol.Json extractError" name="returns UnknownError when the error type is not set" time="0"/>
+<testcase classname="AWS.Protocol.Json extractError" name="returns null for the message when not present" time="0"/>
+<testcase classname="AWS.Protocol.Json extractError" name="returns the message when present" time="0.001"/>
+<testcase classname="AWS.Protocol.Json extractError" name="returns the message when the message property is upper-cased" time="0"/>
+<testcase classname="AWS.Protocol.Json extractError" name="returns a special message for RequestEntityToLarge errors" time="0"/>
+<testcase classname="AWS.Protocol.Json extractError" name="extracts error type from &#x22;code&#x22; key (Glacier)" time="0"/>
+<testcase classname="AWS.Protocol.Json extractData" name="JSON parses http response bodies" time="0.001"/>
+<testcase classname="AWS.Protocol.Json extractData" name="returns raw data if convertResponseTypes is false" time="0"/>
+<testcase classname="AWS.Protocol.Json extractData" name="returns an empty object when the body is an empty string" time="0"/>
+<testcase classname="AWS.Protocol.Json extractData" name="returns an empty object when the body is null" time="0"/>
+<testcase classname="AWS protocol support ec2 input Scalar members" name="case1" time="0.008"/>
+<testcase classname="AWS protocol support ec2 input Structure with locationName and queryName applied to members" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support ec2 input Nested structure members" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support ec2 input List types" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support ec2 input List with location name applied to member" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support ec2 input List with locationName and queryName" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support ec2 input Base64 encoded Blobs" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support ec2 input Timestamp values" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support ec2 output Scalar members" name="case1" time="0.014"/>
+<testcase classname="AWS protocol support ec2 output Blob" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support ec2 output Lists" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support ec2 output List with custom member name" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support ec2 output Flattened List" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support ec2 output Normal map" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support ec2 output Flattened map" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support ec2 output Named map" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query input Scalar members" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query input Nested structure members" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support query input List types" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query input Flattened list" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query input Flattened list with LocationName" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query input Serialize map type" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support query input Serialize map type with locationName" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query input Base64 encoded Blobs" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query input Timestamp values" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query input Recursive shapes" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query input Recursive shapes" name="case2" time="0.001"/>
+<testcase classname="AWS protocol support query input Recursive shapes" name="case3" time="0.001"/>
+<testcase classname="AWS protocol support query input Recursive shapes" name="case4" time="0.001"/>
+<testcase classname="AWS protocol support query input Recursive shapes" name="case5" time="0.001"/>
+<testcase classname="AWS protocol support query input Recursive shapes" name="case6" time="0.003"/>
+<testcase classname="AWS protocol support query output Scalar members" name="case1" time="0.007"/>
+<testcase classname="AWS protocol support query output Not all members in response" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support query output Blob" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support query output Lists" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query output List with custom member name" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query output Flattened List" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query output Flattened single element list" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support query output List of structures" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support query output Flattened list of structures" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support query output Flattened list with location name" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query output Normal map" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support query output Flattened map" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query output Flattened map in shape definition" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support query output Named map" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support json input Scalar members" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support json input Timestamp values" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support json input Base64 encoded Blobs" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support json input Base64 encoded Blobs" name="case2" time="0.001"/>
+<testcase classname="AWS protocol support json input Nested blobs" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support json input Recursive shapes" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support json input Recursive shapes" name="case2" time="0.001"/>
+<testcase classname="AWS protocol support json input Recursive shapes" name="case3" time="0.001"/>
+<testcase classname="AWS protocol support json input Recursive shapes" name="case4" time="0.001"/>
+<testcase classname="AWS protocol support json input Recursive shapes" name="case5" time="0.001"/>
+<testcase classname="AWS protocol support json input Recursive shapes" name="case6" time="0.001"/>
+<testcase classname="AWS protocol support json input Empty maps" name="case1" time="0"/>
+<testcase classname="AWS protocol support json output Scalar members" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support json output Blob members" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support json output Timestamp members" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support json output Lists" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support json output Lists" name="case2" time="0.002"/>
+<testcase classname="AWS protocol support json output Maps" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support json output Ignores extra data" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-json input URI parameter only with no location name" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json input URI parameter only with location name" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-json input String to string maps in querystring" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json input String to string list maps in querystring" name="case1" time="0.005"/>
+<testcase classname="AWS protocol support rest-json input URI parameter and querystring params" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json input URI parameter, querystring params and JSON body" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support rest-json input URI parameter, querystring params, headers and JSON body" name="case1" time="0.004"/>
+<testcase classname="AWS protocol support rest-json input Streaming payload" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support rest-json input Omits null query params, but serializes empty strings" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json input Omits null query params, but serializes empty strings" name="case2" time="0.001"/>
+<testcase classname="AWS protocol support rest-json input Recursive shapes" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json input Recursive shapes" name="case2" time="0.001"/>
+<testcase classname="AWS protocol support rest-json input Recursive shapes" name="case3" time="0.001"/>
+<testcase classname="AWS protocol support rest-json input Recursive shapes" name="case4" time="0.002"/>
+<testcase classname="AWS protocol support rest-json input Recursive shapes" name="case5" time="0.001"/>
+<testcase classname="AWS protocol support rest-json input Recursive shapes" name="case6" time="0.002"/>
+<testcase classname="AWS protocol support rest-json input Timestamp values" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json input Timestamp values" name="case2" time="0.001"/>
+<testcase classname="AWS protocol support rest-json input Named locations in JSON body" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support rest-json output Scalar members" name="case1" time="0.008"/>
+<testcase classname="AWS protocol support rest-json output Blob members" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support rest-json output Timestamp members" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json output Lists" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-json output Lists with structure member" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-json output Maps" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json output Complex Map Values" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-json output Complex Outputs with locationName members" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json output Ignores extra data" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-json output Supports header maps" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json output List payload" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-json output JSON payload" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-json output Streaming payload" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Basic XML serialization" name="case1" time="0.007"/>
+<testcase classname="AWS protocol support rest-xml input Basic XML serialization" name="case2" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Serialize other scalar types" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml input Nested structures" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Nested structures" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Non flattened lists" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml input Non flattened lists with locationName" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Flattened lists" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Flattened lists with locationName" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input List of structures" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Blob and timestamp shapes" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Header maps" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml input String to string maps in querystring" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input String to string list maps in querystring" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml input String payload" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Blob payload" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml input Blob payload" name="case2" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Structure payload" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Structure payload" name="case2" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input XML Attribute" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml input Greedy keys" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Omits null query params, but serializes empty strings" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Omits null query params, but serializes empty strings" name="case2" time="0"/>
+<testcase classname="AWS protocol support rest-xml input Recursive shapes" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Recursive shapes" name="case2" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Recursive shapes" name="case3" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Recursive shapes" name="case4" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Recursive shapes" name="case5" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Recursive shapes" name="case6" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml input Timestamp in header" name="case1" time="0.001"/>
+<testcase classname="AWS protocol support rest-xml output Scalar members" name="case1" time="0.006"/>
+<testcase classname="AWS protocol support rest-xml output Scalar members" name="case2" time="0.005"/>
+<testcase classname="AWS protocol support rest-xml output Blob" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml output Lists" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml output List with custom member name" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml output Flattened List" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml output Normal map" name="case1" time="0.004"/>
+<testcase classname="AWS protocol support rest-xml output Flattened map" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support rest-xml output Named map" name="case1" time="0.003"/>
+<testcase classname="AWS protocol support rest-xml output XML payload" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml output Streaming payload" name="case1" time="0.002"/>
+<testcase classname="AWS protocol support rest-xml output Scalar members in headers" name="case1" time="0.003"/>
+<testcase classname="AWS.Protocol.Query buildRequest" name="should use POST method requests" time="0"/>
+<testcase classname="AWS.Protocol.Query buildRequest" name="should perform all operations on root (/)" time="0.001"/>
+<testcase classname="AWS.Protocol.Query buildRequest" name="allows mounted path to be specified" time="0.001"/>
+<testcase classname="AWS.Protocol.Query buildRequest" name="should set Content-Type header" time="0"/>
+<testcase classname="AWS.Protocol.Query buildRequest" name="should add the api version param" time="0"/>
+<testcase classname="AWS.Protocol.Query buildRequest" name="should add the operation name as Action" time="0"/>
+<testcase classname="AWS.Protocol.Query buildRequest" name="should uri encode params properly" time="0"/>
+<testcase classname="AWS.Protocol.Query buildRequest" name="encodes empty string values properly" time="0"/>
+<testcase classname="AWS.Protocol.Query buildRequest" name="serializes empty lists" time="0.001"/>
+<testcase classname="AWS.Protocol.Query extractError" name="extracts error from UnknownOperationException" time="0.001"/>
+<testcase classname="AWS.Protocol.Query extractError" name="extracts the error code and message" time="0"/>
+<testcase classname="AWS.Protocol.Query extractError" name="returns an empty error when the body is blank" time="0.001"/>
+<testcase classname="AWS.Protocol.Query extractError" name="extracts error when inside &#x3C;Errors&#x3E;" time="0.001"/>
+<testcase classname="AWS.Protocol.Query extractError" name="extracts error when &#x3C;Error&#x3E; is nested" time="0.001"/>
+<testcase classname="AWS.Protocol.Query extractData" name="parses the response using the operation output rules" time="0.001"/>
+<testcase classname="AWS.Protocol.Query extractData" name="performs default xml parsing when output rule is missing" time="0.001"/>
+<testcase classname="AWS.Protocol.Query extractData" name="removes wrapping result element if resultWrapper is set" time="0.002"/>
+<testcase classname="AWS.Protocol.Query extractData" name="extracts requestId from the response" time="0.001"/>
+<testcase classname="AWS.Protocol.Query extractData" name="extracts requestId even if output members are absent" time="0"/>
+<testcase classname="AWS.Protocol.Query extractData" name="does not override RequestId if it is modeled" time="0.001"/>
+<testcase classname="AWS.Protocol.Query extractData" name="does not override requestId if it is modeled" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest method" name="populates method from the operation" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest uri" name="populates uri from the operation" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest uri" name="appends to existing httpRequest endpoint" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest uri" name="replaces param placeholders" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest uri" name="replaces param with empty string" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest buildRequest uri" name="can replace multiple path placeholders" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest uri" name="performs querystring param replacements" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest buildRequest uri" name="performs querystring param replacements on lists" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest buildRequest uri" name="omits querystring when param is not provided" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest uri" name="accpets multiple query params with uri params" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest uri" name="uri escapes params in both path and querystring" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest headers" name="populates the headers with present params" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest headers" name="populates the headers type translations" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest headers" name="uses default rule name if locationName property is not present" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest headers" name="works with map types" time="0"/>
+<testcase classname="AWS.Protocol.Rest buildRequest timestamp header with format" name="populates the header with correct timestamp formatting" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest buildRequest timestamp header without format" name="populates the header using the api formatting" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest buildRequest timestamp header with api formatting and parameter formatting" name="populates the header using the parameter formatting" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest extractData headers" name="extracts header values" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest extractData headers" name="extracts headers when the rule name is camel-cased" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest extractData headers" name="extracts headers when the header name is camel-cased" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest extractData headers" name="extracts map types from header" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest extractData headers" name="adds empty map if no matching headers are found" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest extractData status code" name="extracts the http status when instructed to" time="0.001"/>
+<testcase classname="AWS.Protocol.Rest extractData status code" name="casts string status codes to integers" time="0.001"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest method" name="populates method from the operation" time="0"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest uri" name="populates uri from the operation" time="0"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest uri" name="replaces param placeholders" time="0"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest uri" name="can replace multiple path placeholders" time="0"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest uri" name="performs querystring param replacements" time="0"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest headers" name="populates the headers with present params" time="0"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest headers" name="uses default rule name if .n property is not present" time="0"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest headers" name="works with map types" time="0.001"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest body" name="does not populate a body on a GET request" time="0"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest body" name="does not populate a body on a HEAD request" time="0.001"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest body" name="does not populate a body on a DELETE request" time="0.001"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest body" name="builds root element if rules contains root" time="0.001"/>
+<testcase classname="AWS.Protocol.RestJson buildRequest body" name="builds payload element as non JSON data if rules contains payload" time="0"/>
+<testcase classname="AWS.Protocol.RestJson extractError" name="removes prefixes from the error code" time="0"/>
+<testcase classname="AWS.Protocol.RestJson extractError" name="returns the full code when a # is not present" time="0.001"/>
+<testcase classname="AWS.Protocol.RestJson extractError" name="returns the status code when the body is blank" time="0"/>
+<testcase classname="AWS.Protocol.RestJson extractError" name="returns null for the message when not present" time="0"/>
+<testcase classname="AWS.Protocol.RestJson extractError" name="returns the message when present" time="0.001"/>
+<testcase classname="AWS.Protocol.RestJson extractError" name="returns the message when the message property is upper-cased" time="0"/>
+<testcase classname="AWS.Protocol.RestJson extractError" name="returns a special message for RequestEntityToLarge errors" time="0"/>
+<testcase classname="AWS.Protocol.RestJson extractData" name="JSON parses http response bodies" time="0.001"/>
+<testcase classname="AWS.Protocol.RestJson extractData" name="pulls header data out of response" time="0.001"/>
+<testcase classname="AWS.Protocol.RestJson extractData" name="pulls body out into data key if body is a scalar payload" time="0"/>
+<testcase classname="AWS.Protocol.RestJson extractData" name="pulls body out into data key if body is a structure payload" time="0"/>
+<testcase classname="AWS.Protocol.RestJson extractData" name="pulls body out as Buffer if body is streaming payload" time="0"/>
+<testcase classname="AWS.Protocol.RestJson extractData" name="returns an empty object when the body is an empty string" time="0"/>
+<testcase classname="AWS.Protocol.RestJson extractData" name="returns an empty object when the body is null" time="0"/>
+<testcase classname="AWS.Protocol.RestXml buildRequest" name="uses payload member name for payloads" time="0.002"/>
+<testcase classname="AWS.Protocol.RestXml buildRequest empty bodies" name="defaults body to empty string when there are no inputs" time="0"/>
+<testcase classname="AWS.Protocol.RestXml buildRequest empty bodies" name="defaults body to empty string when no body params are present" time="0.001"/>
+<testcase classname="AWS.Protocol.RestXml buildRequest string bodies" name="does not populate a body on a GET request" time="0.004"/>
+<testcase classname="AWS.Protocol.RestXml buildRequest string bodies" name="does not populate a body on a HEAD request" time="0"/>
+<testcase classname="AWS.Protocol.RestXml buildRequest string bodies" name="populates the body with string types directly" time="0.001"/>
+<testcase classname="AWS.Protocol.RestXml buildRequest xml bodies" name="populates the body with XML from the params" time="0.006"/>
+<testcase classname="AWS.Protocol.RestXml buildRequest xml bodies" name="omits the body xml when body params are not present" time="0.001"/>
+<testcase classname="AWS.Protocol.RestXml extractError" name="extracts the error code and message" time="0.001"/>
+<testcase classname="AWS.Protocol.RestXml extractError" name="returns an empty error when the body is blank" time="0"/>
+<testcase classname="AWS.Protocol.RestXml extractError" name="extracts error when inside &#x3C;Errors&#x3E;" time="0.001"/>
+<testcase classname="AWS.Protocol.RestXml extractError" name="extracts error when &#x3C;Error&#x3E; is nested" time="0.001"/>
+<testcase classname="AWS.Protocol.RestXml extractData" name="parses the xml body" time="0.001"/>
+<testcase classname="AWS.Protocol.RestXml extractData" name="sets payload element to a Buffer object when it streams" time="0.001"/>
+<testcase classname="AWS.Protocol.RestXml extractData" name="sets payload element to String when it does not stream" time="0.001"/>
+<testcase classname="AWS.Protocol.RestXml extractData" name="sets payload element along with other outputs" time="0"/>
+<testcase classname="AWS.Protocol.RestXml extractData" name="parses headers when a payload is provided" time="0.002"/>
+<testcase classname="QueryParamSerializer scalar params" name="can serialize simple strings" time="0.001"/>
+<testcase classname="QueryParamSerializer scalar params" name="stringifies values" time="0"/>
+<testcase classname="QueryParamSerializer scalar params" name="defaults params to strings when type not specified" time="0.001"/>
+<testcase classname="QueryParamSerializer scalar params" name="ignores null values" time="0"/>
+<testcase classname="QueryParamSerializer structures" name="works with deeply nested objects" time="0.001"/>
+<testcase classname="QueryParamSerializer structures" name="works with nested objects that have multiple properties" time="0.001"/>
+<testcase classname="QueryParamSerializer structures" name="applies structure member names" time="0"/>
+<testcase classname="QueryParamSerializer structures" name="ignores null" time="0"/>
+<testcase classname="QueryParamSerializer lists flattened" name="numbers list members starting at 1" time="0"/>
+<testcase classname="QueryParamSerializer lists flattened" name="Uses list-member names instead of the list name" time="0"/>
+<testcase classname="QueryParamSerializer lists flattened" name="accepts nested arrays" time="0"/>
+<testcase classname="QueryParamSerializer lists flattened" name="supports lists of complex types" time="0.001"/>
+<testcase classname="QueryParamSerializer lists flattened" name="serializes list members as strings when member rule not present" time="0"/>
+<testcase classname="QueryParamSerializer lists non-flat" name="adds a &#x60;.member&#x60; prefix to each list member" time="0"/>
+<testcase classname="QueryParamSerializer lists non-flat" name="ignores the list-member name" time="0"/>
+<testcase classname="QueryParamSerializer lists non-flat" name="observes both list name and list member name" time="0"/>
+<testcase classname="QueryParamSerializer maps" name="accepts a hash (object) of arbitrary key/value pairs" time="0.001"/>
+<testcase classname="QueryParamSerializer maps non-flat" name="adds .entry. to name" time="0.001"/>
+<testcase classname="QueryParamSerializer maps with member names" name="applies member name traits" time="0.001"/>
+<testcase classname="QueryParamSerializer timestamps" name="serializes timestamp to iso8601 strings by default" time="0"/>
+<testcase classname="QueryParamSerializer timestamps" name="obeys format options in the rules" time="0"/>
+<testcase classname="AWS.Signers.Presign" name="presigns requests" time="0.01"/>
+<testcase classname="AWS.Signers.Presign" name="presigns synchronously" time="0.001"/>
+<testcase classname="AWS.Signers.Presign" name="throws errors on synchronous presign failures" time="0.003"/>
+<testcase classname="AWS.Signers.Presign" name="allows specifying different expiry time" time="0.002"/>
+<testcase classname="AWS.Signers.Presign" name="limits expiry time to a week in SigV4" time="0.001"/>
+<testcase classname="AWS.Signers.S3 addAuthorization" name="sets the date header when not present" time="0.002"/>
+<testcase classname="AWS.Signers.S3 addAuthorization" name="overwrites Date if present" time="0"/>
+<testcase classname="AWS.Signers.S3 addAuthorization" name="omits the security token header when session token is blank" time="0"/>
+<testcase classname="AWS.Signers.S3 addAuthorization" name="adds a security token header when session token available" time="0"/>
+<testcase classname="AWS.Signers.S3 addAuthorization" name="adds an Authorization header which contains akid and signature" time="0"/>
+<testcase classname="AWS.Signers.S3 addAuthorization" name="properly signs special characters" time="0.001"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="builds a basic string to sign" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="includes content md5 and content type when present" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="includes the http method, whatever it is" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="includes any x-amz- style headers, but not others" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="includes x-amz- headers that are lower-cased" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="sorts headers by their name" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="builds a canonical resource from the path" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="appends the bucket to the path when it is part of the hostname" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="appends the subresource portion of the path querystring" time="0.001"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="includes the sub resource value when present" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="omits non-sub-resource querystring params from the resource string" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="sorts sub resources by name" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="sorts sub resources by name" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="includes the un-decoded query string param for sub resources" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="includes the replication subresource without a value" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="includes the non-encoded query string get header overrides" time="0"/>
+<testcase classname="AWS.Signers.S3 stringToSign" name="omits the date header when not present" time="0"/>
+<testcase classname="AWS.Signers.V2 constructor" name="builds a signer for a request object" time="0"/>
+<testcase classname="AWS.Signers.V2 addAuthorization" name="adds a url encoded iso8601 timestamp param" time="0"/>
+<testcase classname="AWS.Signers.V2 addAuthorization" name="adds a SignatureVersion param" time="0"/>
+<testcase classname="AWS.Signers.V2 addAuthorization" name="adds a SignatureMethod param" time="0.001"/>
+<testcase classname="AWS.Signers.V2 addAuthorization" name="adds an AWSAccessKeyId param" time="0"/>
+<testcase classname="AWS.Signers.V2 addAuthorization" name="omits SecurityToken when sessionToken has been omitted" time="0"/>
+<testcase classname="AWS.Signers.V2 addAuthorization" name="adds the SecurityToken when sessionToken is provided" time="0.001"/>
+<testcase classname="AWS.Signers.V2 addAuthorization" name="populates the body" time="0"/>
+<testcase classname="AWS.Signers.V2 addAuthorization" name="populates content-length header" time="0"/>
+<testcase classname="AWS.Signers.V2 addAuthorization" name="signs additional body params" time="0"/>
+<testcase classname="AWS.Signers.V4 constructor" name="can build a signer for a request object" time="0.002"/>
+<testcase classname="AWS.Signers.V4 addAuthorization" name="should add Content-Type header" time="0"/>
+<testcase classname="AWS.Signers.V4 addAuthorization" name="should add Content-Length header" time="0"/>
+<testcase classname="AWS.Signers.V4 addAuthorization" name="should add X-Amz-Target header" time="0.001"/>
+<testcase classname="AWS.Signers.V4 addAuthorization" name="should add Host header" time="0"/>
+<testcase classname="AWS.Signers.V4 addAuthorization" name="should add X-Amz-Date header" time="0"/>
+<testcase classname="AWS.Signers.V4 addAuthorization" name="should add x-amz-security-token header" time="0"/>
+<testcase classname="AWS.Signers.V4 addAuthorization" name="should add Authorization header" time="0"/>
+<testcase classname="AWS.Signers.V4 authorization" name="should return authorization part for signer" time="0.001"/>
+<testcase classname="AWS.Signers.V4 signature" name="should generate proper signature" time="0"/>
+<testcase classname="AWS.Signers.V4 signature" name="should not compute SHA 256 checksum more than once" time="0"/>
+<testcase classname="AWS.Signers.V4 signature caching" name="will cache a maximum of 50 clients" time="0.056"/>
+<testcase classname="AWS.Signers.V4 signature caching" name="caches subsequent requests" time="0"/>
+<testcase classname="AWS.Signers.V4 signature caching" name="busts cache if caching is disabled" time="0"/>
+<testcase classname="AWS.Signers.V4 signature caching" name="busts cache if region changes" time="0"/>
+<testcase classname="AWS.Signers.V4 signature caching" name="busts cache if service changes" time="0"/>
+<testcase classname="AWS.Signers.V4 signature caching" name="busts cache if access key changes" time="0"/>
+<testcase classname="AWS.Signers.V4 signature caching" name="busts cache if date changes" time="0"/>
+<testcase classname="AWS.Signers.V4 signature caching" name="uses a different cache if client is different" time="0.001"/>
+<testcase classname="AWS.Signers.V4 signature caching" name="works when using the same client" time="0.002"/>
+<testcase classname="AWS.Signers.V4 stringToSign" name="should sign correctly generated input string" time="0.001"/>
+<testcase classname="AWS.Signers.V4 canonicalHeaders" name="should return headers" time="0"/>
+<testcase classname="AWS.Signers.V4 canonicalHeaders" name="should ignore Authorization header" time="0"/>
+<testcase classname="AWS.Signers.V4 canonicalHeaders" name="should ignore X-Amzn-Trace-Id header" time="0"/>
+<testcase classname="AWS.Signers.V4 canonicalHeaders" name="should lowercase all header names (not values)" time="0"/>
+<testcase classname="AWS.Signers.V4 canonicalHeaders" name="should sort headers by key" time="0"/>
+<testcase classname="AWS.Signers.V4 canonicalHeaders" name="should compact multiple spaces in keys/values to a single space" time="0"/>
+<testcase classname="AWS.Signers.V4 canonicalHeaders" name="should strip starting and end of line spaces" time="0"/>
+<testcase classname="AWS.XML.Builder toXML" name="wraps simple structures with location of body" time="0.002"/>
+<testcase classname="AWS.XML.Builder toXML" name="ignores null input" time="0"/>
+<testcase classname="AWS.XML.Builder toXML" name="ignores nested null input" time="0"/>
+<testcase classname="AWS.XML.Builder toXML" name="orders xml members by the order they appear in the rules" time="0.001"/>
+<testcase classname="AWS.XML.Builder toXML" name="can serializes structures into XML" time="0.001"/>
+<testcase classname="AWS.XML.Builder toXML" name="serializes empty structures as empty element" time="0.001"/>
+<testcase classname="AWS.XML.Builder toXML" name="does not serialize missing members" time="0.001"/>
+<testcase classname="AWS.XML.Builder lists" name="serializes lists (default member names)" time="0.002"/>
+<testcase classname="AWS.XML.Builder lists" name="serializes lists (custom member names)" time="0.002"/>
+<testcase classname="AWS.XML.Builder lists" name="includes lists elements even if they have no members" time="0.001"/>
+<testcase classname="AWS.XML.Builder lists" name="serializes lists of structures" time="0.002"/>
+<testcase classname="AWS.XML.Builder flattened lists" name="serializes lists without a base wrapper" time="0.005"/>
+<testcase classname="AWS.XML.Builder flattened lists" name="serializes lists (custom member names)" time="0.002"/>
+<testcase classname="AWS.XML.Builder flattened lists" name="omits lists elements when no members are given" time="0.001"/>
+<testcase classname="AWS.XML.Builder flattened lists" name="serializes lists of structures" time="0.002"/>
+<testcase classname="AWS.XML.Builder maps" name="translates maps" time="0.002"/>
+<testcase classname="AWS.XML.Builder maps" name="allows renamed map keys and values" time="0.002"/>
+<testcase classname="AWS.XML.Builder maps" name="ignores null" time="0"/>
+<testcase classname="AWS.XML.Builder maps" name="ignores undefined" time="0"/>
+<testcase classname="AWS.XML.Builder flattened maps" name="translates flattened maps" time="0.002"/>
+<testcase classname="AWS.XML.Builder flattened maps" name="allows renamed map keys and values" time="0.002"/>
+<testcase classname="AWS.XML.Builder flattened maps" name="ignores null" time="0"/>
+<testcase classname="AWS.XML.Builder flattened maps" name="ignores undefined" time="0"/>
+<testcase classname="AWS.XML.Builder numbers" name="integers" time="0.001"/>
+<testcase classname="AWS.XML.Builder numbers" name="floats" time="0.001"/>
+<testcase classname="AWS.XML.Builder numbers" name="ints and floats formatted as numbers" time="0.002"/>
+<testcase classname="AWS.XML.Builder booleans" name="true" time="0.002"/>
+<testcase classname="AWS.XML.Builder booleans" name="false" time="0.001"/>
+<testcase classname="AWS.XML.Builder timestamps" name="iso8601" time="0.001"/>
+<testcase classname="AWS.XML.Builder timestamps" name="rfc822" time="0.001"/>
+<testcase classname="AWS.XML.Builder timestamps" name="unix timestamp" time="0.001"/>
+<testcase classname="AWS.XML.Builder timestamps" name="follows the forat given on the shape" time="0"/>
+<testcase classname="AWS.XML.Builder xml attributes" name="can serialize xml attributes" time="0.001"/>
+<testcase classname="AWS.XML.Builder xml namespaces" name="can apply xml namespaces on structures" time="0.001"/>
+<testcase classname="AWS.XML.Builder xml namespaces" name="applies namespace prefixes to the xmlns attribute" time="0.001"/>
+<testcase classname="AWS.XML.Builder xml namespaces" name="can apply namespaces to elements that have other attributes" time="0.001"/>
+<testcase classname="AWS.XML.Parser default behavior" name="returns empty object when string is empty" time="0.001"/>
+<testcase classname="AWS.XML.Parser default behavior" name="returns an empty object from an empty document" time="0"/>
+<testcase classname="AWS.XML.Parser default behavior" name="returns empty elements as empty string" time="0.001"/>
+<testcase classname="AWS.XML.Parser default behavior" name="converts string elements to properties" time="0"/>
+<testcase classname="AWS.XML.Parser default behavior" name="converts nested elements into objects" time="0"/>
+<testcase classname="AWS.XML.Parser default behavior" name="returns everything as a string (even numbers)" time="0.001"/>
+<testcase classname="AWS.XML.Parser default behavior" name="ignores xmlns on the root element" time="0"/>
+<testcase classname="AWS.XML.Parser structures" name="returns empty objects as {}" time="0.001"/>
+<testcase classname="AWS.XML.Parser structures" name="parses attributes from tags" time="0.001"/>
+<testcase classname="AWS.XML.Parser lists" name="returns empty lists as []" time="0.001"/>
+<testcase classname="AWS.XML.Parser lists" name="returns missing lists as []" time="0.001"/>
+<testcase classname="AWS.XML.Parser lists" name="Converts xml lists of strings into arrays of strings" time="0.001"/>
+<testcase classname="AWS.XML.Parser lists" name="observes list member names when present" time="0.001"/>
+<testcase classname="AWS.XML.Parser lists" name="can parse lists of strucures" time="0.001"/>
+<testcase classname="AWS.XML.Parser lists" name="can parse lists of strucures with renames" time="0.001"/>
+<testcase classname="AWS.XML.Parser flattened lists" name="collects sibling elements of the same name" time="0.001"/>
+<testcase classname="AWS.XML.Parser flattened lists" name="flattened lists can be composed of complex obects" time="0.001"/>
+<testcase classname="AWS.XML.Parser flattened lists" name="can parse flattened lists of complex objects" time="0.001"/>
+<testcase classname="AWS.XML.Parser maps non-flattened" name="returns empty maps as {}" time="0.001"/>
+<testcase classname="AWS.XML.Parser maps non-flattened" name="expects entry, key, and value elements by default" time="0.001"/>
+<testcase classname="AWS.XML.Parser maps non-flattened" name="can use alternate names for key and value elements" time="0.001"/>
+<testcase classname="AWS.XML.Parser maps flattened" name="expects key and value elements by default" time="0"/>
+<testcase classname="AWS.XML.Parser maps flattened" name="can use alternate names for key and value elements" time="0.001"/>
+<testcase classname="AWS.XML.Parser booleans" name="converts the string &#x22;true&#x22; in to the boolean value true" time="0.001"/>
+<testcase classname="AWS.XML.Parser booleans" name="converts the string &#x22;false&#x22; in to the boolean value false" time="0.001"/>
+<testcase classname="AWS.XML.Parser booleans" name="converts the empty elements into null" time="0.001"/>
+<testcase classname="AWS.XML.Parser timestamp" name="returns an empty element as null" time="0.001"/>
+<testcase classname="AWS.XML.Parser timestamp" name="understands unix timestamps" time="0"/>
+<testcase classname="AWS.XML.Parser timestamp" name="understands basic iso8601 strings" time="0.001"/>
+<testcase classname="AWS.XML.Parser timestamp" name="understands basic rfc822 strings" time="0.001"/>
+<testcase classname="AWS.XML.Parser timestamp" name="throws an error when unable to determine the format" time="0.001"/>
+<testcase classname="AWS.XML.Parser numbers" name="float parses elements types as integer" time="0"/>
+<testcase classname="AWS.XML.Parser numbers" name="returns null for empty elements" time="0"/>
+<testcase classname="AWS.XML.Parser integers" name="integer parses elements types as integer" time="0.001"/>
+<testcase classname="AWS.XML.Parser integers" name="returns null for empty elements" time="0.001"/>
+<testcase classname="AWS.XML.Parser renaming elements" name="can rename scalar elements" time="0.001"/>
+<testcase classname="AWS.XML.Parser renaming elements" name="can rename nested elements" time="0.001"/>
+<testcase classname="AWS.XML.Parser strings" name="parses empty strings as &#x22;&#x22;" time="0.001"/>
+<testcase classname="AWS.XML.Parser base64 encoded strings" name="base64 decodes string elements with encoding=&#x22;base64&#x22;" time="0.002"/>
+<testcase classname="AWS.XML.Parser elements with XML namespaces" name="strips the xmlns element" time="0.011"/>
+<testcase classname="AWS.XML.Parser parsing errors" name="throws an error when unable to parse the xml" time="0.001"/>
+<testcase classname="AWS.XML.Parser parsing errors" name="throws an error when xml is incomplete or does not close all tags" time="0.001"/>
+<testcase classname="AWS.XML.Parser parsing errors" name="xml parser errors are retryable" time="0.001"/>
+</testsuite>

@@ -1,0 +1,467 @@
+1..456
+ok 1 AWS.JSON.Builder build returns an empty document when there are no params
+ok 2 AWS.JSON.Builder build translates nested maps
+ok 3 AWS.JSON.Builder build traslates nested timestamps
+ok 4 AWS.JSON.Builder build translates integers formatted as strings
+ok 5 AWS.JSON.Builder build translates floats formatted as strings
+ok 6 AWS.JSON.Builder build ignores nulls null as null
+ok 7 AWS.JSON.Builder build structures translates input
+ok 8 AWS.JSON.Builder build structures ignores undefined
+ok 9 AWS.JSON.Builder build lists translates input
+ok 10 AWS.JSON.Builder build lists ignores undefined
+ok 11 AWS.JSON.Builder build maps translates maps
+ok 12 AWS.JSON.Builder build maps ignores undefined
+ok 13 AWS.JSON.Parser parse returns an empty document when there are no params
+ok 14 AWS.JSON.Parser parse translates nested maps
+ok 15 AWS.JSON.Parser parse traslates nested timestamps
+ok 16 AWS.JSON.Parser parse translates binary types
+ok 17 AWS.JSON.Parser parse structures translates input
+ok 18 AWS.JSON.Parser parse structures ignores null
+ok 19 AWS.JSON.Parser parse lists translates input
+ok 20 AWS.JSON.Parser parse lists ignores null
+ok 21 AWS.JSON.Parser parse maps translates maps
+ok 22 AWS.JSON.Parser parse maps ignores null
+ok 23 AWS.Model.Api loading loads properties from metadata
+ok 24 AWS.Model.Api isApi is an API
+ok 25 AWS.Model.Api className generates the correct class name from fullName
+ok 26 AWS.Model.Api className uses abbreviation if supplied
+ok 27 AWS.Model.Api className special cases ELB
+ok 28 AWS.Model.Api className handles lack of service name
+ok 29 AWS.Model.Api documentation does not provide documentation by default
+ok 30 AWS.Model.Api documentation can attach documentation if option is enabled
+ok 31 AWS.Model.Api shapes creates a set of shapes
+ok 32 AWS.Model.Shape Traits inherits streaming trait
+ok 33 AWS.Model.Shape TimestampShape toType() converts unix timestamps
+ok 34 AWS.Model.Shape TimestampShape toType() converts iso8601 timestamps
+ok 35 AWS.Model.Shape TimestampShape toType() converts rfc822 timestamps
+ok 36 AWS.Model.Shape TimestampShape toWireFormat() converts all header shapes to rfc822
+ok 37 AWS.Model.Shape TimestampShape toWireFormat() converts all timestamps in JSON protocol to unixTimestamp
+ok 38 AWS.Model.Shape TimestampShape toWireFormat() converts all timestamps in XML/query protocol to iso8601
+ok 39 AWS.Model.Shape TimestampShape BooleanShape toType() converts true / false booleans
+ok 40 AWS.Model.Shape TimestampShape BooleanShape toType() converts string "true" and "false" to boolean
+ok 41 AWS.Model.Shape TimestampShape BooleanShape toType() converts other strings to false
+ok 42 AWS.Model.Shape TimestampShape BooleanShape toType() converts null/undefined to null
+ok 43 AWS.Protocol.Json buildRequest should use POST method requests
+ok 44 AWS.Protocol.Json buildRequest should perform all operations on root (/)
+ok 45 AWS.Protocol.Json buildRequest allows mounted path to be specified
+ok 46 AWS.Protocol.Json buildRequest should set Content-Type header
+ok 47 AWS.Protocol.Json buildRequest should set X-Amz-Target header
+ok 48 AWS.Protocol.Json buildRequest should set the body to JSON serialized params
+ok 49 AWS.Protocol.Json buildRequest should preserve numeric types
+ok 50 AWS.Protocol.Json extractError removes prefixes from the error code
+ok 51 AWS.Protocol.Json extractError returns the full code when a  is not present
+ok 52 AWS.Protocol.Json extractError returns the status code when the body is blank
+ok 53 AWS.Protocol.Json extractError returns UnknownError when the error type is not set
+ok 54 AWS.Protocol.Json extractError returns null for the message when not present
+ok 55 AWS.Protocol.Json extractError returns the message when present
+ok 56 AWS.Protocol.Json extractError returns the message when the message property is upper-cased
+ok 57 AWS.Protocol.Json extractError returns a special message for RequestEntityToLarge errors
+ok 58 AWS.Protocol.Json extractError extracts error type from "code" key (Glacier)
+ok 59 AWS.Protocol.Json extractData JSON parses http response bodies
+ok 60 AWS.Protocol.Json extractData returns raw data if convertResponseTypes is false
+ok 61 AWS.Protocol.Json extractData returns an empty object when the body is an empty string
+ok 62 AWS.Protocol.Json extractData returns an empty object when the body is null
+ok 63 AWS protocol support ec2 input Scalar members case1
+ok 64 AWS protocol support ec2 input Structure with locationName and queryName applied to members case1
+ok 65 AWS protocol support ec2 input Nested structure members case1
+ok 66 AWS protocol support ec2 input List types case1
+ok 67 AWS protocol support ec2 input List with location name applied to member case1
+ok 68 AWS protocol support ec2 input List with locationName and queryName case1
+ok 69 AWS protocol support ec2 input Base64 encoded Blobs case1
+ok 70 AWS protocol support ec2 input Timestamp values case1
+ok 71 AWS protocol support ec2 output Scalar members case1
+ok 72 AWS protocol support ec2 output Blob case1
+ok 73 AWS protocol support ec2 output Lists case1
+ok 74 AWS protocol support ec2 output List with custom member name case1
+ok 75 AWS protocol support ec2 output Flattened List case1
+ok 76 AWS protocol support ec2 output Normal map case1
+ok 77 AWS protocol support ec2 output Flattened map case1
+ok 78 AWS protocol support ec2 output Named map case1
+ok 79 AWS protocol support query input Scalar members case1
+ok 80 AWS protocol support query input Nested structure members case1
+ok 81 AWS protocol support query input List types case1
+ok 82 AWS protocol support query input Flattened list case1
+ok 83 AWS protocol support query input Flattened list with LocationName case1
+ok 84 AWS protocol support query input Serialize map type case1
+ok 85 AWS protocol support query input Serialize map type with locationName case1
+ok 86 AWS protocol support query input Base64 encoded Blobs case1
+ok 87 AWS protocol support query input Timestamp values case1
+ok 88 AWS protocol support query input Recursive shapes case1
+ok 89 AWS protocol support query input Recursive shapes case2
+ok 90 AWS protocol support query input Recursive shapes case3
+ok 91 AWS protocol support query input Recursive shapes case4
+ok 92 AWS protocol support query input Recursive shapes case5
+ok 93 AWS protocol support query input Recursive shapes case6
+ok 94 AWS protocol support query output Scalar members case1
+ok 95 AWS protocol support query output Not all members in response case1
+ok 96 AWS protocol support query output Blob case1
+ok 97 AWS protocol support query output Lists case1
+ok 98 AWS protocol support query output List with custom member name case1
+ok 99 AWS protocol support query output Flattened List case1
+ok 100 AWS protocol support query output Flattened single element list case1
+ok 101 AWS protocol support query output List of structures case1
+ok 102 AWS protocol support query output Flattened list of structures case1
+ok 103 AWS protocol support query output Flattened list with location name case1
+ok 104 AWS protocol support query output Normal map case1
+ok 105 AWS protocol support query output Flattened map case1
+ok 106 AWS protocol support query output Flattened map in shape definition case1
+ok 107 AWS protocol support query output Named map case1
+ok 108 AWS protocol support json input Scalar members case1
+ok 109 AWS protocol support json input Timestamp values case1
+ok 110 AWS protocol support json input Base64 encoded Blobs case1
+ok 111 AWS protocol support json input Base64 encoded Blobs case2
+ok 112 AWS protocol support json input Nested blobs case1
+ok 113 AWS protocol support json input Recursive shapes case1
+ok 114 AWS protocol support json input Recursive shapes case2
+ok 115 AWS protocol support json input Recursive shapes case3
+ok 116 AWS protocol support json input Recursive shapes case4
+ok 117 AWS protocol support json input Recursive shapes case5
+ok 118 AWS protocol support json input Recursive shapes case6
+ok 119 AWS protocol support json input Empty maps case1
+ok 120 AWS protocol support json output Scalar members case1
+ok 121 AWS protocol support json output Blob members case1
+ok 122 AWS protocol support json output Timestamp members case1
+ok 123 AWS protocol support json output Lists case1
+ok 124 AWS protocol support json output Lists case2
+ok 125 AWS protocol support json output Maps case1
+ok 126 AWS protocol support json output Ignores extra data case1
+ok 127 AWS protocol support rest-json input URI parameter only with no location name case1
+ok 128 AWS protocol support rest-json input URI parameter only with location name case1
+ok 129 AWS protocol support rest-json input String to string maps in querystring case1
+ok 130 AWS protocol support rest-json input String to string list maps in querystring case1
+ok 131 AWS protocol support rest-json input URI parameter and querystring params case1
+ok 132 AWS protocol support rest-json input URI parameter, querystring params and JSON body case1
+ok 133 AWS protocol support rest-json input URI parameter, querystring params, headers and JSON body case1
+ok 134 AWS protocol support rest-json input Streaming payload case1
+ok 135 AWS protocol support rest-json input Omits null query params, but serializes empty strings case1
+ok 136 AWS protocol support rest-json input Omits null query params, but serializes empty strings case2
+ok 137 AWS protocol support rest-json input Recursive shapes case1
+ok 138 AWS protocol support rest-json input Recursive shapes case2
+ok 139 AWS protocol support rest-json input Recursive shapes case3
+ok 140 AWS protocol support rest-json input Recursive shapes case4
+ok 141 AWS protocol support rest-json input Recursive shapes case5
+ok 142 AWS protocol support rest-json input Recursive shapes case6
+ok 143 AWS protocol support rest-json input Timestamp values case1
+ok 144 AWS protocol support rest-json input Timestamp values case2
+ok 145 AWS protocol support rest-json input Named locations in JSON body case1
+ok 146 AWS protocol support rest-json output Scalar members case1
+ok 147 AWS protocol support rest-json output Blob members case1
+ok 148 AWS protocol support rest-json output Timestamp members case1
+ok 149 AWS protocol support rest-json output Lists case1
+ok 150 AWS protocol support rest-json output Lists with structure member case1
+ok 151 AWS protocol support rest-json output Maps case1
+ok 152 AWS protocol support rest-json output Complex Map Values case1
+ok 153 AWS protocol support rest-json output Complex Outputs with locationName members case1
+ok 154 AWS protocol support rest-json output Ignores extra data case1
+ok 155 AWS protocol support rest-json output Supports header maps case1
+ok 156 AWS protocol support rest-json output List payload case1
+ok 157 AWS protocol support rest-json output JSON payload case1
+ok 158 AWS protocol support rest-json output Streaming payload case1
+ok 159 AWS protocol support rest-xml input Basic XML serialization case1
+ok 160 AWS protocol support rest-xml input Basic XML serialization case2
+ok 161 AWS protocol support rest-xml input Serialize other scalar types case1
+ok 162 AWS protocol support rest-xml input Nested structures case1
+ok 163 AWS protocol support rest-xml input Nested structures case1
+ok 164 AWS protocol support rest-xml input Non flattened lists case1
+ok 165 AWS protocol support rest-xml input Non flattened lists with locationName case1
+ok 166 AWS protocol support rest-xml input Flattened lists case1
+ok 167 AWS protocol support rest-xml input Flattened lists with locationName case1
+ok 168 AWS protocol support rest-xml input List of structures case1
+ok 169 AWS protocol support rest-xml input Blob and timestamp shapes case1
+ok 170 AWS protocol support rest-xml input Header maps case1
+ok 171 AWS protocol support rest-xml input String to string maps in querystring case1
+ok 172 AWS protocol support rest-xml input String to string list maps in querystring case1
+ok 173 AWS protocol support rest-xml input String payload case1
+ok 174 AWS protocol support rest-xml input Blob payload case1
+ok 175 AWS protocol support rest-xml input Blob payload case2
+ok 176 AWS protocol support rest-xml input Structure payload case1
+ok 177 AWS protocol support rest-xml input Structure payload case2
+ok 178 AWS protocol support rest-xml input XML Attribute case1
+ok 179 AWS protocol support rest-xml input Greedy keys case1
+ok 180 AWS protocol support rest-xml input Omits null query params, but serializes empty strings case1
+ok 181 AWS protocol support rest-xml input Omits null query params, but serializes empty strings case2
+ok 182 AWS protocol support rest-xml input Recursive shapes case1
+ok 183 AWS protocol support rest-xml input Recursive shapes case2
+ok 184 AWS protocol support rest-xml input Recursive shapes case3
+ok 185 AWS protocol support rest-xml input Recursive shapes case4
+ok 186 AWS protocol support rest-xml input Recursive shapes case5
+ok 187 AWS protocol support rest-xml input Recursive shapes case6
+ok 188 AWS protocol support rest-xml input Timestamp in header case1
+ok 189 AWS protocol support rest-xml output Scalar members case1
+ok 190 AWS protocol support rest-xml output Scalar members case2
+ok 191 AWS protocol support rest-xml output Blob case1
+ok 192 AWS protocol support rest-xml output Lists case1
+ok 193 AWS protocol support rest-xml output List with custom member name case1
+ok 194 AWS protocol support rest-xml output Flattened List case1
+ok 195 AWS protocol support rest-xml output Normal map case1
+ok 196 AWS protocol support rest-xml output Flattened map case1
+ok 197 AWS protocol support rest-xml output Named map case1
+ok 198 AWS protocol support rest-xml output XML payload case1
+ok 199 AWS protocol support rest-xml output Streaming payload case1
+ok 200 AWS protocol support rest-xml output Scalar members in headers case1
+ok 201 AWS.Protocol.Query buildRequest should use POST method requests
+ok 202 AWS.Protocol.Query buildRequest should perform all operations on root (/)
+ok 203 AWS.Protocol.Query buildRequest allows mounted path to be specified
+ok 204 AWS.Protocol.Query buildRequest should set Content-Type header
+ok 205 AWS.Protocol.Query buildRequest should add the api version param
+ok 206 AWS.Protocol.Query buildRequest should add the operation name as Action
+ok 207 AWS.Protocol.Query buildRequest should uri encode params properly
+ok 208 AWS.Protocol.Query buildRequest encodes empty string values properly
+ok 209 AWS.Protocol.Query buildRequest serializes empty lists
+ok 210 AWS.Protocol.Query extractError extracts error from UnknownOperationException
+ok 211 AWS.Protocol.Query extractError extracts the error code and message
+ok 212 AWS.Protocol.Query extractError returns an empty error when the body is blank
+ok 213 AWS.Protocol.Query extractError extracts error when inside <Errors>
+ok 214 AWS.Protocol.Query extractError extracts error when <Error> is nested
+ok 215 AWS.Protocol.Query extractData parses the response using the operation output rules
+ok 216 AWS.Protocol.Query extractData performs default xml parsing when output rule is missing
+ok 217 AWS.Protocol.Query extractData removes wrapping result element if resultWrapper is set
+ok 218 AWS.Protocol.Query extractData extracts requestId from the response
+ok 219 AWS.Protocol.Query extractData extracts requestId even if output members are absent
+ok 220 AWS.Protocol.Query extractData does not override RequestId if it is modeled
+ok 221 AWS.Protocol.Query extractData does not override requestId if it is modeled
+ok 222 AWS.Protocol.Rest buildRequest method populates method from the operation
+ok 223 AWS.Protocol.Rest buildRequest uri populates uri from the operation
+ok 224 AWS.Protocol.Rest buildRequest uri appends to existing httpRequest endpoint
+ok 225 AWS.Protocol.Rest buildRequest uri replaces param placeholders
+ok 226 AWS.Protocol.Rest buildRequest uri replaces param with empty string
+ok 227 AWS.Protocol.Rest buildRequest uri can replace multiple path placeholders
+ok 228 AWS.Protocol.Rest buildRequest uri performs querystring param replacements
+ok 229 AWS.Protocol.Rest buildRequest uri performs querystring param replacements on lists
+ok 230 AWS.Protocol.Rest buildRequest uri omits querystring when param is not provided
+ok 231 AWS.Protocol.Rest buildRequest uri accpets multiple query params with uri params
+ok 232 AWS.Protocol.Rest buildRequest uri uri escapes params in both path and querystring
+ok 233 AWS.Protocol.Rest buildRequest headers populates the headers with present params
+ok 234 AWS.Protocol.Rest buildRequest headers populates the headers type translations
+ok 235 AWS.Protocol.Rest buildRequest headers uses default rule name if locationName property is not present
+ok 236 AWS.Protocol.Rest buildRequest headers works with map types
+ok 237 AWS.Protocol.Rest buildRequest timestamp header with format populates the header with correct timestamp formatting
+ok 238 AWS.Protocol.Rest buildRequest timestamp header without format populates the header using the api formatting
+ok 239 AWS.Protocol.Rest buildRequest timestamp header with api formatting and parameter formatting populates the header using the parameter formatting
+ok 240 AWS.Protocol.Rest extractData headers extracts header values
+ok 241 AWS.Protocol.Rest extractData headers extracts headers when the rule name is camel-cased
+ok 242 AWS.Protocol.Rest extractData headers extracts headers when the header name is camel-cased
+ok 243 AWS.Protocol.Rest extractData headers extracts map types from header
+ok 244 AWS.Protocol.Rest extractData headers adds empty map if no matching headers are found
+ok 245 AWS.Protocol.Rest extractData status code extracts the http status when instructed to
+ok 246 AWS.Protocol.Rest extractData status code casts string status codes to integers
+ok 247 AWS.Protocol.RestJson buildRequest method populates method from the operation
+ok 248 AWS.Protocol.RestJson buildRequest uri populates uri from the operation
+ok 249 AWS.Protocol.RestJson buildRequest uri replaces param placeholders
+ok 250 AWS.Protocol.RestJson buildRequest uri can replace multiple path placeholders
+ok 251 AWS.Protocol.RestJson buildRequest uri performs querystring param replacements
+ok 252 AWS.Protocol.RestJson buildRequest headers populates the headers with present params
+ok 253 AWS.Protocol.RestJson buildRequest headers uses default rule name if .n property is not present
+ok 254 AWS.Protocol.RestJson buildRequest headers works with map types
+ok 255 AWS.Protocol.RestJson buildRequest body does not populate a body on a GET request
+ok 256 AWS.Protocol.RestJson buildRequest body does not populate a body on a HEAD request
+ok 257 AWS.Protocol.RestJson buildRequest body does not populate a body on a DELETE request
+ok 258 AWS.Protocol.RestJson buildRequest body builds root element if rules contains root
+ok 259 AWS.Protocol.RestJson buildRequest body builds payload element as non JSON data if rules contains payload
+ok 260 AWS.Protocol.RestJson extractError removes prefixes from the error code
+ok 261 AWS.Protocol.RestJson extractError returns the full code when a  is not present
+ok 262 AWS.Protocol.RestJson extractError returns the status code when the body is blank
+ok 263 AWS.Protocol.RestJson extractError returns null for the message when not present
+ok 264 AWS.Protocol.RestJson extractError returns the message when present
+ok 265 AWS.Protocol.RestJson extractError returns the message when the message property is upper-cased
+ok 266 AWS.Protocol.RestJson extractError returns a special message for RequestEntityToLarge errors
+ok 267 AWS.Protocol.RestJson extractData JSON parses http response bodies
+ok 268 AWS.Protocol.RestJson extractData pulls header data out of response
+ok 269 AWS.Protocol.RestJson extractData pulls body out into data key if body is a scalar payload
+ok 270 AWS.Protocol.RestJson extractData pulls body out into data key if body is a structure payload
+ok 271 AWS.Protocol.RestJson extractData pulls body out as Buffer if body is streaming payload
+ok 272 AWS.Protocol.RestJson extractData returns an empty object when the body is an empty string
+ok 273 AWS.Protocol.RestJson extractData returns an empty object when the body is null
+ok 274 AWS.Protocol.RestXml buildRequest uses payload member name for payloads
+ok 275 AWS.Protocol.RestXml buildRequest empty bodies defaults body to empty string when there are no inputs
+ok 276 AWS.Protocol.RestXml buildRequest empty bodies defaults body to empty string when no body params are present
+ok 277 AWS.Protocol.RestXml buildRequest string bodies does not populate a body on a GET request
+ok 278 AWS.Protocol.RestXml buildRequest string bodies does not populate a body on a HEAD request
+ok 279 AWS.Protocol.RestXml buildRequest string bodies populates the body with string types directly
+ok 280 AWS.Protocol.RestXml buildRequest xml bodies populates the body with XML from the params
+ok 281 AWS.Protocol.RestXml buildRequest xml bodies omits the body xml when body params are not present
+ok 282 AWS.Protocol.RestXml extractError extracts the error code and message
+ok 283 AWS.Protocol.RestXml extractError returns an empty error when the body is blank
+ok 284 AWS.Protocol.RestXml extractError extracts error when inside <Errors>
+ok 285 AWS.Protocol.RestXml extractError extracts error when <Error> is nested
+ok 286 AWS.Protocol.RestXml extractData parses the xml body
+ok 287 AWS.Protocol.RestXml extractData sets payload element to a Buffer object when it streams
+ok 288 AWS.Protocol.RestXml extractData sets payload element to String when it does not stream
+ok 289 AWS.Protocol.RestXml extractData sets payload element along with other outputs
+ok 290 AWS.Protocol.RestXml extractData parses headers when a payload is provided
+ok 291 QueryParamSerializer scalar params can serialize simple strings
+ok 292 QueryParamSerializer scalar params stringifies values
+ok 293 QueryParamSerializer scalar params defaults params to strings when type not specified
+ok 294 QueryParamSerializer scalar params ignores null values
+ok 295 QueryParamSerializer structures works with deeply nested objects
+ok 296 QueryParamSerializer structures works with nested objects that have multiple properties
+ok 297 QueryParamSerializer structures applies structure member names
+ok 298 QueryParamSerializer structures ignores null
+ok 299 QueryParamSerializer lists flattened numbers list members starting at 1
+ok 300 QueryParamSerializer lists flattened Uses list-member names instead of the list name
+ok 301 QueryParamSerializer lists flattened accepts nested arrays
+ok 302 QueryParamSerializer lists flattened supports lists of complex types
+ok 303 QueryParamSerializer lists flattened serializes list members as strings when member rule not present
+ok 304 QueryParamSerializer lists non-flat adds a `.member` prefix to each list member
+ok 305 QueryParamSerializer lists non-flat ignores the list-member name
+ok 306 QueryParamSerializer lists non-flat observes both list name and list member name
+ok 307 QueryParamSerializer maps accepts a hash (object) of arbitrary key/value pairs
+ok 308 QueryParamSerializer maps non-flat adds .entry. to name
+ok 309 QueryParamSerializer maps with member names applies member name traits
+ok 310 QueryParamSerializer timestamps serializes timestamp to iso8601 strings by default
+ok 311 QueryParamSerializer timestamps obeys format options in the rules
+ok 312 AWS.Signers.Presign presigns requests
+ok 313 AWS.Signers.Presign presigns synchronously
+ok 314 AWS.Signers.Presign throws errors on synchronous presign failures
+ok 315 AWS.Signers.Presign allows specifying different expiry time
+ok 316 AWS.Signers.Presign limits expiry time to a week in SigV4
+ok 317 AWS.Signers.S3 addAuthorization sets the date header when not present
+ok 318 AWS.Signers.S3 addAuthorization overwrites Date if present
+ok 319 AWS.Signers.S3 addAuthorization omits the security token header when session token is blank
+ok 320 AWS.Signers.S3 addAuthorization adds a security token header when session token available
+ok 321 AWS.Signers.S3 addAuthorization adds an Authorization header which contains akid and signature
+ok 322 AWS.Signers.S3 addAuthorization properly signs special characters
+ok 323 AWS.Signers.S3 stringToSign builds a basic string to sign
+ok 324 AWS.Signers.S3 stringToSign includes content md5 and content type when present
+ok 325 AWS.Signers.S3 stringToSign includes the http method, whatever it is
+ok 326 AWS.Signers.S3 stringToSign includes any x-amz- style headers, but not others
+ok 327 AWS.Signers.S3 stringToSign includes x-amz- headers that are lower-cased
+ok 328 AWS.Signers.S3 stringToSign sorts headers by their name
+ok 329 AWS.Signers.S3 stringToSign builds a canonical resource from the path
+ok 330 AWS.Signers.S3 stringToSign appends the bucket to the path when it is part of the hostname
+ok 331 AWS.Signers.S3 stringToSign appends the subresource portion of the path querystring
+ok 332 AWS.Signers.S3 stringToSign includes the sub resource value when present
+ok 333 AWS.Signers.S3 stringToSign omits non-sub-resource querystring params from the resource string
+ok 334 AWS.Signers.S3 stringToSign sorts sub resources by name
+ok 335 AWS.Signers.S3 stringToSign sorts sub resources by name
+ok 336 AWS.Signers.S3 stringToSign includes the un-decoded query string param for sub resources
+ok 337 AWS.Signers.S3 stringToSign includes the replication subresource without a value
+ok 338 AWS.Signers.S3 stringToSign includes the non-encoded query string get header overrides
+ok 339 AWS.Signers.S3 stringToSign omits the date header when not present
+ok 340 AWS.Signers.V2 constructor builds a signer for a request object
+ok 341 AWS.Signers.V2 addAuthorization adds a url encoded iso8601 timestamp param
+ok 342 AWS.Signers.V2 addAuthorization adds a SignatureVersion param
+ok 343 AWS.Signers.V2 addAuthorization adds a SignatureMethod param
+ok 344 AWS.Signers.V2 addAuthorization adds an AWSAccessKeyId param
+ok 345 AWS.Signers.V2 addAuthorization omits SecurityToken when sessionToken has been omitted
+ok 346 AWS.Signers.V2 addAuthorization adds the SecurityToken when sessionToken is provided
+ok 347 AWS.Signers.V2 addAuthorization populates the body
+ok 348 AWS.Signers.V2 addAuthorization populates content-length header
+ok 349 AWS.Signers.V2 addAuthorization signs additional body params
+ok 350 AWS.Signers.V4 constructor can build a signer for a request object
+ok 351 AWS.Signers.V4 addAuthorization should add Content-Type header
+ok 352 AWS.Signers.V4 addAuthorization should add Content-Length header
+ok 353 AWS.Signers.V4 addAuthorization should add X-Amz-Target header
+ok 354 AWS.Signers.V4 addAuthorization should add Host header
+ok 355 AWS.Signers.V4 addAuthorization should add X-Amz-Date header
+ok 356 AWS.Signers.V4 addAuthorization should add x-amz-security-token header
+ok 357 AWS.Signers.V4 addAuthorization should add Authorization header
+ok 358 AWS.Signers.V4 authorization should return authorization part for signer
+ok 359 AWS.Signers.V4 signature should generate proper signature
+ok 360 AWS.Signers.V4 signature should not compute SHA 256 checksum more than once
+ok 361 AWS.Signers.V4 signature caching will cache a maximum of 50 clients
+ok 362 AWS.Signers.V4 signature caching caches subsequent requests
+ok 363 AWS.Signers.V4 signature caching busts cache if caching is disabled
+ok 364 AWS.Signers.V4 signature caching busts cache if region changes
+ok 365 AWS.Signers.V4 signature caching busts cache if service changes
+ok 366 AWS.Signers.V4 signature caching busts cache if access key changes
+ok 367 AWS.Signers.V4 signature caching busts cache if date changes
+ok 368 AWS.Signers.V4 signature caching uses a different cache if client is different
+ok 369 AWS.Signers.V4 signature caching works when using the same client
+ok 370 AWS.Signers.V4 stringToSign should sign correctly generated input string
+ok 371 AWS.Signers.V4 canonicalHeaders should return headers
+ok 372 AWS.Signers.V4 canonicalHeaders should ignore Authorization header
+ok 373 AWS.Signers.V4 canonicalHeaders should ignore X-Amzn-Trace-Id header
+ok 374 AWS.Signers.V4 canonicalHeaders should lowercase all header names (not values)
+ok 375 AWS.Signers.V4 canonicalHeaders should sort headers by key
+ok 376 AWS.Signers.V4 canonicalHeaders should compact multiple spaces in keys/values to a single space
+ok 377 AWS.Signers.V4 canonicalHeaders should strip starting and end of line spaces
+ok 378 AWS.XML.Builder toXML wraps simple structures with location of body
+ok 379 AWS.XML.Builder toXML ignores null input
+ok 380 AWS.XML.Builder toXML ignores nested null input
+ok 381 AWS.XML.Builder toXML orders xml members by the order they appear in the rules
+ok 382 AWS.XML.Builder toXML can serializes structures into XML
+ok 383 AWS.XML.Builder toXML serializes empty structures as empty element
+ok 384 AWS.XML.Builder toXML does not serialize missing members
+ok 385 AWS.XML.Builder lists serializes lists (default member names)
+ok 386 AWS.XML.Builder lists serializes lists (custom member names)
+ok 387 AWS.XML.Builder lists includes lists elements even if they have no members
+ok 388 AWS.XML.Builder lists serializes lists of structures
+ok 389 AWS.XML.Builder flattened lists serializes lists without a base wrapper
+ok 390 AWS.XML.Builder flattened lists serializes lists (custom member names)
+ok 391 AWS.XML.Builder flattened lists omits lists elements when no members are given
+ok 392 AWS.XML.Builder flattened lists serializes lists of structures
+ok 393 AWS.XML.Builder maps translates maps
+ok 394 AWS.XML.Builder maps allows renamed map keys and values
+ok 395 AWS.XML.Builder maps ignores null
+ok 396 AWS.XML.Builder maps ignores undefined
+ok 397 AWS.XML.Builder flattened maps translates flattened maps
+ok 398 AWS.XML.Builder flattened maps allows renamed map keys and values
+ok 399 AWS.XML.Builder flattened maps ignores null
+ok 400 AWS.XML.Builder flattened maps ignores undefined
+ok 401 AWS.XML.Builder numbers integers
+ok 402 AWS.XML.Builder numbers floats
+ok 403 AWS.XML.Builder numbers ints and floats formatted as numbers
+ok 404 AWS.XML.Builder booleans true
+ok 405 AWS.XML.Builder booleans false
+ok 406 AWS.XML.Builder timestamps iso8601
+ok 407 AWS.XML.Builder timestamps rfc822
+ok 408 AWS.XML.Builder timestamps unix timestamp
+ok 409 AWS.XML.Builder timestamps follows the forat given on the shape
+ok 410 AWS.XML.Builder xml attributes can serialize xml attributes
+ok 411 AWS.XML.Builder xml namespaces can apply xml namespaces on structures
+ok 412 AWS.XML.Builder xml namespaces applies namespace prefixes to the xmlns attribute
+ok 413 AWS.XML.Builder xml namespaces can apply namespaces to elements that have other attributes
+ok 414 AWS.XML.Parser default behavior returns empty object when string is empty
+ok 415 AWS.XML.Parser default behavior returns an empty object from an empty document
+ok 416 AWS.XML.Parser default behavior returns empty elements as empty string
+ok 417 AWS.XML.Parser default behavior converts string elements to properties
+ok 418 AWS.XML.Parser default behavior converts nested elements into objects
+ok 419 AWS.XML.Parser default behavior returns everything as a string (even numbers)
+ok 420 AWS.XML.Parser default behavior ignores xmlns on the root element
+ok 421 AWS.XML.Parser structures returns empty objects as {}
+ok 422 AWS.XML.Parser structures parses attributes from tags
+ok 423 AWS.XML.Parser lists returns empty lists as []
+ok 424 AWS.XML.Parser lists returns missing lists as []
+ok 425 AWS.XML.Parser lists Converts xml lists of strings into arrays of strings
+ok 426 AWS.XML.Parser lists observes list member names when present
+ok 427 AWS.XML.Parser lists can parse lists of strucures
+ok 428 AWS.XML.Parser lists can parse lists of strucures with renames
+ok 429 AWS.XML.Parser flattened lists collects sibling elements of the same name
+ok 430 AWS.XML.Parser flattened lists flattened lists can be composed of complex obects
+ok 431 AWS.XML.Parser flattened lists can parse flattened lists of complex objects
+ok 432 AWS.XML.Parser maps non-flattened returns empty maps as {}
+ok 433 AWS.XML.Parser maps non-flattened expects entry, key, and value elements by default
+ok 434 AWS.XML.Parser maps non-flattened can use alternate names for key and value elements
+ok 435 AWS.XML.Parser maps flattened expects key and value elements by default
+ok 436 AWS.XML.Parser maps flattened can use alternate names for key and value elements
+ok 437 AWS.XML.Parser booleans converts the string "true" in to the boolean value true
+ok 438 AWS.XML.Parser booleans converts the string "false" in to the boolean value false
+ok 439 AWS.XML.Parser booleans converts the empty elements into null
+ok 440 AWS.XML.Parser timestamp returns an empty element as null
+ok 441 AWS.XML.Parser timestamp understands unix timestamps
+ok 442 AWS.XML.Parser timestamp understands basic iso8601 strings
+ok 443 AWS.XML.Parser timestamp understands basic rfc822 strings
+ok 444 AWS.XML.Parser timestamp throws an error when unable to determine the format
+ok 445 AWS.XML.Parser numbers float parses elements types as integer
+ok 446 AWS.XML.Parser numbers returns null for empty elements
+ok 447 AWS.XML.Parser integers integer parses elements types as integer
+ok 448 AWS.XML.Parser integers returns null for empty elements
+ok 449 AWS.XML.Parser renaming elements can rename scalar elements
+ok 450 AWS.XML.Parser renaming elements can rename nested elements
+ok 451 AWS.XML.Parser strings parses empty strings as ""
+ok 452 AWS.XML.Parser base64 encoded strings base64 decodes string elements with encoding="base64"
+ok 453 AWS.XML.Parser elements with XML namespaces strips the xmlns element
+ok 454 AWS.XML.Parser parsing errors throws an error when unable to parse the xml
+ok 455 AWS.XML.Parser parsing errors throws an error when xml is incomplete or does not close all tags
+ok 456 AWS.XML.Parser parsing errors xml parser errors are retryable
+# tests 456
+# pass 456
+# fail 0
+
+=============================== Coverage summary ===============================
+Statements   : 65.93% ( 2400/3640 )
+Branches     : 54.06% ( 1059/1959 )
+Functions    : 60.03% ( 383/638 )
+Lines        : 67.41% ( 2306/3421 )
+================================================================================

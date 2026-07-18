@@ -1,0 +1,41 @@
+{
+  "name": "@jibo/three",
+  "version": "3.0.18",
+  "description": "JavaScript 3D library",
+  "main": "build/three.js",
+  "typings": "index.d.ts",
+  "files": [
+    "build",
+    "index.d.ts"
+  ],
+  "eslintConfig": {
+    "extends": "mdcs"
+  },
+  "scripts": {
+    "build": "rollup -c && uglifyjs build/three.js -cm > build/three.min.js",
+    "build:release": "yarn build",
+    "lint": "eslint src"
+  },
+  "author": "mrdoob",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0"
+  },
+  "dependencies": {
+    "three": "0.70.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.jibo.com:sdk/sdk.git"
+  },
+  "monorailConfig": {
+    "dryrun": false,
+    "output": "build"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.1",
+    "eslint-config-mdcs": "^4.2.2",
+    "rollup": "^0.41.4",
+    "uglify-js": "^2.6.0"
+  }
+}

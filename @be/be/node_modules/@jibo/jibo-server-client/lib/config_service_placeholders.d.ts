@@ -1,0 +1,57 @@
+import * as AWS from '../clients/all';
+export abstract class ConfigurationServicePlaceholders {
+  log?: AWS.Log.Types.ClientConfiguration;
+  logadmin?: AWS.LogAdmin.Types.ClientConfiguration;
+  push?: AWS.Push.Types.ClientConfiguration;
+  account?: AWS.Account.Types.ClientConfiguration;
+  accountadmin?: AWS.AccountAdmin.Types.ClientConfiguration;
+  backup?: AWS.Backup.Types.ClientConfiguration;
+  notification?: AWS.Notification.Types.ClientConfiguration;
+  update?: AWS.Update.Types.ClientConfiguration;
+  updateadmin?: AWS.UpdateAdmin.Types.ClientConfiguration;
+  robot?: AWS.Robot.Types.ClientConfiguration;
+  robotadmin?: AWS.RobotAdmin.Types.ClientConfiguration;
+  key?: AWS.Key.Types.ClientConfiguration;
+  loop?: AWS.Loop.Types.ClientConfiguration;
+  lps?: AWS.Lps.Types.ClientConfiguration;
+  media?: AWS.Media.Types.ClientConfiguration;
+  mediaadmin?: AWS.MediaAdmin.Types.ClientConfiguration;
+  person?: AWS.Person.Types.ClientConfiguration;
+  gqa?: AWS.GQA.Types.ClientConfiguration;
+  oobe?: AWS.OOBE.Types.ClientConfiguration;
+  nlp?: AWS.NLP.Types.ClientConfiguration;
+  collision?: AWS.Collision.Types.ClientConfiguration;
+  ifttt?: AWS.IFTTT.Types.ClientConfiguration;
+  oobeadmin?: AWS.OOBEAdmin.Types.ClientConfiguration;
+  rom?: AWS.ROM.Types.ClientConfiguration;
+  oauthclientsadmin?: AWS.OauthClientsAdmin.Types.ClientConfiguration;
+  settings?: AWS.Settings.Types.ClientConfiguration;
+}
+export interface ConfigurationServiceApiVersions {
+  log?: AWS.Log.Types.apiVersion;
+  logadmin?: AWS.LogAdmin.Types.apiVersion;
+  push?: AWS.Push.Types.apiVersion;
+  account?: AWS.Account.Types.apiVersion;
+  accountadmin?: AWS.AccountAdmin.Types.apiVersion;
+  backup?: AWS.Backup.Types.apiVersion;
+  notification?: AWS.Notification.Types.apiVersion;
+  update?: AWS.Update.Types.apiVersion;
+  updateadmin?: AWS.UpdateAdmin.Types.apiVersion;
+  robot?: AWS.Robot.Types.apiVersion;
+  robotadmin?: AWS.RobotAdmin.Types.apiVersion;
+  key?: AWS.Key.Types.apiVersion;
+  loop?: AWS.Loop.Types.apiVersion;
+  lps?: AWS.Lps.Types.apiVersion;
+  media?: AWS.Media.Types.apiVersion;
+  mediaadmin?: AWS.MediaAdmin.Types.apiVersion;
+  person?: AWS.Person.Types.apiVersion;
+  gqa?: AWS.GQA.Types.apiVersion;
+  oobe?: AWS.OOBE.Types.apiVersion;
+  nlp?: AWS.NLP.Types.apiVersion;
+  collision?: AWS.Collision.Types.apiVersion;
+  ifttt?: AWS.IFTTT.Types.apiVersion;
+  oobeadmin?: AWS.OOBEAdmin.Types.apiVersion;
+  rom?: AWS.ROM.Types.apiVersion;
+  oauthclientsadmin?: AWS.OauthClientsAdmin.Types.apiVersion;
+  settings?: AWS.Settings.Types.apiVersion;
+}

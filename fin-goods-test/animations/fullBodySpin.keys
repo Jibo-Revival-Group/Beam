@@ -1,0 +1,91 @@
+{
+    "version": "0.6.0",
+    "framerate": 30,
+    "duration": 180,
+    "scale": 1,
+    "layers": [
+        {
+            "id": "0e3f3a8a642644dfbb70de2041b8b356",
+            "name": "Body #1",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        }
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 360,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        }
+                    },
+                    "time": 179
+                }
+            ]
+        },
+        {
+            "id": "7ea3467da77043a5817d2a35ba1beaf8",
+            "name": "Body",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        }
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": -360,
+                        "Pelvis": 180,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        }
+                    },
+                    "time": 90
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": -720,
+                        "Pelvis": 360,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        }
+                    },
+                    "time": 179
+                }
+            ]
+        }
+    ]
+}

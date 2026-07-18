@@ -1,0 +1,28 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "children": [
+            "e483e04b-ca55-435c-9c69-554b5f41702f"
+        ]
+    },
+    "meta": {
+        "version": 1
+    },
+    "e483e04b-ca55-435c-9c69-554b5f41702f": {
+        "id": "e483e04b-ca55-435c-9c69-554b5f41702f",
+        "class": "PlayAnimation",
+        "name": "Spin neck 360 degrees both ways",
+        "options": {
+            "animPath": "neck360Both.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    }
+}

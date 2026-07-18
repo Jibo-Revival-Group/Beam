@@ -1,0 +1,28 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "children": [
+            "ed8f7d90-1489-47bc-8459-b412c5c03aa1"
+        ]
+    },
+    "meta": {
+        "version": 1
+    },
+    "ed8f7d90-1489-47bc-8459-b412c5c03aa1": {
+        "id": "ed8f7d90-1489-47bc-8459-b412c5c03aa1",
+        "class": "PlayAnimation",
+        "name": "Spin head and pelvis opposite directions 360 degrees",
+        "options": {
+            "animPath": "led-test-animation.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    }
+}

@@ -1,0 +1,105 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "args": [],
+        "children": [
+            5,
+            2,
+            3,
+            4,
+            7,
+            6
+        ]
+    },
+    "2": {
+        "id": 2,
+        "class": "PlayAnimation",
+        "name": "head cycle",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "spin_head.keys",
+            [
+                "(animation) => {",
+                "  animation.setSpeed(notepad.animSpeed);",
+                "}"
+            ]
+        ]
+    },
+    "3": {
+        "id": 3,
+        "class": "PlayAnimation",
+        "name": "torso cycle",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "spin_torso.keys",
+            [
+                "(animation) => {",
+                "  animation.setSpeed(notepad.animSpeed);",
+                "}"
+            ]
+        ]
+    },
+    "4": {
+        "id": 4,
+        "class": "PlayAnimation",
+        "name": "pelvis cycle",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "spin_pelvis.keys",
+            [
+                "(animation) => {",
+                "  animation.setSpeed(notepad.animSpeed);",
+                "}"
+            ]
+        ]
+    },
+    "5": {
+        "id": 5,
+        "class": "ExecuteScript",
+        "name": "get random anim speed",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "  notepad.animSpeed = parseFloat(Math.random() * (0.75 - 0.60) + 0.60).toFixed(2); // between 0.60-0.75",
+                "  document.getElementById('test-label3').innerHTML = 'anim speed: ' + notepad.animSpeed * 100 + \"%\";",
+                "}"
+            ]
+        ]
+    },
+    "6": {
+        "id": 6,
+        "class": "TimeoutJs",
+        "name": "rest for 30 secs",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "   document.getElementById('test-label3').innerHTML = 'resting for 5 secs';",
+                "   return 5000;",
+                "}"
+            ]
+        ]
+    },
+    "7": {
+        "id": 7,
+        "class": "PlayAnimation",
+        "name": "twist everything",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "twist.keys",
+            [
+                "(animation) => {",
+                "}"
+            ]
+        ]
+    }
+}

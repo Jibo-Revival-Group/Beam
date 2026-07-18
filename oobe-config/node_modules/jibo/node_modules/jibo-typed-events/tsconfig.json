@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "allowJs": false,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "typeRoots": ["node_modules/@types"]
+    },
+    "compileOnSave": false,
+    "include": [
+        "src/**/*.ts",
+        "typings/index.d.ts"
+    ]
+}

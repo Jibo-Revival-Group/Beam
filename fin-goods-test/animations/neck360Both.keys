@@ -1,0 +1,69 @@
+{
+    "version": "0.5.0",
+    "framerate": 30,
+    "duration": 240,
+    "scale": 1,
+    "layers": [
+        {
+            "id": "19e6e4a80fbd402881e1e7e0dfdbafc0",
+            "name": "Body",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 360,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 100
+                },
+                {
+                    "value": {
+                        "Head": 360,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 120
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 220
+                }
+            ]
+        }
+    ]
+}

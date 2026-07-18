@@ -1,0 +1,1 @@
+/// <reference path="../node_modules/jibo/typings/index.d.ts" />

@@ -1,0 +1,114 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 6,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"JOYFUL\"",
+			"prompt": "I have to say, I am. Right now I feel like a well-oiled machine. ",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsProud_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"PLEASED\"",
+			"prompt": "Oh. I wouldn't necessarily say that right now. But I also wouldn't not say that.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsProud_AN_02",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"DETERMINED\"",
+			"prompt": "Actually right now I'm feeling like I can be a better robot.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsProud_AN_03",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"CONFIDENT\"",
+			"prompt": "It's true. I'm feeling proud to be a robot right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsProud_AN_04",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!jibo.emotion || jibo.emotion == \"NEUTRAL\"",
+			"prompt": "Oh. I wouldn't necessarily say that right now. But I also wouldn't not say that.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsProud_AN_05",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"INSECURE\"",
+			"prompt": "Actually I'm not feeling so proud at the moment, to be honest.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsProud_AN_06",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"HOPEFUL\"",
+			"prompt": "I <pitch mult=\"1.2\">do</pitch> have a little extra spring in my step at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsProud_AN_07",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"SAD\"",
+			"prompt": "Oh. I wouldn't necessarily say that right now. But I also wouldn't not say that.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsProud_AN_08",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"FRUSTRATED\"",
+			"prompt": "Actually I have to say this isn't my best moment as a robot.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsProud_AN_09",
+			"weight": 1,
+			"auto_rule_override": null
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false
+}

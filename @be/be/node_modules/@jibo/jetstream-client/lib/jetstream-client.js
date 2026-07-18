@@ -1,0 +1,1312 @@
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.jetstreamClient = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+const types = require("./Types");
+exports.types = types;
+const request = require("./Request");
+exports.request = request;
+const events_ns = require("./Events");
+const Utils_1 = require("./Utils");
+const Client_1 = require("./Client");
+const HotwordMode_1 = require("./HotwordMode");
+exports.HotwordModeToken = HotwordMode_1.HotwordModeToken;
+__export(require("./Client"));
+exports.Events = events_ns.Events;
+let client = new Client_1.Client();
+exports.events = client.events;
+function init(options, log) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (client.initialized) {
+            console.warn("Client has already been initialized. No action taken.");
+            return;
+        }
+        yield client.init(options, log);
+        HotwordMode_1.init(client.log);
+        request.init(client.log);
+    });
+}
+exports.init = init;
+function close() {
+    client.close();
+}
+exports.close = close;
+function triggerProactive(data) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before triggerProactive');
+            yield exports.events.connect.waitFor(5000);
+        }
+        const ret = yield Utils_1.Utils.sendPostRequest(client.options, '/proactive/trigger', data);
+        return new request.ProactiveRequest(client, client.getRequestID(ret));
+    });
+}
+exports.triggerProactive = triggerProactive;
+function startLocalTurn(data) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before startLocalTurn');
+            yield exports.events.connect.waitFor(5000);
+        }
+        const ret = yield Utils_1.Utils.sendPostRequest(client.options, '/listen/start_local_turn', data);
+        return new request.LocalTurnRequest(client, client.getRequestID(ret));
+    });
+}
+exports.startLocalTurn = startLocalTurn;
+function mimicGlobalTurn(data) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before mimicGlobalTurn');
+            yield exports.events.connect.waitFor(5000);
+        }
+        const ret = yield Utils_1.Utils.sendPostRequest(client.options, '/listen/mimic_global_turn', data);
+        return new request.Request(client, client.getRequestID(ret));
+    });
+}
+exports.mimicGlobalTurn = mimicGlobalTurn;
+function subscribeGlobal(data) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before subscribeGlobal');
+            yield exports.events.connect.waitFor(5000);
+        }
+        const ret = yield Utils_1.Utils.sendPostRequest(client.options, '/listen/subscribe_global', data);
+        return new request.SubscribeGlobalRequest(client, client.getRequestID(ret));
+    });
+}
+exports.subscribeGlobal = subscribeGlobal;
+function unsubscribeAllGlobals() {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before unsubscribeAllGlobals');
+            yield exports.events.connect.waitFor(5000);
+        }
+        yield Utils_1.Utils.sendPostRequest(client.options, '/listen/unsubscribe_all_globals', {});
+    });
+}
+exports.unsubscribeAllGlobals = unsubscribeAllGlobals;
+function cancelAnyTurn() {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before cancelAnyTurn');
+            yield exports.events.connect.waitFor(5000);
+        }
+        yield Utils_1.Utils.sendPostRequest(client.options, '/listen/cancel_any_turn', {});
+    });
+}
+exports.cancelAnyTurn = cancelAnyTurn;
+function setHJMode(mode) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before setHJMode');
+            yield exports.events.connect.waitFor(5000);
+        }
+        yield Utils_1.Utils.sendPostRequest(client.options, '/listen/set_hj_mode', { mode });
+    });
+}
+exports.setHJMode = setHJMode;
+function getHJMode() {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before getHJMode');
+            yield exports.events.connect.waitFor(5000);
+        }
+        const response = yield Utils_1.Utils.sendPostRequest(client.options, '/listen/get_hj_mode', {});
+        return response.mode;
+    });
+}
+exports.getHJMode = getHJMode;
+function setHotwordMode(mode, rules) {
+    return HotwordMode_1.generateToken(mode, rules);
+}
+exports.setHotwordMode = setHotwordMode;
+function resetHotwordMode() {
+    return HotwordMode_1.resetMode();
+}
+exports.resetHotwordMode = resetHotwordMode;
+function getCloudSkillResponse(transId) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before getCloudSkillResponse');
+            yield exports.events.connect.waitFor(5000);
+        }
+        return client.getCloudSkillResponse(transId);
+    });
+}
+exports.getCloudSkillResponse = getCloudSkillResponse;
+function removeSpeakerModel(speakerID) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before removeSpeakerModel');
+            yield exports.events.connect.waitFor(5000);
+        }
+        yield Utils_1.Utils.sendPostRequest(client.options, '/enroll/remove_speaker_model', { speakerID });
+    });
+}
+exports.removeSpeakerModel = removeSpeakerModel;
+function startEnrollmentTurn(speakerID, number_of_utterances) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before startEnrollmentTurn');
+            yield exports.events.connect.waitFor(5000);
+        }
+        const ret = yield Utils_1.Utils.sendPostRequest(client.options, '/listen/start_enrollment_turn', {
+            speakerID,
+            number_of_utterances
+        });
+        return new request.EnrollmentTurnRequest(client, client.getRequestID(ret));
+    });
+}
+exports.startEnrollmentTurn = startEnrollmentTurn;
+function initNameLearning(looperName) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before initNameLearning');
+            yield exports.events.connect.waitFor(5000);
+        }
+        yield Utils_1.Utils.sendPostRequest(client.options, '/pronunciation/init_pronunciation_learning', { word_to_learn: looperName });
+    });
+}
+exports.initNameLearning = initNameLearning;
+function startNameLearningTurn(looperName, ignoreHJ = true, rejectIfBusy = false) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before startNameLearningTurn');
+            yield exports.events.connect.waitFor(5000);
+        }
+        const ret = yield Utils_1.Utils.sendPostRequest(client.options, '/listen/start_pronunciation_learning_turn', {
+            word_to_learn: looperName,
+            ignoreHJ,
+            rejectIfBusy
+        });
+        return new request.NameLearningRequest(client, client.getRequestID(ret));
+    });
+}
+exports.startNameLearningTurn = startNameLearningTurn;
+function createSpeakerModel(speakerID, append = false) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before createSpeakerModel');
+            yield exports.events.connect.waitFor(5000);
+        }
+        const result = yield Utils_1.Utils.sendPostRequest(client.options, '/enroll/create_speaker_model', { speakerID, append });
+        if (result.message) {
+            return Promise.reject(result.message);
+        }
+        if (typeof result === 'string') {
+            return Promise.reject(result);
+        }
+        return result;
+    });
+}
+exports.createSpeakerModel = createSpeakerModel;
+function removePendingSamples(speakerID) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before removePendingSamples');
+            yield exports.events.connect.waitFor(5000);
+        }
+        const result = yield Utils_1.Utils.sendPostRequest(client.options, '/enroll/remove_pending_samples', { speakerID });
+        if (result.message) {
+            return Promise.reject(result.message);
+        }
+        if (typeof result === 'string') {
+            return Promise.reject(result);
+        }
+        return result;
+    });
+}
+exports.removePendingSamples = removePendingSamples;
+function getEnrolledSpeakers() {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!client.connected) {
+            client.log.warn('Disconnected, waiting for reconnect before getEnrolledSpeakers');
+            yield exports.events.connect.waitFor(5000);
+        }
+        const result = yield Utils_1.Utils.sendPostRequest(client.options, '/enroll/get_enrolled_speakers', {});
+        if (!result.speakers) {
+            client.log.warn(`Response from get_enrolled_speakers did not contain speakers - `, result);
+            return [];
+        }
+        return result.speakers;
+    });
+}
+exports.getEnrolledSpeakers = getEnrolledSpeakers;
+function _resetInstance() {
+    client = new Client_1.Client();
+    exports.events = client.events;
+}
+exports._resetInstance = _resetInstance;
+
+},{"./Client":2,"./Events":4,"./HotwordMode":5,"./Request":6,"./Types":7,"./Utils":8}],2:[function(require,module,exports){
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const jibo_client_framework_1 = require("jibo-client-framework");
+const types = require("./Types");
+const Events_1 = require("./Events");
+const CloudResponseRegistry_1 = require("./CloudResponseRegistry");
+const jibo_log_1 = require("jibo-log");
+const REGISTRY_CULL_TIME = 10000;
+function isSuccessResult(result) {
+    return result.hasOwnProperty('result');
+}
+class Client {
+    constructor() {
+        this.events = new Events_1.Events();
+        this._requests = new Map();
+        this.initialized = false;
+        this.connected = false;
+        this.cloudSkillResponseRegistry = new CloudResponseRegistry_1.CloudResponseRegistry();
+        this.handleMessage = (event) => {
+            try {
+                if (typeof event.data === 'string') {
+                    event.data = JSON.parse(event.data);
+                }
+            }
+            catch (error) {
+                this.emitError(new Error(`Error parsing incoming event: '${error.message}'`));
+                return;
+            }
+            if (typeof event.type !== 'string') {
+                const message = JSON.stringify(event);
+                this.emitError(new Error(`Incoming event missing 'type': '${message}'`));
+                return;
+            }
+            if (!event.requestID) {
+                const message = JSON.stringify(event);
+                this.emitError(new Error(`Incoming event missing 'requestID': '${message}'`));
+                return;
+            }
+            let shouldPassToRequest = true;
+            try {
+                switch (event.type) {
+                    case types.ServiceEventType.ERROR:
+                        this.emitError(new Error(event.data.message));
+                        break;
+                    case types.ServiceEventType.SOS:
+                        this.events.sos.emit();
+                        break;
+                    case types.ServiceEventType.EOS:
+                        this.events.eos.emit();
+                        break;
+                    case types.ServiceEventType.SPEAKER_ID:
+                        this.events.speakerID.emit(event.data);
+                        break;
+                    case types.ServiceEventType.TURN_STARTED:
+                        if (this._requests.has(event.requestID)) {
+                            this.events.localTurnStarted.emit(event.transID);
+                        }
+                        else {
+                            this.events.globalTurnStarted.emit();
+                        }
+                        break;
+                    case types.ServiceEventType.TURN_RESULT:
+                        if (event.data.status === types.TurnResultType.SUCCEEDED && typeof event.data.result === 'string') {
+                            event.data.result = JSON.parse(event.data.result);
+                        }
+                        const result = event.data.result;
+                        if (result && 'asr' in result) {
+                            event.data.result = new types.ListenResult(result.asr, result.nlu, result.match);
+                        }
+                        event.data.transID = event.transID;
+                        if (event.data.global || event.requestID === types.GLOBAL_REQUEST) {
+                            const data = event.data;
+                            if ((data.status === types.TurnResultType.SUCCEEDED) && data.result.match) {
+                                this.emitSkillSwitch(data.result.match, data.result.asr, data.result.nlu, event.transID);
+                            }
+                            this.events.globalTurnResult.emit(event.data);
+                        }
+                        else {
+                            this.emitLocalTurnResult(event.data);
+                        }
+                        break;
+                    case types.ServiceEventType.HJ_HEARD:
+                        this.events.hjHeard.emit();
+                        break;
+                    case types.ServiceEventType.HJ_ONLY:
+                        this.events.hjOnly.emit();
+                        break;
+                    case types.ServiceEventType.SKILL_ACTION:
+                        shouldPassToRequest = false;
+                        this.cloudSkillResponseRegistry.resolve(event.transID, event.data);
+                        break;
+                    case types.ServiceEventType.SKILL_REDIRECT:
+                        this.emitSkillSwitch(event.data.match, event.data.asr, event.data.nlu, event.transID);
+                        break;
+                    case types.ServiceEventType.PROACTIVE:
+                        if (event.data.match) {
+                            const nlu = {
+                                rules: [],
+                                intent: '',
+                                entities: {},
+                            };
+                            const asr = {
+                                text: '',
+                                confidence: 1
+                            };
+                            this.emitSkillSwitch(event.data.match, asr, nlu, event.transID);
+                        }
+                        break;
+                    case types.ServiceEventType.SPEAKER_ENROLLMENT:
+                        this.events.speakerEnrollment.emit(event.data);
+                        break;
+                    default:
+                        this.log.warn(`Unknown event type received: '${event.type}'`);
+                }
+            }
+            catch (error) {
+                this.emitError(error);
+            }
+            if (shouldPassToRequest) {
+                const request = this._requests.get(event.requestID);
+                if (request) {
+                    if (event.type === types.ServiceEventType.ERROR) {
+                        request.error.emit(new Error(`Received error: ${event.data.message}`));
+                    }
+                    else {
+                        request.events.emit(event);
+                    }
+                }
+                else {
+                    if (event.requestID !== types.GLOBAL_REQUEST) {
+                    }
+                }
+            }
+        };
+        this.handleVAD = (event) => {
+            this.events.vad.emit(event);
+        };
+    }
+    init(options, log) {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.options = options;
+            this.log = log || new jibo_log_1.Log(`JetstreamClient`);
+            const callback = () => {
+                this.cloudSkillResponseRegistry.cull(REGISTRY_CULL_TIME);
+            };
+            callback.isGlobalTimer = true;
+            this.cullInterval = setInterval(callback, REGISTRY_CULL_TIME);
+            return new Promise((resolve, reject) => {
+                this.eventWS = new jibo_client_framework_1.WSClient(`ws://${this.options.hostname}:${this.options.port}/events`);
+                this.eventWS.once('open', () => resolve());
+                this.eventWS.on('close', () => {
+                    this.connected = false;
+                    this.emitError(new Error(`Jetstream Websocket closed`));
+                    this.cancelAllRequests();
+                });
+                this.eventWS.on('open', () => {
+                    this.connected = true;
+                    this.events.connect.emit();
+                });
+                this.eventWS.on('message', this.handleMessage);
+                this.vadWS = new jibo_client_framework_1.WSClient(`ws://${this.options.hostname}:${this.options.port}/vad`);
+                this.vadWS.on('close', () => {
+                    this.emitError(new Error(`Jetstream VAD Websocket closed`));
+                });
+                this.vadWS.on('message', this.handleVAD);
+                this.initialized = true;
+            });
+        });
+    }
+    close() {
+        clearInterval(this.cullInterval);
+        this.cullInterval = null;
+        if (this.eventWS && this.eventWS.socket) {
+            this.eventWS.socket.removeAllListeners('close');
+            this.eventWS.socket.close();
+        }
+        this.eventWS = null;
+        if (this.vadWS && this.vadWS.socket) {
+            this.vadWS.socket.removeAllListeners('close');
+            this.vadWS.socket.close();
+        }
+        this.vadWS = null;
+    }
+    getRequestID(response) {
+        if (typeof response.requestID !== 'string') {
+            throw new Error(`Missing 'requestID' in response`);
+        }
+        return response.requestID;
+    }
+    getCloudSkillResponse(transID) {
+        return this.cloudSkillResponseRegistry.add(transID);
+    }
+    forceEndTurns(doGlobal = false) {
+        const fakeTurnResult = {
+            status: types.TurnResultType.FAILED,
+            global: false,
+            message: 'Jetstream disconnected'
+        };
+        this.events.localTurnResult.emit(fakeTurnResult);
+        if (doGlobal) {
+            this.events.globalTurnResult.emit(fakeTurnResult);
+        }
+    }
+    emitError(error) {
+        this.log.error(error.message);
+        this.events.error.emit(error);
+    }
+    emitSkillSwitch(match, asr, nlu, transID) {
+        this.events.skillSwitch.emit({
+            skillID: match.skillID,
+            onRobot: match.onRobot,
+            isProactive: match.isProactive,
+            skipSurprises: match.skipSurprises,
+            transID: transID,
+            data: new types.ListenResult(asr, nlu, match)
+        });
+    }
+    emitLocalTurnResult(data) {
+        if (data.status === types.TurnResultType.SUCCEEDED && isSuccessResult(data)) {
+            data.result.transID = data.transID;
+            if (data.result.match) {
+                data.result.cloudSkillResponse = this.getCloudSkillResponse(data.transID);
+            }
+        }
+        this.events.localTurnResult.emit(data);
+    }
+    cancelAllRequests() {
+        const requests = this._requests.values();
+        const fakeTurnResult = {
+            status: types.TurnResultType.FAILED,
+            global: false,
+            message: 'Jetstream disconnected'
+        };
+        for (let request of requests) {
+            request.events.emit({
+                requestID: request.id,
+                transID: '',
+                ts: Date.now(),
+                type: types.ServiceEventType.TURN_RESULT,
+                data: fakeTurnResult
+            });
+        }
+        this._requests.clear();
+        this.forceEndTurns(true);
+    }
+}
+exports.Client = Client;
+
+},{"./CloudResponseRegistry":3,"./Events":4,"./Types":7,"jibo-client-framework":undefined,"jibo-log":undefined}],3:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jibo_cai_utils_1 = require("jibo-cai-utils");
+class CloudResponseRegistry {
+    constructor() {
+        this.registry = new Map();
+    }
+    add(transID) {
+        let existing = this.registry.get(transID);
+        if (existing) {
+            this.registry.delete(transID);
+            return existing.response.promise;
+        }
+        else {
+            return this.createEntry(transID).response.promise;
+        }
+    }
+    resolve(transID, skillResponse) {
+        let entry = this.registry.get(transID);
+        const hadEntry = !!entry;
+        if (!entry) {
+            entry = this.createEntry(transID);
+        }
+        entry.response.resolve(skillResponse);
+        if (hadEntry) {
+            this.registry.delete(transID);
+        }
+    }
+    cull(maxAgeMs) {
+        const now = Date.now();
+        this.registry.forEach((entry, key) => {
+            const age = (now - entry.timestamp);
+            if (age > maxAgeMs) {
+                entry.response.reject(new Error(`Timeout of ${maxAgeMs} ms reached. Culling cloud response`));
+                this.registry.delete(key);
+            }
+        });
+    }
+    createEntry(id) {
+        const entry = {
+            timestamp: Date.now(),
+            transID: id,
+            response: new jibo_cai_utils_1.ExtPromiseWrapper()
+        };
+        this.registry.set(id, entry);
+        return entry;
+    }
+}
+exports.CloudResponseRegistry = CloudResponseRegistry;
+
+},{"jibo-cai-utils":undefined}],4:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jibo_typed_events_1 = require("jibo-typed-events");
+class Events extends jibo_typed_events_1.EventContainer {
+    constructor() {
+        super(...arguments);
+        this.error = new jibo_typed_events_1.Event(`ERROR`);
+        this.sos = new jibo_typed_events_1.Event(`Start of speech`);
+        this.eos = new jibo_typed_events_1.Event(`End of speech`);
+        this.hjHeard = new jibo_typed_events_1.Event(`HJ Heard`);
+        this.hjOnly = new jibo_typed_events_1.Event(`HJ Only`);
+        this.speakerID = new jibo_typed_events_1.Event(`Speaker ID`);
+        this.localTurnStarted = new jibo_typed_events_1.Event(`Local Turn started`);
+        this.localTurnResult = new jibo_typed_events_1.Event(`Local Turn result`);
+        this.globalTurnStarted = new jibo_typed_events_1.Event(`Global Turn started`);
+        this.globalTurnResult = new jibo_typed_events_1.Event(`Global Turn result`);
+        this.skillSwitch = new jibo_typed_events_1.Event(`Skill Switch`);
+        this.speakerEnrollment = new jibo_typed_events_1.Event(`Speaker Enrollment`);
+        this.vad = new jibo_typed_events_1.Event(`VAD Event`);
+        this.connect = new jibo_typed_events_1.Event(`Connect`);
+    }
+}
+exports.Events = Events;
+
+},{"jibo-typed-events":undefined}],5:[function(require,module,exports){
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const jibo_typed_events_1 = require("jibo-typed-events");
+const Types_1 = require("./Types");
+const api = require("./Api");
+const ACTIVE_TOKENS = [
+    [],
+    [],
+    [],
+    [],
+    []
+];
+let previousMode = Types_1.HotwordListenMode.Normal;
+let asrOnlyRequest = null;
+function rulesIntersect(arr1, arr2) {
+    if (!arr1 || !arr2) {
+        return false;
+    }
+    return arr1.some((n) => arr2.includes(n));
+}
+let log;
+function init(parentLog) {
+    log = parentLog.createChild('HotwordMode');
+    api.events.connect.on(onReconnect);
+}
+exports.init = init;
+class HotwordModeToken {
+    constructor(mode, rules) {
+        this.valid = true;
+        this.mode = mode;
+        this.rules = rules || [];
+        this.match = new jibo_typed_events_1.Event(`Global match`);
+        this.onGlobalResult = this.onGlobalResult.bind(this);
+    }
+    release() {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield this.cleanup();
+            try {
+                yield removeToken(this);
+            }
+            catch (e) {
+                log.warn('Next mode could not be set when removing a token', e);
+            }
+        });
+    }
+    cleanup() {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.match.removeAllListeners();
+            this.valid = false;
+            try {
+                yield this.activated;
+            }
+            catch (e) {
+                log.warn('Releasing a token but it failed to activate', e);
+            }
+            yield this.removeSubscribeGlobalRequest();
+        });
+    }
+    acceptSubscribeGlobalRequest(request) {
+        if (!this.valid) {
+            request.unsubscribe();
+            return;
+        }
+        this.globalRequest = request;
+        api.events.globalTurnResult.on(this.onGlobalResult);
+    }
+    removeSubscribeGlobalRequest() {
+        return __awaiter(this, void 0, void 0, function* () {
+            api.events.globalTurnResult.off(this.onGlobalResult);
+            if (this.globalRequest) {
+                try {
+                    const request = this.globalRequest;
+                    this.globalRequest = null;
+                    yield request.unsubscribe();
+                }
+                catch (e) {
+                    log.info('Failed to unsubscribe a global request from a token', e);
+                }
+            }
+        });
+    }
+    onGlobalResult(result) {
+        if (result.status === Types_1.TurnResultType.SUCCEEDED && result.result.nlu && rulesIntersect(result.result.nlu.rules, this.rules)) {
+            this.match.emit(result);
+        }
+    }
+}
+exports.HotwordModeToken = HotwordModeToken;
+function generateToken(mode, rules) {
+    const token = new HotwordModeToken(mode, rules);
+    if (mode === Types_1.HotwordListenMode.Normal) {
+        token.activated = Promise.resolve();
+        return token;
+    }
+    if (typeof Types_1.HotwordListenMode[mode] !== 'string') {
+        token.activated = Promise.reject(`Invalid mode: ${mode}`);
+        return token;
+    }
+    ACTIVE_TOKENS[mode].push(token);
+    token.activated = updateMode(mode);
+    return token;
+}
+exports.generateToken = generateToken;
+function resetMode() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const tokenCleanup = [];
+        for (let i = Types_1.HotwordListenMode.Disabled; i < Types_1.HotwordListenMode.Normal; ++i) {
+            tokenCleanup.push(...ACTIVE_TOKENS[i].map(token => token.cleanup()));
+            ACTIVE_TOKENS[i].length = 0;
+        }
+        yield Promise.all(tokenCleanup);
+        return updateMode(Types_1.HotwordListenMode.Normal);
+    });
+}
+exports.resetMode = resetMode;
+function removeToken(token) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (token.mode === Types_1.HotwordListenMode.Normal) {
+            return Promise.resolve();
+        }
+        const list = ACTIVE_TOKENS[token.mode];
+        if (!list) {
+            return Promise.reject(`Invalid mode: ${token.mode}`);
+        }
+        const index = list.indexOf(token);
+        if (index === -1) {
+            return Promise.resolve();
+        }
+        list.splice(index, 1);
+        if (token.mode > previousMode) {
+            return Promise.resolve();
+        }
+        for (let i = Types_1.HotwordListenMode.Disabled; i < Types_1.HotwordListenMode.Normal; ++i) {
+            if (ACTIVE_TOKENS[i].length) {
+                return updateMode(i);
+            }
+        }
+        return updateMode(Types_1.HotwordListenMode.Normal);
+    });
+}
+function updateMode(newMode) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const tempPrevMode = previousMode;
+        previousMode = newMode;
+        if (newMode === Types_1.HotwordListenMode.ASR_Only) {
+            yield Promise.all(ACTIVE_TOKENS[Types_1.HotwordListenMode.Custom_NLU_Only].map(token => token.removeSubscribeGlobalRequest().catch((e) => {
+                log.info('Failed to unsubscribe global rules with token ', e);
+            })));
+        }
+        if (tempPrevMode !== newMode && tempPrevMode === Types_1.HotwordListenMode.ASR_Only) {
+            try {
+                yield asrOnlyRequest.unsubscribe();
+                asrOnlyRequest = null;
+            }
+            catch (e) {
+                log.warn('Unable to unsubscribe asrOnlyRequest token', e);
+                asrOnlyRequest = null;
+            }
+        }
+        if (newMode === Types_1.HotwordListenMode.Disabled) {
+            if (tempPrevMode !== newMode) {
+                return api.setHJMode(Types_1.HJMode.IGNORE_HJ);
+            }
+            return;
+        }
+        switch (newMode) {
+            case Types_1.HotwordListenMode.HJ_Only:
+                yield api.setHJMode(Types_1.HJMode.ONLY_HJ);
+                break;
+            case Types_1.HotwordListenMode.ASR_Only:
+                if (!asrOnlyRequest) {
+                    asrOnlyRequest = yield api.subscribeGlobal({
+                        nluRules: [],
+                        exclusive: true
+                    });
+                }
+                break;
+            case Types_1.HotwordListenMode.Custom_NLU_Only:
+            case Types_1.HotwordListenMode.Custom_NLU_Added:
+            case Types_1.HotwordListenMode.Normal:
+                break;
+            default:
+        }
+        if (newMode !== Types_1.HotwordListenMode.ASR_Only) {
+            yield buildRuleList();
+        }
+        if (tempPrevMode === Types_1.HotwordListenMode.Disabled || tempPrevMode === Types_1.HotwordListenMode.HJ_Only) {
+            return api.setHJMode(Types_1.HJMode.NORMAL_HJ);
+        }
+    });
+}
+function buildRuleList() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const newTokens = [
+            ...ACTIVE_TOKENS[Types_1.HotwordListenMode.Custom_NLU_Added].filter(token => !token.globalRequest),
+            ...ACTIVE_TOKENS[Types_1.HotwordListenMode.Custom_NLU_Only].filter(token => !token.globalRequest)
+        ];
+        return subscribeRules(newTokens);
+    });
+}
+function subscribeRules(tokens) {
+    return Promise.all(tokens.map((token) => {
+        return api.subscribeGlobal({
+            nluRules: token.rules,
+            exclusive: token.mode === Types_1.HotwordListenMode.Custom_NLU_Only
+        }).then((request) => {
+            token.acceptSubscribeGlobalRequest(request);
+        });
+    }));
+}
+function onReconnect() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const tokens = [...ACTIVE_TOKENS[Types_1.HotwordListenMode.Custom_NLU_Added], ...ACTIVE_TOKENS[Types_1.HotwordListenMode.Custom_NLU_Only]];
+        tokens.forEach((token) => {
+            token.globalRequest = null;
+        });
+        const prevMode = previousMode;
+        previousMode = Types_1.HotwordListenMode.Normal;
+        updateMode(prevMode);
+    });
+}
+
+},{"./Api":1,"./Types":7,"jibo-typed-events":undefined}],6:[function(require,module,exports){
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const jibo_typed_events_1 = require("jibo-typed-events");
+const Utils_1 = require("./Utils");
+const Types_1 = require("./Types");
+let log;
+function init(parentLog) {
+    log = parentLog.createChild('Request');
+}
+exports.init = init;
+var RequestStatus;
+(function (RequestStatus) {
+    RequestStatus["ACTIVE"] = "ACTIVE";
+    RequestStatus["CANCELED"] = "CANCELED";
+    RequestStatus["FINISHED"] = "FINISHED";
+    RequestStatus["ERROR"] = "ERROR";
+})(RequestStatus = exports.RequestStatus || (exports.RequestStatus = {}));
+class Request {
+    constructor(client, id) {
+        this.client = client;
+        this.status = RequestStatus.ACTIVE;
+        this.events = new jibo_typed_events_1.Event(`Event`);
+        this.error = new jibo_typed_events_1.Event(`Error`);
+        this.id = id;
+    }
+    forceEnd() {
+        this.resolve({
+            status: Types_1.TurnResultType.CANCELED,
+            global: false
+        });
+        this.client.forceEndTurns();
+    }
+}
+exports.Request = Request;
+class ProactiveRequest extends Request {
+    constructor(client, id) {
+        super(client, id);
+        client._requests.set(id, this);
+        this.promise = new Promise((resolve, reject) => {
+            this.events.on(event => {
+                if (event.type === Types_1.ServiceEventType.PROACTIVE) {
+                    process.nextTick(() => resolve(event.data));
+                }
+            });
+            this.error.on(error => {
+                process.nextTick(() => reject(error));
+            });
+        }).then((data) => {
+            this.status = RequestStatus.FINISHED;
+            client._requests.delete(id);
+            return data;
+        }).catch(error => {
+            this.status = RequestStatus.ERROR;
+            client._requests.delete(id);
+            throw error;
+        });
+    }
+}
+exports.ProactiveRequest = ProactiveRequest;
+class LocalTurnRequest extends Request {
+    constructor(client, id) {
+        super(client, id);
+        client._requests.set(id, this);
+        this.promise = new Promise((resolve, reject) => {
+            this.resolve = resolve;
+            this.events.on(event => {
+                if (event.type === Types_1.ServiceEventType.TURN_RESULT) {
+                    const data = event.data;
+                    process.nextTick(() => {
+                        switch (data.status) {
+                            case Types_1.TurnResultType.SUCCEEDED:
+                            case Types_1.TurnResultType.FAILED:
+                            case Types_1.TurnResultType.INTERRUPTED:
+                            case Types_1.TurnResultType.CANCELED:
+                            case Types_1.TurnResultType.TIMEOUT:
+                                resolve(data);
+                                break;
+                            default:
+                                reject(new Error(`Unknown turn result status '${data.status}'`));
+                                break;
+                        }
+                    });
+                }
+            });
+            this.error.on(error => {
+                process.nextTick(() => reject(error));
+            });
+        }).then((data) => {
+            if (data.status === Types_1.TurnResultType.CANCELED) {
+                this.status = RequestStatus.CANCELED;
+            }
+            else {
+                this.status = RequestStatus.FINISHED;
+            }
+            client._requests.delete(id);
+            return data;
+        }).catch(error => {
+            this.status = RequestStatus.ERROR;
+            client._requests.delete(id);
+            throw error;
+        });
+    }
+    cancel() {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (this.status === RequestStatus.ACTIVE) {
+                this.status = RequestStatus.CANCELED;
+                try {
+                    yield Utils_1.Utils.sendPostRequest(this.client.options, '/listen/cancel_local_turn', { requestID: this.id });
+                    this.resolve({
+                        status: Types_1.TurnResultType.CANCELED,
+                        global: false
+                    });
+                    return true;
+                }
+                catch (err) {
+                    log.warn('Unable to cancel local turn', err);
+                    this.forceEnd();
+                }
+            }
+            return false;
+        });
+    }
+    update(asrOrNlu, meta) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (this.status !== RequestStatus.ACTIVE) {
+                return;
+            }
+            const data = {
+                requestID: this.id,
+                clientASR: typeof asrOrNlu === 'string' ? asrOrNlu : undefined,
+                clientNLU: typeof asrOrNlu === 'string' ? undefined : asrOrNlu,
+                meta
+            };
+            try {
+                yield Utils_1.Utils.sendPostRequest(this.client.options, '/listen/update_local_turn', data);
+            }
+            catch (err) {
+                log.warn('Unable to update local turn', err);
+            }
+        });
+    }
+}
+exports.LocalTurnRequest = LocalTurnRequest;
+class SubscribeGlobalRequest extends Request {
+    unsubscribe() {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (this.status === RequestStatus.ACTIVE) {
+                try {
+                    this.status = RequestStatus.CANCELED;
+                    yield Utils_1.Utils.sendPostRequest(this.client.options, '/listen/unsubscribe_global', { requestID: this.id });
+                    return true;
+                }
+                catch (e) {
+                    log.warn('Unable to unsubscribe global request', e);
+                }
+            }
+            return false;
+        });
+    }
+}
+exports.SubscribeGlobalRequest = SubscribeGlobalRequest;
+class EnrollmentTurnRequest extends Request {
+    constructor(client, id) {
+        super(client, id);
+        this.ready = new jibo_typed_events_1.Event(`Enrollment Ready`);
+        client._requests.set(id, this);
+        this.promise = new Promise((resolve, reject) => {
+            this.resolve = resolve;
+            this.events.on(event => {
+                if (event.type === Types_1.ServiceEventType.TURN_RESULT) {
+                    const data = event.data;
+                    process.nextTick(() => {
+                        switch (data.status) {
+                            case Types_1.TurnResultType.SUCCEEDED:
+                            case Types_1.TurnResultType.FAILED:
+                            case Types_1.TurnResultType.INTERRUPTED:
+                            case Types_1.TurnResultType.CANCELED:
+                            case Types_1.TurnResultType.TIMEOUT:
+                                resolve(data);
+                                break;
+                            default:
+                                reject(`Unknown turn result status '${data.status}'`);
+                                break;
+                        }
+                    });
+                }
+                else if (event.type === Types_1.ServiceEventType.TURN_STARTED) {
+                    this.ready.emit();
+                }
+            });
+            this.error.on(error => {
+                process.nextTick(() => reject(error));
+            });
+        }).then((data) => {
+            if (data.status === Types_1.TurnResultType.CANCELED) {
+                this.status = RequestStatus.CANCELED;
+            }
+            else {
+                this.status = RequestStatus.FINISHED;
+            }
+            client._requests.delete(id);
+            return data;
+        }).catch(error => {
+            this.status = RequestStatus.ERROR;
+            client._requests.delete(id);
+            throw error;
+        });
+    }
+    cancel() {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (this.status === RequestStatus.ACTIVE) {
+                this.status = RequestStatus.CANCELED;
+                try {
+                    yield Utils_1.Utils.sendPostRequest(this.client.options, '/listen/cancel_local_turn', { requestID: this.id });
+                    this.resolve({
+                        status: Types_1.TurnResultType.CANCELED,
+                        global: false
+                    });
+                    return true;
+                }
+                catch (err) {
+                    log.warn('Unable to cancel voice enrollment turn', err);
+                    this.forceEnd();
+                }
+            }
+            return false;
+        });
+    }
+}
+exports.EnrollmentTurnRequest = EnrollmentTurnRequest;
+class NameLearningRequest extends Request {
+    constructor(client, id) {
+        super(client, id);
+        client._requests.set(id, this);
+        this.promise = new Promise((resolve, reject) => {
+            this.resolve = resolve;
+            this.events.on(event => {
+                if (event.type === Types_1.ServiceEventType.TURN_RESULT) {
+                    const data = event.data;
+                    process.nextTick(() => {
+                        switch (event.data.status) {
+                            case Types_1.TurnResultType.SUCCEEDED:
+                                resolve(data);
+                                break;
+                            case Types_1.TurnResultType.FAILED:
+                            case Types_1.TurnResultType.INTERRUPTED:
+                            case Types_1.TurnResultType.CANCELED:
+                            case Types_1.TurnResultType.TIMEOUT:
+                                reject(data);
+                                break;
+                            default:
+                                reject(`Unknown turn result status '${data.status}'`);
+                                break;
+                        }
+                    });
+                }
+            });
+            this.error.on(error => {
+                process.nextTick(() => reject(error));
+            });
+        }).then((data) => {
+            if (data.status === Types_1.TurnResultType.CANCELED) {
+                this.status = RequestStatus.CANCELED;
+            }
+            else {
+                this.status = RequestStatus.FINISHED;
+            }
+            client._requests.delete(id);
+            return data;
+        }).catch(error => {
+            this.status = RequestStatus.ERROR;
+            client._requests.delete(id);
+            throw error;
+        });
+    }
+    cancel() {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (this.status === RequestStatus.ACTIVE) {
+                this.status = RequestStatus.CANCELED;
+                try {
+                    yield Utils_1.Utils.sendPostRequest(this.client.options, '/listen/cancel_local_turn', { requestID: this.id });
+                    this.resolve({
+                        status: Types_1.TurnResultType.CANCELED,
+                        global: false
+                    });
+                    return true;
+                }
+                catch (err) {
+                    log.warn('Unable to cancel pronunciation learning turn', err);
+                    this.forceEnd();
+                }
+            }
+            return false;
+        });
+    }
+}
+exports.NameLearningRequest = NameLearningRequest;
+
+},{"./Types":7,"./Utils":8,"jibo-typed-events":undefined}],7:[function(require,module,exports){
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const interfaces = require("@jibo/interfaces");
+exports.ProactiveTriggerSource = interfaces.proactive.TriggerSource;
+exports.ListenMessageMode = interfaces.hub.request.ListenMessageMode;
+exports.ASRAnnotation = interfaces.asr.ASRAnnotation;
+exports.ListenResultState = interfaces.hub.response.ListenResultState;
+var BaseListenResult = interfaces.hub.response.ListenResult;
+exports.GLOBAL_REQUEST = 'GLOBAL';
+var HotwordListenMode;
+(function (HotwordListenMode) {
+    HotwordListenMode[HotwordListenMode["Disabled"] = 0] = "Disabled";
+    HotwordListenMode[HotwordListenMode["HJ_Only"] = 1] = "HJ_Only";
+    HotwordListenMode[HotwordListenMode["ASR_Only"] = 2] = "ASR_Only";
+    HotwordListenMode[HotwordListenMode["Custom_NLU_Only"] = 3] = "Custom_NLU_Only";
+    HotwordListenMode[HotwordListenMode["Custom_NLU_Added"] = 4] = "Custom_NLU_Added";
+    HotwordListenMode[HotwordListenMode["Normal"] = 5] = "Normal";
+})(HotwordListenMode = exports.HotwordListenMode || (exports.HotwordListenMode = {}));
+var TurnResultType;
+(function (TurnResultType) {
+    TurnResultType["SUCCEEDED"] = "SUCCEEDED";
+    TurnResultType["INTERRUPTED"] = "INTERRUPTED";
+    TurnResultType["CANCELED"] = "CANCELED";
+    TurnResultType["FAILED"] = "FAILED";
+    TurnResultType["TIMEOUT"] = "TIMEDOUT";
+})(TurnResultType = exports.TurnResultType || (exports.TurnResultType = {}));
+var HJMode;
+(function (HJMode) {
+    HJMode["NORMAL_HJ"] = "NORMAL_HJ";
+    HJMode["IGNORE_HJ"] = "IGNORE_HJ";
+    HJMode["ONLY_HJ"] = "ONLY_HJ";
+})(HJMode = exports.HJMode || (exports.HJMode = {}));
+var ServiceEventType;
+(function (ServiceEventType) {
+    ServiceEventType["EOS"] = "EOS";
+    ServiceEventType["SOS"] = "SOS";
+    ServiceEventType["ERROR"] = "ERROR";
+    ServiceEventType["SPEAKER_ID"] = "SPEAKER_ID";
+    ServiceEventType["HJ_HEARD"] = "HJ_HEARD";
+    ServiceEventType["HJ_ONLY"] = "HJ_ONLY";
+    ServiceEventType["SKILL_ACTION"] = "SKILL_ACTION";
+    ServiceEventType["SKILL_REDIRECT"] = "SKILL_REDIRECT";
+    ServiceEventType["TURN_STARTED"] = "TURN_STARTED";
+    ServiceEventType["TURN_RESULT"] = "TURN_RESULT";
+    ServiceEventType["PROACTIVE"] = "PROACTIVE";
+    ServiceEventType["SPEAKER_ENROLLMENT"] = "SPEAKER_ENROLLMENT";
+})(ServiceEventType = exports.ServiceEventType || (exports.ServiceEventType = {}));
+class ListenResult extends BaseListenResult {
+    get text() {
+        return this.asr ? this.asr.text : '';
+    }
+    set text(value) {
+        if (this.asr) {
+            this.asr.text = value;
+        }
+        else {
+            this.asr = {
+                text: value,
+                confidence: 1
+            };
+        }
+    }
+    get intent() {
+        return this.nlu ? this.nlu.intent : '';
+    }
+    set intent(value) {
+        if (this.nlu) {
+            this.nlu.intent = value;
+        }
+        else {
+            this.nlu = {
+                intent: value,
+                entities: {},
+                rules: []
+            };
+        }
+    }
+    static fromJSON(json) {
+        if (!json) {
+            return new ListenResult(null);
+        }
+        const out = new ListenResult(json.asr, json.nlu, json.match);
+        out.transID = json.transID;
+        return out;
+    }
+    toJSON() {
+        return Object.assign(super.toJSON(), {
+            transID: this.transID
+        });
+    }
+    toLog() {
+        let nlu = null;
+        if (this.nlu) {
+            nlu = this.nlu;
+        }
+        return {
+            nlu,
+            asr: {
+                text: (this.asr && this.asr.text) ? '<user input removed>' : '',
+                confidence: this.asr ? this.asr.confidence : null
+            }
+        };
+    }
+}
+exports.ListenResult = ListenResult;
+
+},{"@jibo/interfaces":undefined}],8:[function(require,module,exports){
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const http = require("http");
+const MAX_RETRIES = 5;
+class Utils {
+    static sendPostRequest(hostOptions, path, postData, retries = 0) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const postDataString = JSON.stringify(postData);
+            const postOptions = {
+                host: hostOptions.hostname,
+                port: hostOptions.port,
+                path: path,
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Content-Length': Buffer.byteLength(postDataString)
+                }
+            };
+            return new Promise((resolve, reject) => {
+                const postReq = http.request(postOptions, (response) => {
+                    response.setEncoding('utf8');
+                    let responseData = '';
+                    response.on('data', (chunk) => {
+                        responseData += chunk;
+                    });
+                    response.on('end', () => {
+                        if (response.statusCode === 417) {
+                            if (retries >= MAX_RETRIES) {
+                                return reject(new Error('Attempted too many retries - ' + responseData));
+                            }
+                            return resolve(Utils.sendPostRequest(hostOptions, path, postData, retries + 1));
+                        }
+                        try {
+                            if (responseData === '') {
+                                return resolve({});
+                            }
+                            const data = JSON.parse(responseData);
+                            resolve(data);
+                        }
+                        catch (error) {
+                            reject(new Error(`Error parsing response: '${error.message}' - Response: ${responseData} - Path used: ${path} - Original POST: ${postDataString}`));
+                        }
+                    });
+                    response.on('error', reject);
+                });
+                postReq.write(postDataString);
+                postReq.end();
+            });
+        });
+    }
+}
+exports.Utils = Utils;
+
+},{"http":undefined}],9:[function(require,module,exports){
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+const types = require("./Types");
+exports.types = types;
+const request = require("./Request");
+exports.request = request;
+const api = require("./Api");
+exports.api = api;
+__export(require("./Utils"));
+__export(require("./Client"));
+__export(require("./Events"));
+var HotwordMode_1 = require("./HotwordMode");
+exports.HotwordModeToken = HotwordMode_1.HotwordModeToken;
+
+},{"./Api":1,"./Client":2,"./Events":4,"./HotwordMode":5,"./Request":6,"./Types":7,"./Utils":8}]},{},[9])(9)
+});
+
+//# sourceMappingURL=jetstream-client.js.map

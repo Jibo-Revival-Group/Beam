@@ -1,0 +1,211 @@
+{
+  "name": "@be/be",
+  "version": "10.0.18",
+  "description": "",
+  "main": "index.js",
+  "jibo": {
+    "debug": {
+      "asr": false,
+      "embodiedListen": false,
+      "attention": false,
+      "idle": false,
+      "embodiedSpeech": false,
+      "resourceLeak": true,
+      "showTimer": false,
+      "noCacheDestroy": false,
+      "skipRestore": false
+    },
+    "main": "index.html",
+    "skills": [
+      "@be/clock",
+      "@be/circuit-saver",
+      "@be/idle",
+      "@be/main-menu",
+      "@be/settings",
+      "@be/create",
+      "@be/exercise",
+      "@be/first-contact",
+      "@be/friendly-tips",
+      "@be/gallery",
+      "@be/hue-control",
+      "@be/ifttt",
+      "@be/introductions",
+      "@be/remote",
+      "@be/nimbus",
+      "@be/restore",
+      "@be/surprises",
+      "@be/surprises-date",
+      "@be/surprises-ota",
+      "@be/greetings",
+      "@be/who-am-i",
+      "@be/tutorial",
+      "@be/radio",
+      "@be/word-of-the-day"
+    ],
+    "defaultSkill": "@be/idle",
+    "eosSkill": "@be/surprises",
+    "firstSkill": "@be/first-contact",
+    "restoreSkill": "@be/restore"
+  },
+  "config": {
+    "standalone": true
+  },
+  "monorailConfig": {
+    "public": false,
+    "shrinkwrap": true,
+    "output": "index.js",
+    "input": [
+      "src"
+    ]
+  },
+  "scripts": {
+    "start": "yarn watch",
+    "sim": "../../packages/jibo-cli/bin/jibo.js sim .",
+    "sim:dev": "env ETCO_server_hubTokenSecret=dev-hub-token-secret JetstreamSim_hubHost=dev-hub.jibo.com JetstreamSim_hubPort=443 yarn sim",
+    "sim:stg": "env ETCO_server_hubTokenSecret=stg-hub-token-secret JetstreamSim_hubHost=stg-hub.jibo.com JetstreamSim_hubPort=443 yarn sim",
+    "clean": "cross-conf-env rimraf npm_package_config_bundle && cross-conf-env rimraf npm_package_jibo_launchRule",
+    "lint": "cross-conf-env eslint npm_package_config_src || exit 0",
+    "prebuild": "yarn lint",
+    "build": "jibo-dev build",
+    "build:release": "jibo-dev build --prod",
+    "watch": "jibo-dev watch",
+    "prebuild:release": "yarn clean && yarn lint",
+    "rsync": "jibo-rsync",
+    "sync": "./bin/sync-to-robot.sh",
+    "sync:autobot": "node ./bin/sync-autobot.js",
+    "robot": "yarn sync && jibo run",
+    "robot:clear": "jibo delete",
+    "addsshkey": "jibo-rsync --init",
+    "test": "floss --path tests/index.js --coveragePattern index.js && istanbul report && yarn coverage:check",
+    "coverage:report": "istanbul report && open coverage/lcov-report/index.html",
+    "coverage:remap": "remap-istanbul --input ./coverage/coverage-final.json --output ./coverage/coverage-final.json",
+    "coverage:check": "istanbul check-coverage coverage/coverage-final.json --statements 40 --branches 30 --functions 40 --lines 40",
+    "test:report": "yarn test --reporter=spec,xunit",
+    "testdebug": "floss --debug --path tests/index.js --coveragePattern index.js && istanbul report && yarn coverage:check",
+    "test:debug": "yarn testdebug",
+    "test:performance": "floss --path tests/performance/index.js",
+    "test:autobot:smoke:firstcontact": "floss --path tests/autobot/first-contact-tutorial-test.js --debug --unmuted",
+    "test:performance:debug": "floss --path tests/performance/index.js --debug --unmuted",
+    "test:autobot:smoke:chitchat": "floss --path tests/autobot/chitchat-smoketests.js --debug --unmuted",
+    "test:autobot:smoke:simulator:chitchat": "yarn test:autobot:smoke:chitchat --arguments '{\"simulator\": true}' ",
+    "test:autobot:chitchat-all": "floss --path tests/autobot/chitchat-scripted-all.js --debug --unmuted",
+    "test:autobot:holiday": "floss --path tests/autobot/fresh-n-lively-smoketests.js --debug --unmuted",
+    "test:autobot:gqa-all": "floss --path tests/autobot/chitchat-gqa-all.js --debug --unmuted",
+    "test:autobot:gqa-performance": "floss --path tests/autobot/chitchat-gqa-performance-smoketests.js --debug --unmuted",
+    "test:autobot:regression:debug": "floss --path tests/autobot/regression-testsuite.js --debug --unmuted",
+    "test:autobot:smoke:settings-gui": "floss --path tests/autobot/settings-gui-smoketests.js --debug --unmuted",
+    "test:autobot:smoke:simulator:settings-gui": "yarn test:autobot:smoke:settings-gui --arguments '{\"simulator\": true}' ",
+    "test:autobot:introductions": "floss --path tests/autobot/introductions.js --debug --unmuted",
+    "test:autobot:empathy": "floss --path tests/autobot/empathy-smoketests.js --debug --unmuted",
+    "test:autobot:regression:jenkins": "floss --path tests/autobot/regression-testsuite.js --unmuted --close",
+    "test:autobot:radiotest": "floss --path tests/autobot/radio-test.js --debug --unmuted",
+    "test:autobot:bing": "floss --path tests/autobot/gqa-bing.js --debug --unmuted",
+    "test:autobot:wiki": "floss --path tests/autobot/gqa-wiki.js --debug --unmuted",
+    "test:autobot:wolf": "floss --path tests/autobot/gqa-wolf.js --debug --unmuted",
+    "first:local:enable": "node bin/toggleFirstContact.js",
+    "first:local:disable": "node bin/toggleFirstContact.js -d",
+    "first:robot:enable": "./bin/toggle-first-contact.sh",
+    "first:robot:disable": "./bin/toggle-first-contact.sh -d",
+    "buildroot": "node ./bin/buildroot.js"
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-jibo"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "rules": {
+      "no-console": 0,
+      "no-debugger": 1
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "globals": {
+      "Promise": true,
+      "Set": true,
+      "Map": true,
+      "Symbol": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.jibo.com:sdk/sdk.git"
+  },
+  "publishConfig": {
+    "registry": "http://npm.jibo.com:8080"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "dependencies": {
+    "@be/be-framework": "^11.0.0",
+    "@be/clock": "^11.0.0",
+    "@be/circuit-saver": "^6.0.0",
+    "@be/create": "^8.0.0",
+    "@be/exercise": "^2.0.0",
+    "@be/first-contact": "^10.0.0",
+    "@be/friendly-tips": "^9.0.0",
+    "@be/gallery": "^7.0.0",
+    "@be/greetings": "^11.0.0",
+    "@be/hue-control": "^2.0.0",
+    "@be/word-of-the-day": "^2.0.0",
+    "@be/idle": "^12.0.0",
+    "@be/ifttt": "^6.0.0",
+    "@be/introductions": "^5.0.0",
+    "@be/main-menu": "^9.0.0",
+    "@be/nimbus": "^2.0.0",
+    "@be/radio": "^3.0.0",
+    "@be/remote": "^3.0.0",
+    "@be/restore": "^5.0.0",
+    "@be/surprises": "^10.0.0",
+    "@be/surprises-date": "^10.0.0",
+    "@be/surprises-ota": "^9.0.0",
+    "@be/settings": "^10.0.0",
+    "@be/tutorial": "^6.0.0",
+    "@be/who-am-i": "^9.0.0",
+    "@jibo/chitchat-mims": "^3.0.0",
+    "jibo": "^14.0.0",
+    "jibo-anim-db-animations": "19.0.2",
+    "jibo-log": "^5.0.0",
+    "jibo-client-framework": "^4.0.0"
+  },
+  "license": "UNLICENSED",
+  "distribution": "PROPRIETARY AND CONFIDENTIAL - NOT FOR DISTRIBUTION",
+  "copyright": "Copyright (c) 2014-2018 Jibo, Inc. All Rights Reserved",
+  "devDependencies": {
+    "@jibo/floss": "^2.0.0",
+    "babel-preset-jibo": "^2.0.1",
+    "babelify": "^7.3.0",
+    "body-parser": "^1.18.2",
+    "browserify": "^14.3.0",
+    "cross-conf-env": "1.0.7",
+    "electron-prebuilt": "1.4.3",
+    "eslint": "^3.19.0",
+    "express": "^4.16.2",
+    "istanbul": "^0.4.5",
+    "jibo-autobot": "^7.0.0",
+    "jibo-dev": "^5.0.0",
+    "jibo-rsync": "^4.0.0",
+    "mock-require": "^1.3.0",
+    "parallelshell": "^2.0.0",
+    "preprocessify": "^1.0.1",
+    "rimraf": "^2.6.1",
+    "skills-service-manager": "^14.0.0",
+    "watch": "^1.0.2",
+    "watchify": "^3.9.0"
+  },
+  "files": [
+    "index.*",
+    "resources",
+    "launchRules.fst",
+    "config",
+    "npm-shrinkwrap.json"
+  ]
+}

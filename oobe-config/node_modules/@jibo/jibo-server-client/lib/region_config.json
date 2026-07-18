@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "local/*": {
+      "endpoint": "http://localhost:8080",
+      "wsendpoint": "ws://localhost:8090"
+    },
+    "internal/*": {
+      "endpoint": "http://security:8080",
+      "wsendpoint": "ws://socket:8090"
+    },
+    "mock-region/*": {
+      "endpoint": "{service}.{region}.api.jibo.com",
+      "wsendpoint": "ws://socket:8090"
+    },
+    "*/*": "globalSSL"
+  },
+
+  "patterns": {
+    "globalSSL": {
+      "endpoint": "https://{region}.jibo.com",
+      "wsendpoint": "wss://{region}-socket.jibo.com",
+      "globalEndpoint": true
+    },
+    "global": {
+      "endpoint": "http://{region}.jibo.com:8080",
+      "wsendpoint": "ws://{region}-socket.jibo.com:8090",
+      "globalEndpoint": true
+    }
+  }
+}

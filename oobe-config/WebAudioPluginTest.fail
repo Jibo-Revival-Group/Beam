@@ -1,0 +1,4 @@
+This file needs to exist for SoundJS to not fail it's initial capabilities test.
+
+It's expecting to get a response code as a test of XmlHttpRequest, by loading a
+nonexistent file, but because we're not using HTTP, it doesn't and gets confused

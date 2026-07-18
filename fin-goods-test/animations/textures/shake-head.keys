@@ -1,0 +1,47 @@
+{
+    "framerate": 30,
+    "duration": 60,
+    "layers": [
+        {
+            "id": "0c29e24b9d80421d964b08ecd3d3c857",
+            "name": "Body",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": -47.49999999999999,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 20
+                },
+                {
+                    "value": {
+                        "Head": 36.50000000000001,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 44
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 59
+                }
+            ]
+        }
+    ]
+}

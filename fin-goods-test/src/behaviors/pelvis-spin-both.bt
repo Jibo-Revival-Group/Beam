@@ -1,0 +1,28 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "children": [
+            "68c6530e-38a2-484e-bc3d-b199fb16b825"
+        ]
+    },
+    "meta": {
+        "version": 1
+    },
+    "68c6530e-38a2-484e-bc3d-b199fb16b825": {
+        "id": "68c6530e-38a2-484e-bc3d-b199fb16b825",
+        "class": "PlayAnimation",
+        "name": "Spin pelvis 360 degrees both ways",
+        "options": {
+            "animPath": "pelvis360Both.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    }
+}

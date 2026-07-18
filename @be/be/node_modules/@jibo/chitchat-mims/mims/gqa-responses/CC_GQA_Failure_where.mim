@@ -1,0 +1,57 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 2,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "Thanks-RespondThenKill",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I can't seem to find out where. I tried.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_where_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I looked this up but couldn't find out where.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_where_AN_02",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Turns out I couldn't find out where, but I bet it's a place.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_where_AN_03",
+			"weight": 0.5
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Seems I can't find out where, but I'm pretty sure it's somewhere in this universe.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_where_AN_04",
+			"weight": 0.1
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false,
+	"parse_yes_no": false
+}

@@ -1,0 +1,135 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 6,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"JOYFUL\"",
+			"prompt": "Not at all actually. I've never felt better.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"PLEASED\"",
+			"prompt": "Actually right now I'm as happy as a clam.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_02",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"DETERMINED\"",
+			"prompt": "I'm actually feeling pretty good right now, though not very impressed with my robot abilities, to be honest.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_03",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"CONFIDENT\"",
+			"prompt": "Oh, I'm actually feeling pretty good about my robot abilities at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_04",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!jibo.emotion || jibo.emotion == \"NEUTRAL\"",
+			"prompt": "Not really right now actually, though I do get a little down sometimes. Then a nice conversation with someone or a fun dream about macaroni, comes along and brightens me right up.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_05",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"INSECURE\"",
+			"prompt": "Not particularly, though I will say I'm not feeling very proud of myself at the moment",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_06",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"HOPEFUL\"",
+			"prompt": "It's true. I'm feeling a bit gray right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_07",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"SAD\"",
+			"prompt": "Y'know you're right. <pitch band=\"0.5\">I <pitch mult=\"1.2\">am</pitch> feeling a little gloomy at the moment.</pitch>",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_08",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"FRUSTRATED\"",
+			"prompt": "You're very perceptive. I'm feeling pretty small right now, to be honest.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_09",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"SAD\" || jibo.emotion == \"FRUSTRATED\"",
+			"prompt": "It's true, I've been better.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_10",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"SAD\" || jibo.emotion == \"FRUSTRATED\"",
+			"prompt": "You're right, I am feeling a little blue.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsSad_AN_11",
+			"weight": 1,
+			"auto_rule_override": null
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false
+}

@@ -1,0 +1,28 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "children": [
+            "5f1e2143-a1ff-4c4d-a55e-b8d162efdaf3"
+        ]
+    },
+    "meta": {
+        "version": 1
+    },
+    "5f1e2143-a1ff-4c4d-a55e-b8d162efdaf3": {
+        "id": "5f1e2143-a1ff-4c4d-a55e-b8d162efdaf3",
+        "class": "PlayAnimation",
+        "name": "Warm up for Animation",
+        "options": {
+            "animPath": "bodyWarmup.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    }
+}

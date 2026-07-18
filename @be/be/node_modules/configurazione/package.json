@@ -1,0 +1,25 @@
+{
+  "name": "configurazione",
+  "version": "0.0.1",
+  "description": "A simple configuration manager in Node.js",
+  "main": "lib/configurazione.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:michielvandergeest/node-configurazione.git"
+  },
+  "keywords": [
+    "configuration",
+    "manager",
+    "options",
+    "config"
+  ],
+  "author": "Michiel van der Geest",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michielvandergeest/node-configurazione/issues"
+  },
+  "homepage": "https://github.com/michielvandergeest/node-configurazione"
+}

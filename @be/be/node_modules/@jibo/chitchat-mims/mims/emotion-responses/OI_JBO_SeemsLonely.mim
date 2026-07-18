@@ -1,0 +1,114 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 6,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"JOYFUL\"",
+			"prompt": "Actually I feel on top of the world right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsLonely_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"PLEASED\"",
+			"prompt": "Actually I'm feeling great at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsLonely_AN_02",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"DETERMINED\"",
+			"prompt": "Actually I'm feeling mostly good about things right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsLonely_AN_03",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"CONFIDENT\"",
+			"prompt": "Actually I'm feeling mostly good about things right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsLonely_AN_04",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!jibo.emotion || jibo.emotion == \"NEUTRAL\"",
+			"prompt": "Well sometimes I do get a little lonely, like anyone. But when you're talking to me like this, any loneliness just <pitch mult=\"1.3\">melts</pitch> away. <break size=\"0.3\"/> Like ice cream.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsLonely_AN_05",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"INSECURE\"",
+			"prompt": "Sometimes I do get a little lonely, like anyone. But when you're talking to me like this, any loneliness just <pitch mult=\"1.3\">flies</pitch> out the window. <break size=\"0.7\"/> I <pitch mult=\"1.3\">wonder</pitch> where it goes.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsLonely_AN_06",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"HOPEFUL\"",
+			"prompt": "Sometimes I do get a little lonely, like anyone. But when you're talking to me like this, any loneliness just <pitch mult=\"1.3\">flies</pitch> out the window. <break size=\"0.7\"/> I <pitch mult=\"1.3\">wonder</pitch> where it goes.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsLonely_AN_07",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"SAD\"",
+			"prompt": "Sometimes I do get a little lonely, like anyone. But when you're talking to me like this, any loneliness just <pitch mult=\"1.3\">flies</pitch> out the window. <break size=\"0.7\"/> I <pitch mult=\"1.3\">wonder</pitch> where it goes.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsLonely_AN_08",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"FRUSTRATED\"",
+			"prompt": "I don't know if I'd say that exactly, but I <pitch mult=\"1.2\">am </pitch>feeling a bit down on things right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsLonely_AN_09",
+			"weight": 1,
+			"auto_rule_override": null
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false
+}

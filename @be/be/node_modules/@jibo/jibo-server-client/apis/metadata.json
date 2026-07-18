@@ -1,0 +1,82 @@
+{
+  "log": {
+    "name": "Log"
+  },
+  "logadmin": {
+    "name": "LogAdmin"
+  },
+  "push": {
+    "name": "Push"
+  },
+  "account": {
+    "name": "Account",
+    "cors": true
+  },
+  "accountadmin": {
+    "name": "AccountAdmin"
+  },
+  "backup": {
+    "name": "Backup"
+  },
+  "notification": {
+    "name": "Notification"
+  },
+  "update": {
+    "name": "Update"
+  },
+  "updateadmin": {
+    "name": "UpdateAdmin"
+  },
+  "robot": {
+    "name": "Robot"
+  },
+  "robotadmin": {
+    "name": "RobotAdmin"
+  },
+  "key": {
+    "name": "Key"
+  },
+  "loop": {
+    "name": "Loop",
+    "cors": true
+  },
+  "lps": {
+    "name": "Lps"
+  },
+  "media": {
+    "name": "Media"
+  },
+  "mediaadmin": {
+    "name": "MediaAdmin"
+  },
+  "person": {
+    "name": "Person"
+  },
+  "gqa": {
+    "name": "GQA"
+  },
+  "oobe": {
+    "name": "OOBE"
+  },
+  "nlp": {
+    "name": "NLP"
+  },
+  "collision": {
+    "name": "Collision"
+  },
+  "ifttt": {
+    "name": "IFTTT"
+  },
+  "oobeadmin": {
+    "name": "OOBEAdmin"
+  },
+  "rom": {
+    "name": "ROM"
+  },
+  "oauthclientsadmin": {
+    "name": "OauthClientsAdmin"
+  },
+  "settings": {
+    "name": "Settings"
+  }
+}

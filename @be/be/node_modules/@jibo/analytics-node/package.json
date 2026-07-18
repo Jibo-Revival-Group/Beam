@@ -1,0 +1,39 @@
+{
+  "name": "@jibo/analytics-node",
+  "version": "3.0.18",
+  "description": "The hassle-free way to integrate analytics into any node application.",
+  "keywords": [
+    "analytics",
+    "segment.io",
+    "segmentio",
+    "client",
+    "driver"
+  ],
+  "typings": "index.d.ts",
+  "main": "lib/index.js",
+  "dependencies": {
+    "@segment/loosely-validate-event": "^1.1.2",
+    "axios": "mividtim/axios#jibo",
+    "clone": "^2.1.1",
+    "crypto-token": "^1.0.1",
+    "remove-trailing-slash": "^0.1.0"
+  },
+  "engines": {
+    "node": ">= 0.12.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.jibo.com:sdk/sdk.git"
+  },
+  "publishConfig": {
+    "registry": "http://npm.jibo.com:8080"
+  },
+  "files": [
+    "lib/index.js",
+    "index.d.ts",
+    "package.json"
+  ],
+  "license": "UNLICENSED",
+  "distribution": "PROPRIETARY AND CONFIDENTIAL - NOT FOR DISTRIBUTION",
+  "copyright": "Copyright (c) 2014-2018 Jibo, Inc. All Rights Reserved"
+}

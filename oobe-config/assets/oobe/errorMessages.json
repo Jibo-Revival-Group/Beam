@@ -1,0 +1,87 @@
+{
+  "wifi1": {
+    "code": "Can't connect to Wi-Fi network",
+    "message": "Make sure your router is powered on and Jibo is in range.\nGo to the app for help and to get a new QR code.",
+    "instructions": "Tap here to connect with your new code."
+  },
+  "wifi2": {
+    "code": "Can't get IP address from router",
+    "message": "Go to the app for help and to get a new QR code.",
+    "instructions": "Tap here to connect with your new code."
+  },
+  "wifi3": {
+    "code": "Can't connect to the internet",
+    "message": "Go to the app for help and to get a new QR code.",
+    "instructions": "Tap here to connect with your new code."
+  },
+  "wifi4": {
+    "code": "Can't connect to Jibo's server",
+    "message": "Make sure your router is connected.\nGo to the app for help and to get a new QR code.",
+    "instructions": "Tap here to connect with your new code."
+  },
+  "wifi5": {
+    "code": "Invalid password length",
+    "message": "Go to the app for help and to get a new QR code.",
+    "instructions": "Tap here to connect with your new code."
+  },
+  "wifi6": {
+    "code": "SSID not provided",
+    "message": "Go to the app for help and to get a new QR code.",
+    "instructions": "Tap here to connect with your new code."
+  },
+  "wifi7": {
+    "code": "QR code expired",
+    "message": "Go to the app for help and to get a new QR code.",
+    "instructions": "Tap here to connect with your new code."
+  },
+  "wifix": {
+    "code": "Uh oh, something happened",
+    "message": "Jibo didn't connect to Wi-Fi.\nTry rebooting him, or go to the app for help.",
+    "instructions": "To change Wi-Fi settings, get a new QR code and tap here."
+  },
+  "ota1": {
+    "code": "Lost Wi-Fi connection",
+    "message": "Make sure your router is powered on and Jibo is in range.\nGo to the app for more help.",
+    "instructions": "To reconnect, get a new QR code in the app and tap here."
+  },
+  "ota2": {
+    "code": "Can't get IP address from router",
+    "message": "Go to the app for help and to get a new QR code.",
+    "instructions": "To reconnect, get a new QR code in the app and tap here."
+  },
+  "ota3": {
+    "code": "Lost internet connection",
+    "message": "Make sure your router is connected.\nGo to the app for troubleshooting help",
+    "instructions": "To reconnect, get a new QR code in the app and tap here."
+  },
+  "ota4": {
+    "code": "Lost connection to Jibo's server",
+    "message": "Make sure your router is connected.\nGo to the app for more help.",
+    "instructions": "To reconnect, get a new QR code in the app and tap here."
+  },
+  "ota5": {
+    "code": "Password too short",
+    "message": "Go to the app for help and to get a new QR code.",
+    "instructions": "To reconnect, get a new QR code in the app and tap here."
+  },
+  "ota6": {
+    "code": "SSID not provided",
+    "message": "Go to the app for help and to get a new QR code.",
+    "instructions": "To reconnect, get a new QR code in the app and tap here."
+  },
+  "ota7": {
+    "code": "No updates found",
+    "message": "Attempting to find updates.\nGo to the app for troubleshooting help.",
+    "instructions": "To reconnect, get a new QR code in the app and tap here."
+  },
+  "ota8": {
+    "code": "Unexpected server response",
+    "message": "Something may be wrong with the internet connection.\nGo to the app for troubleshooting help.",
+    "instructions": "To reconnect, get a new QR code in the app and tap here."
+  },
+  "otax": {
+    "code": "Uh oh, something happened",
+    "message": "Jibo wasn't able to complete the update.\nTry rebooting him, or go to the app for help.",
+    "instructions": "To reconnect, get a new QR code in the app and tap here."
+  }
+}

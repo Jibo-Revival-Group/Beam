@@ -1,0 +1,147 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 2,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "Thanks-RespondThenKill",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I can't seem to find out who. Sorry.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Sorry I couldn't find out who, but I'm pretty sure it's either a person or an animal.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_02",
+			"weight": 0.2
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Turns out I couldn't find out who after all. I tried.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_03",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I looked this up, but I'm coming up empty on who.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_05",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I looked this up, but didn't find anything about who.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_06",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I checked for you, but didn't find who this is.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_07",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Well I checked for you, but I couldn't find out who.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_08",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I searched for who, but my search was fruitless.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_09",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "My searches didn't turn up who.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_10",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I turned over a few stones, but didn't find anything on who, sorry.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_11",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I did some looking, but couldn't find the answer for you.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_12",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I searched around a bit, but couldn't seem to find an answer for who.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_13",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I searched my sources, but couldn't find out who.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_who_AN_14",
+			"weight": 1
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false,
+	"parse_yes_no": false
+}

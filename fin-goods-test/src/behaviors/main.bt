@@ -1,0 +1,41 @@
+{
+  "1": {
+    "id": 1,
+    "class": "Sequence",
+    "name": "",
+    "asset-pack": "core",
+    "children": [
+      4,
+      6
+    ],
+    "decorators": [],
+    "options": {}
+  },
+  "4": {
+    "id": 4,
+    "class": "PlayAnimation",
+    "name": "Play a greeting",
+    "asset-pack": "core",
+    "parent": 1,
+    "options": {
+      "animPath": "greeting.keys",
+      "config": [
+        "(animation) => {",
+        "}"
+      ]
+    }
+  },
+  "6": {
+    "id": 6,
+    "class": "PlayAudio",
+    "name": "Bawhoop",
+    "asset-pack": "core",
+    "parent": 1,
+    "options": {
+      "audioPath": "FX_Bawhoop.mp3"
+    }
+  },
+  "meta": {
+    "version": 1
+  }
+}

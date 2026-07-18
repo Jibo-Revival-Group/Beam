@@ -1,0 +1,43 @@
+{
+    "version": "0.5.0",
+    "framerate": 30,
+    "duration": 90,
+    "scale": 1,
+    "layers": [
+        {
+            "id": "f7a40be196534ce697833d2f0937f485",
+            "name": "Body",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": -360,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 89
+                }
+            ]
+        }
+    ]
+}

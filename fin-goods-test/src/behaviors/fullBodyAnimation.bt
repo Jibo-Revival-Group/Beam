@@ -1,0 +1,28 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "children": [
+            "5efb4987-d484-4d58-bc50-a2ababd8cb8e"
+        ]
+    },
+    "meta": {
+        "version": 1
+    },
+    "5efb4987-d484-4d58-bc50-a2ababd8cb8e": {
+        "id": "5efb4987-d484-4d58-bc50-a2ababd8cb8e",
+        "class": "PlayAnimation",
+        "name": "Full body animation of all 3 axes",
+        "options": {
+            "animPath": "fullBodySpin.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    }
+}

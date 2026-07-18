@@ -1,0 +1,432 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "sequence of blinks and lookAts that will run an idle for ~4 mins",
+        "asset-pack": "core",
+        "children": [
+            5,
+            7
+        ],
+        "options": {}
+    },
+    "3": {
+        "id": 3,
+        "class": "Sequence",
+        "name": "look at random spots",
+        "asset-pack": "core",
+        "parent": 7,
+        "decorators": [
+            4
+        ],
+        "children": [
+            8,
+            134
+        ],
+        "options": {}
+    },
+    "4": {
+        "id": 4,
+        "class": "WhileCondition",
+        "name": "",
+        "asset-pack": "core",
+        "options": {
+            "init": [
+                "() => {",
+                "  ",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "  return notepad.running;",
+                "}"
+            ]
+        }
+    },
+    "5": {
+        "id": 5,
+        "class": "ExecuteScript",
+        "name": "initialize our variables",
+        "asset-pack": "core",
+        "parent": 1,
+        "options": {
+            "exec": [
+                "() => {",
+                "  notepad.running = true;",
+                "  notepad.resting = false;",
+                "  notepad.cycleLength = 240; // 240 ~= 4 mins",
+                "  notepad.hrStart = process.hrtime();",
+                "  notepad.hrRestStart = 0;",
+                "}"
+            ]
+        }
+    },
+    "7": {
+        "id": 7,
+        "class": "Parallel",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "children": [
+            38,
+            21,
+            10,
+            23,
+            3
+        ],
+        "options": {
+            "succeedOnOne": false
+        }
+    },
+    "8": {
+        "id": 8,
+        "class": "TimeoutJs",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 3,
+        "options": {
+            "getTime": [
+                "() => {",
+                "   return 1500 + 1500 * Math.random();",
+                "}"
+            ]
+        }
+    },
+    "10": {
+        "id": 10,
+        "class": "Sequence",
+        "name": "blink randomly",
+        "asset-pack": "core",
+        "parent": 7,
+        "decorators": [
+            11
+        ],
+        "children": [
+            15,
+            16
+        ],
+        "options": {}
+    },
+    "11": {
+        "id": 11,
+        "class": "WhileCondition",
+        "name": "",
+        "asset-pack": "core",
+        "parent": null,
+        "options": {
+            "init": [
+                "() => {",
+                "  ",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "  return notepad.running;",
+                "}"
+            ]
+        }
+    },
+    "15": {
+        "id": 15,
+        "class": "TimeoutJs",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 10,
+        "options": {
+            "getTime": [
+                "() => {",
+                "  return 2000 + 1500 * Math.random();",
+                "}"
+            ]
+        }
+    },
+    "16": {
+        "id": 16,
+        "class": "Blink",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 10,
+        "options": {}
+    },
+    "17": {
+        "id": 17,
+        "class": "LookAt",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 134,
+        "options": {
+            "getTarget": [
+                "() => {",
+                "\tlet x = 1 - 2 * Math.random();",
+                "\tlet y = 1 - 2 * Math.random();",
+                "\tlet z = 0.7 + 0.5 * (1 - 2 * Math.random());",
+                "\treturn {x: x, y: y, z: z};",
+                "}"
+            ]
+        }
+    },
+    "18": {
+        "id": 18,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 21,
+        "decorators": [],
+        "options": {
+            "exec": [
+                "() => {",
+                "  let timeDiff = process.hrtime(notepad.hrStart);",
+                "  document.getElementById('test-label3').innerHTML = 'animating time: ' + timeDiff[0] + 's';",
+                "//  console.log(\"time diff vs cycle length = \" + timeDiff[0] + \"/\" + notepad.cycleLength);",
+                "  if (timeDiff[0] >= notepad.cycleLength) {",
+                "    // tell everyone to stop",
+                "    notepad.running = false;",
+                "  }",
+                "}"
+            ]
+        }
+    },
+    "21": {
+        "id": 21,
+        "class": "Sequence",
+        "name": "update timer",
+        "asset-pack": "core",
+        "parent": 7,
+        "children": [
+            18
+        ],
+        "decorators": [
+            22
+        ],
+        "options": {}
+    },
+    "22": {
+        "id": 22,
+        "class": "WhileCondition",
+        "name": "",
+        "asset-pack": "core",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "  return notepad.running;",
+                "}"
+            ]
+        }
+    },
+    "23": {
+        "id": 23,
+        "class": "Sequence",
+        "name": "color LED randomly",
+        "asset-pack": "core",
+        "parent": 7,
+        "decorators": [
+            24
+        ],
+        "children": [
+            28,
+            29
+        ],
+        "skipped": false,
+        "options": {}
+    },
+    "24": {
+        "id": 24,
+        "class": "WhileCondition",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 13,
+        "options": {
+            "init": [
+                "() => {",
+                "  ",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "  return notepad.running;",
+                "}"
+            ]
+        }
+    },
+    "28": {
+        "id": 28,
+        "class": "TimeoutJs",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 23,
+        "options": {
+            "getTime": [
+                "() => {",
+                "  return 1000 + 1000 * Math.random();",
+                "}"
+            ]
+        }
+    },
+    "29": {
+        "id": 29,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 23,
+        "options": {
+            "exec": [
+                "() => {",
+                "  let r = Math.floor(Math.random() * 256)/255;",
+                "  let g = Math.floor(Math.random() * 256)/255;",
+                "  let b = Math.floor(Math.random() * 256)/255;",
+                "  jibo.animate.setLEDColor([r,g,b]);",
+                "}"
+            ]
+        }
+    },
+    "38": {
+        "id": 38,
+        "class": "Sequence",
+        "name": "resting",
+        "asset-pack": "core",
+        "parent": 7,
+        "decorators": [
+            67
+        ],
+        "children": [
+            118,
+            68
+        ],
+        "options": {}
+    },
+    "67": {
+        "id": 67,
+        "class": "StartOnCondition",
+        "name": "",
+        "asset-pack": "core",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "  return !notepad.running && !notepad.resting;",
+                "}"
+            ]
+        }
+    },
+    "68": {
+        "id": 68,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 38,
+        "decorators": [
+            119
+        ],
+        "options": {
+            "exec": [
+                "() => {",
+                "  let restTimeDiff = process.hrtime(notepad.hrRestStart);",
+                "  document.getElementById('test-label3').innerHTML = 'resting time: ' + restTimeDiff[0] + 's';",
+                "//  console.log(\"time diff vs cycle length = \" + timeDiff[0] + \"/\" + notepad.cycleLength);",
+                "  if (restTimeDiff[0] >= notepad.cycleLength) {",
+                "    // tell everyone to stop",
+                "    notepad.resting = false;",
+                "  }",
+                "}"
+            ]
+        }
+    },
+    "118": {
+        "id": 118,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 38,
+        "options": {
+            "exec": [
+                "() => {",
+                "  //start up resting timer",
+                "  notepad.resting = true;",
+                "  notepad.hrRestStart = process.hrtime();",
+                "}"
+            ]
+        }
+    },
+    "119": {
+        "id": 119,
+        "class": "WhileCondition",
+        "name": "",
+        "asset-pack": "core",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "  return notepad.resting;",
+                "}"
+            ]
+        }
+    },
+    "120": {
+        "id": 120,
+        "class": "PlayAudio",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 128,
+        "options": {
+            "audioPath": "FX_Bleep.mp3"
+        }
+    },
+    "124": {
+        "id": 124,
+        "class": "PlayAudio",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 128,
+        "options": {
+            "audioPath": "FX_Blip.mp3"
+        }
+    },
+    "128": {
+        "id": 128,
+        "class": "Random",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 134,
+        "children": [
+            124,
+            129,
+            120
+        ],
+        "options": {}
+    },
+    "129": {
+        "id": 129,
+        "class": "PlayAudio",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 128,
+        "options": {
+            "audioPath": "FX_Bloop.mp3"
+        }
+    },
+    "134": {
+        "id": 134,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 3,
+        "children": [
+            128,
+            17
+        ],
+        "options": {}
+    },
+    "meta": {
+        "version": 1
+    }
+}

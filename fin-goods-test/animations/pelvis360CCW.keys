@@ -1,0 +1,43 @@
+{
+    "version": "0.5.0",
+    "framerate": 30,
+    "duration": 90,
+    "scale": 1,
+    "layers": [
+        {
+            "id": "23466ed4067d4f01b8ee9e26a23ce551",
+            "name": "Pelvis",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 360,
+                        "Tween": {
+                            "display": "linear",
+                            "label": "Linear Tween",
+                            "value": "linear"
+                        }
+                    },
+                    "time": 89
+                }
+            ]
+        }
+    ]
+}

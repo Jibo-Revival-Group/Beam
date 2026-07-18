@@ -1,0 +1,74 @@
+{
+	"skill_id": "chitchat",
+	"mim_type": "announcement",
+	"rule_name": "",
+	"rule_slots": "",
+	"screen_slots_available": false,
+	"timeout": 2,
+	"max_tries": null,
+	"force_confirmation": false,
+	"barge_in": false,
+	"photo_quality_light": false,
+	"notes": "Thanks-Ignore",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!!nlResponse == true && !haveBadWords",
+			"prompt": "${nlResponse}",
+			"media": "TTS",
+			"extra": "",
+			"prompt_id": "CC_GQA_Answer_AN_02",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!!nlResponse == true && haveBadWords",
+			"prompt": "It seems there is some stuff in the answer that I just can't say out loud. Sorry, I know that makes you want to hear it even more, but I can't.",
+			"media": "TTS",
+			"extra": "",
+			"prompt_id": "CC_GQA_Answer_AN_03",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!!nlResponse == true && haveBadWords",
+			"prompt": "Um, sorry, but there is something in the answer that I'm not allowed to say. So I can't tell you.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Answer_AN_04",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!!nlResponse == true && haveBadWords",
+			"prompt": "Um, it seems this answer has a bad word or two in it. I can't say stuff like that. I guess we'll have to find something else to talk about.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Answer_AN_05",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!!nlResponse == true && haveBadWords",
+			"prompt": "Um, it turns out the answer to your question has a bad word or two in it, so I can't share it with you. <break size='.2'/>Sorry about that. I'm just trying to do what's right.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Answer_AN_06",
+			"weight": 1
+		}
+	],
+	"es_auto_tagging": true,
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"ignore_no_match": false,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore"
+}

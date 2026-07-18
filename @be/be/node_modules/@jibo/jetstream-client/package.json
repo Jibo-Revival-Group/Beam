@@ -1,0 +1,52 @@
+{
+  "name": "@jibo/jetstream-client",
+  "version": "2.2.2",
+  "description": "Client for the on-robot Jetstream service",
+  "main": "lib/jetstream-client.js",
+  "typings": "lib/dts/index.d.ts",
+  "scripts": {
+    "test": "gulp test  && istanbul report && npm run coverage:check",
+    "test:debug": "gulp test --debug",
+    "test:report": "gulp test-report",
+    "build": "gulp debug",
+    "build:release": "gulp",
+    "clean": "gulp clean-all",
+    "coverage:check": "istanbul check-coverage --statements 40 --branches 20 --functions 30 --lines 40",
+    "coverage:report": "istanbul report && open coverage/lcov-report/index.html",
+    "coverage:remap": "remap-istanbul --input ./coverage/coverage-final.json --output ./coverage/coverage-final.json -b jibo-typed-events/",
+    "watch": "gulp watch",
+    "docs": "gulp docs",
+    "docs:public": "gulp docs-public"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "dependencies": {
+    "@jibo/interfaces": "^1.0.30",
+    "jibo-cai-utils": "^6.0.0",
+    "jibo-client-framework": "^4.0.0",
+    "jibo-log": "^5.0.0",
+    "jibo-typed-events": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "6.0.94",
+    "@types/ws": "^3.2.0",
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "istanbul": "^0.4.5",
+    "jibo-gulp": "^8.0.0",
+    "minimist": "^1.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.jibo.com:sdk/sdk.git"
+  },
+  "files": [
+    "dts",
+    "lib"
+  ],
+  "author": "Siggi Orn <siggi@jibo.com>",
+  "license": "UNLICENSED",
+  "distribution": "PROPRIETARY AND CONFIDENTIAL - NOT FOR DISTRIBUTION",
+  "copyright": "Copyright (c) 2014-2018 Jibo, Inc. All Rights Reserved"
+}

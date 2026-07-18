@@ -1,0 +1,133 @@
+{
+    "version": "0.5.0",
+    "framerate": 30,
+    "duration": 30,
+    "scale": 1,
+    "layers": [
+        {
+            "id": "d17e6b4be7564cb7aa2fe0367e37c387",
+            "name": "Eye",
+            "type": "Eye",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Rotate": 0,
+                        "Scale": {
+                            "x": 1,
+                            "y": 1
+                        },
+                        "Translate": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Tween": {
+                            "display": "cubic in out",
+                            "label": "Cubic Ease In Out",
+                            "value": "cubicInOut"
+                        },
+                        "Vertex 1": {
+                            "x": -281.3073655214508,
+                            "y": -297.2113789169163
+                        },
+                        "Vertex 2": {
+                            "x": 0,
+                            "y": -297.2113789169163
+                        },
+                        "Vertex 3": {
+                            "x": 281.3073655214508,
+                            "y": -297.2113789169163
+                        },
+                        "Vertex 4": {
+                            "x": -281.3073655214508,
+                            "y": 0
+                        },
+                        "Vertex 5": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "Vertex 6": {
+                            "x": 281.3073655214508,
+                            "y": 0
+                        },
+                        "Vertex 7": {
+                            "x": -281.3073655214508,
+                            "y": 297.2113789169163
+                        },
+                        "Vertex 8": {
+                            "x": 0,
+                            "y": 297.2113789169163
+                        },
+                        "Vertex 9": {
+                            "x": 281.3073655214508,
+                            "y": 297.2113789169163
+                        }
+                    },
+                    "time": 0
+                }
+            ]
+        },
+        {
+            "id": "884ce4cf33104a8a9c40174be2279046",
+            "name": "Eye Texture",
+            "type": "Eye Texture",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Texture": "animations/textures/white-eye.png",
+                        "Color": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255
+                        }
+                    },
+                    "time": 0
+                }
+            ]
+        },
+        {
+            "id": "0dd1ee6a616941ca8cf326e91d34fb2e",
+            "name": "Body",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "cubic in out",
+                            "label": "Cubic Ease In Out",
+                            "value": "cubicInOut"
+                        }
+                    },
+                    "time": 0
+                }
+            ]
+        },
+        {
+            "id": "e2cb81d0defe43b2bfd8415db41609af",
+            "name": "LED #1",
+            "type": "LED",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Color": {
+                            "r": 0,
+                            "g": 0,
+                            "b": 0
+                        }
+                    },
+                    "time": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+TopRule = ($* run diagnostics {skill='diagnostics'} $*);

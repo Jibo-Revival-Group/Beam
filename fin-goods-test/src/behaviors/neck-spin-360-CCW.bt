@@ -1,0 +1,28 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "children": [
+            2
+        ],
+        "options": {}
+    },
+    "2": {
+        "id": 2,
+        "class": "PlayAnimation",
+        "name": "Spin neck 360 degrees CCW",
+        "asset-pack": "core",
+        "parent": 1,
+        "options": {
+            "animPath": "neck360CCW.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        }
+    },
+    "meta": {
+        "version": 1
+    }
+}

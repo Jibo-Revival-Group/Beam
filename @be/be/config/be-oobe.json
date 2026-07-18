@@ -1,0 +1,21 @@
+{
+    "logUncaughtExceptions": true,
+    "logUnhandledRejections": true,
+    "stackTraceLimit": 30,
+    "outputs": {
+        "console": {
+            "outputFileAndLine": false
+        },
+        "syslog": {
+            "port": 514,
+            "target": "127.0.0.1",
+            "outputFileAndLine": false
+        }
+    },
+    "namespaces": {
+        "": {
+            "console": "none",
+            "syslog": "info"
+        }
+    }
+}

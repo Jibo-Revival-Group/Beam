@@ -1,0 +1,29 @@
+{
+  "log": {
+    "name": "Log"
+  },
+  "account": {
+    "name": "Account"
+  },
+  "backup": {
+    "name": "Backup"
+  },
+  "notification": {
+    "name": "Notification"
+  },
+  "robot": {
+    "name": "Robot"
+  },
+  "loop": {
+    "name": "Loop"
+  },
+  "media": {
+    "name": "Media"
+  },
+  "person": {
+    "name": "Person"
+  },
+  "gqa": {
+    "name": "GQA"
+  }
+}

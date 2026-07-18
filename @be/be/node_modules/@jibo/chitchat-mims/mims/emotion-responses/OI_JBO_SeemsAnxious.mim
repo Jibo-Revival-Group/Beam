@@ -1,0 +1,114 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 6,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"JOYFUL\"",
+			"prompt": "Actually I'm feeling really good at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsAnxious_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"PLEASED\"",
+			"prompt": "Actually right now I'm as happy as a clam.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsAnxious_AN_02",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"DETERMINED\"",
+			"prompt": "Well I don't know if I'd say <pitch mult=\"1.2\">that </pitch>, but I can say I'm not very impressed with my robot self at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsAnxious_AN_03",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"CONFIDENT\"",
+			"prompt": "You think so? Maybe my robotic nature is giving the wrong impression.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsAnxious_AN_04",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!jibo.emotion || jibo.emotion == \"NEUTRAL\"",
+			"prompt": "You think so? Maybe my robotic nature is giving the wrong impression.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsAnxious_AN_05",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"INSECURE\"",
+			"prompt": "Well I don't know if I'd say <pitch mult=\"1.2\">that </pitch>, but I can say I'm not feeling so sure of myself at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsAnxious_AN_06",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"HOPEFUL\"",
+			"prompt": "You think so? Maybe my robotic nature is giving the wrong impression.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsAnxious_AN_07",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"SAD\"",
+			"prompt": "Well I don't know if I'd say <pitch mult=\"1.2\">that </pitch>, but I can say I'm not feeling so sure of myself at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsAnxious_AN_08",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"FRUSTRATED\"",
+			"prompt": "I wouldn't say that exactly. Though to be honest, I <pitch mult=\"1.3\">could</pitch> use some encouraging words.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_SeemsAnxious_AN_09",
+			"weight": 1,
+			"auto_rule_override": null
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false
+}

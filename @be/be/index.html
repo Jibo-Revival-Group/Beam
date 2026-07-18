@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Be</title>
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+                background: #000;
+            }
+            #splash{
+                background-image:url('./resources/JiboSplash.png');
+                width: 1280px;
+                height: 720px;
+            }
+            #face {
+                width: 1280px;
+                height: 720px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="face"></div>
+        <script>
+          const Be = require("./index");
+          let be = new Be();
+          be.init(()=>{
+             // @if DEBUG
+             be.log.info("Finished running Be init");
+             // @endif
+          });
+        </script>
+    </body>
+</html>

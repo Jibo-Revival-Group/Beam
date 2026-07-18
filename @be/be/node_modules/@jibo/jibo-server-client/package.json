@@ -1,0 +1,100 @@
+{
+  "name": "@jibo/jibo-server-client",
+  "description": "Jibo API for JavaScript",
+  "version": "3.0.117",
+  "publishConfig": {
+    "registry": "http://npm.jibo.com:8080"
+  },
+  "author": {
+    "name": "Jibo",
+    "email": "support@jibo.com",
+    "url": "https://www.jibo.com/"
+  },
+  "homepage": "https://github.com/jiborobot/srv-jibo-server-client",
+  "contributors": [
+    "Loren Segal <lsegal@amazon.com>",
+    "Trevor Rowe <trevrowe@amazon.com>",
+    "Dmytro Milashenko <dmytro.milashenko@jibo.com>",
+    "Alexander Rysenko <alexander.rysenko@jibo.com>"
+  ],
+  "devDependencies": {
+    "@types/node": "^6.0.46",
+    "browserify": "13.1.0",
+    "chai": "*",
+    "coffee-script": "1.6.3",
+    "coffeeify": "2.1.0",
+    "coveralls": "2.x",
+    "cucumber": "0.5.x",
+    "eslint": "1.x",
+    "insert-module-globals": "^7.0.0",
+    "istanbul": "*",
+    "mocha": "*",
+    "phantomjs": "^1.9.20",
+    "repl.history": "*",
+    "semver": "*",
+    "typescript": "2.0.8",
+    "uglify-js": "2.x"
+  },
+  "dependencies": {
+    "buffer": "4.9.1",
+    "crypto-browserify": "1.0.9",
+    "jmespath": "0.15.0",
+    "node-rsa": "^0.4.2",
+    "querystring": "0.2.0",
+    "sax": "1.1.5",
+    "url": "0.10.3",
+    "uuid": "3.0.0",
+    "xml2js": "0.4.15",
+    "xmlbuilder": "2.6.2"
+  },
+  "optionalDependencies": {
+    "@jibo/ws": "~0.8.0"
+  },
+  "main": "lib/aws.js",
+  "browser": {
+    "lib/aws.js": "./lib/browser.js",
+    "fs": false,
+    "./global.js": "./browser.js",
+    "./lib/node_loader.js": "./lib/browser_loader.js"
+  },
+  "browserify": {
+    "transform": "./dist-tools/transform.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "types": "index.d.ts",
+  "typings": "index.d.ts",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.jibo.com:server/jibo-server-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jiborobot/srv-jibo-server-client/issues",
+    "mail": "support@jibo.com"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "api",
+    "amazon",
+    "aws",
+    "jibo"
+  ],
+  "scripts": {
+    "test": "npm -s run-script lint && npm -s run-script unit && npm -s run-script buildertest && npm -s run-script browsertest && npm -s run-script coverage && ([ -f configuration ] && npm -s run-script integration || true)",
+    "unit": "istanbul `[ $COVERAGE ] && echo 'cover _mocha' || echo 'test mocha'` -- test test/json test/model test/protocol test/query test/signers test/xml",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- test test/json test/model test/protocol test/query test/signers test/xml",
+    "browsertest": "rake browser:test",
+    "buildertest": "mocha --compilers coffee:coffee-script -s 1000 -t 10000 dist-tools/test",
+    "integration": "cucumber.js",
+    "lint": "eslint lib dist-tools/*.js",
+    "console": "./scripts/console",
+    "testfiles": "istanbul `[ $COVERAGE ] && echo 'cover _mocha' || echo 'test mocha'`",
+    "tstest": "tsc -p ./ts",
+    "sdk-publish": "node scripts/sdk-publish.js",
+    "prepublish": "scripts/translate-api && node scripts/typings-generator.js && node dist-tools/create-all-services.js"
+  }
+}

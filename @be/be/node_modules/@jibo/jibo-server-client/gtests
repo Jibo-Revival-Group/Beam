@@ -1,0 +1,21 @@
+#!/bin/bash
+
+Return_unit_line ()
+{
+    pjson=$(cat ./package.json)
+    echo $pjson | sed -r "s/^.*\"scripts\" :(.*)$/\1/" | while read line; do
+           if [[ $line =~ \"unit\" ]]; then
+               echo $line
+           fi
+    done
+}
+Return_test_list ()
+{
+    for t in $1; do
+            echo $t | sed -n "/test\/\w/p"
+    done
+}
+OIFS=$IFS; IFS=,
+str=$(echo $(Return_unit_line) | sed "s/\"//g")
+IFS=$OIFS
+echo $(Return_test_list "$str")

@@ -1,0 +1,32 @@
+{
+  "name": "@jibo/interfaces",
+  "author": "Jibo, Inc.",
+  "license": "UNLICENSED",
+  "distribution": "PROPRIETARY AND CONFIDENTIAL - NOT FOR DISTRIBUTION",
+  "copyright": "Copyright (c) 2017-2018 Jibo, Inc. All Rights Reserved",
+  "version": "1.0.30",
+  "main": "lib/interfaces.js",
+  "typings": "lib/dts/index.d.ts",
+  "scripts": {
+    "build": "gulp debug",
+    "clean": "rm -rf ./lib/ ./test/ ./npm-debug.log ./node_modules/ ./ts-node-*/",
+    "watch": "gulp watch",
+    "docker:interactive": "../../scripts/docker-run.js -i -d packages/interfaces",
+    "docker:run": "../../scripts/docker-run.js -d packages/interfaces -- ",
+    "docker:build": "yarn run docker:run yarn run build"
+  },
+  "devDependencies": {
+    "@types/jibo-command-protocol": "^2.4.0",
+    "@types/node": "6.0.94"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://npm.jibo.com:8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.jibo.com:sdk/sdk.git"
+  }
+}

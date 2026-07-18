@@ -1,0 +1,28 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "children": [
+            "ad03cf77-8f2c-4b6d-9bbe-9129e1cc01d2"
+        ]
+    },
+    "meta": {
+        "version": 1
+    },
+    "ad03cf77-8f2c-4b6d-9bbe-9129e1cc01d2": {
+        "id": "ad03cf77-8f2c-4b6d-9bbe-9129e1cc01d2",
+        "class": "PlayAnimation",
+        "name": "Spin torso 360 degrees both ways",
+        "options": {
+            "animPath": "torso360Both.keys",
+            "config": [
+                "(animation) => {",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    }
+}

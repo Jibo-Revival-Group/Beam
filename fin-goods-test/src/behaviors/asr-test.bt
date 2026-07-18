@@ -1,0 +1,215 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "args": [],
+        "children": [
+            12,
+            2,
+            26,
+            23,
+            36
+        ],
+        "decorators": []
+    },
+    "2": {
+        "id": 2,
+        "class": "ListenEmbedded",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "hey_jibo",
+            [
+                "() => {",
+                "\tlet options = {",
+                "\t\treturnSpeakers: false,",
+                "\t\ttimeout: 6000",
+                "\t}",
+                "\treturn options;",
+                "}"
+            ],
+            [
+                "(listener) => {",
+                "\tlistener.on('hey-jibo', (asrResult, speakerIds) => {",
+                "    notepad.speechResult = true;",
+                "    blackboard.setLabel(\"heard you say hey jibo\"); ",
+                "\t});",
+                "}",
+                ""
+            ]
+        ]
+    },
+    "12": {
+        "id": 12,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "  blackboard.setLabel(\"Say hey jibo\");",
+                "  notepad.speechResult = false;",
+                "}"
+            ]
+        ],
+        "skipped": false
+    },
+    "23": {
+        "id": 23,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => {",
+                "  blackboard.setLabel(\"Now say whatever you want\");",
+                "  notepad.textIndependent = false;",
+                "}"
+            ]
+        ],
+        "skipped": false
+    },
+    "26": {
+        "id": 26,
+        "class": "TimeoutJs",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+			[
+                "() => {",
+                "   return 1000;",
+                "}"
+            ]
+        ]
+    },
+    "27": {
+        "id": 27,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 29,
+        "args": [
+            [
+                "() => {",
+                "  blackboard.setLabel(\"didn't hear anything for text-independent speech\");",
+                "}"
+            ]
+        ],
+        "decorators": [
+            28
+        ]
+    },
+    "28": {
+        "id": 28,
+        "class": "Case",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "  return !notepad.NLresult;",
+                "}"
+            ]
+        ]
+    },
+    "29": {
+        "id": 29,
+        "class": "Switch",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 36,
+        "args": [],
+        "children": [
+            27,
+            38
+        ]
+    },
+    "36": {
+        "id": 36,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [],
+        "children": [
+            39,
+            29
+        ],
+        "decorators": [
+            37
+        ]
+    },
+    "37": {
+        "id": 37,
+        "class": "WhileCondition",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "}"
+            ],
+            [
+                "() => {",
+                "  return true;",
+                "}"
+            ]
+        ]
+    },
+    "38": {
+        "id": 38,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 29,
+        "args": [
+            [
+                "() => {",
+                "  notepad.NLresult = false;",
+                "}"
+            ]
+        ]
+    },
+    "39": {
+        "id": 39,
+        "class": "ListenJs",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 36,
+        "args": [
+            [
+                "() => {",
+                "\tlet options = {",
+                "\t\theyJibo: false,",
+                "\t\tdetectEnd: false,",
+                "\t\treturnSpeakers: false,",
+                "\t\tincremental: true,",
+                "\t\ttimeout: 6000,",
+                "\t\tbargein: false,",
+                "\t\tspeakerName: ''",
+                "\t}",
+                "\treturn options;",
+                "}"
+            ],
+            [
+                "(callback) => {",
+                "\tcallback(\"TopGrammar = $* Hello World $*;\");",
+                "}"
+            ],
+            [
+                "(listener) => {",
+                "\tlistener.on('cloud', (asrResult, speakerIds) => {",
+                "\t\tblackboard.setLabel(asrResult.Input);",
+                "\t\tnotepad.NLresult = true;",
+                "\t});",
+                "}",
+                ""
+            ]
+        ]
+    }
+}

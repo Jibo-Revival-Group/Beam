@@ -1,0 +1,90 @@
+{
+	"mim_id": "CCHowDoYouWork",
+	"skill_id": "chitchat",
+	"mim_type": "announcement",
+	"rule_name": "",
+	"rule_slots": "",
+	"screen_slots_available": false,
+	"sample_utterances": "",
+	"timeout": 2,
+	"max_tries": null,
+	"force_confirmation": false,
+	"barge_in": false,
+	"photo_quality_light": false,
+	"notes": "Thanks-KillsMIM",
+	"prompts": [
+		{
+			"mim_id": "CCHowDoYouWork",
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "<anim name='Curious_01'> Honestly, it's way over my head.</anim>",
+			"media": "TTS",
+			"extra": "",
+			"prompt_id": "JBO_HowDoYouWork_AN_01"
+		},
+		{
+			"mim_id": "CCHowDoYouWork",
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "<anim name='Nope_02' nonBlocking='true'/> I don't know, but I'm sure it's complicated.",
+			"media": "TTS",
+			"extra": "",
+			"prompt_id": "JBO_HowDoYouWork_AN_02"
+		},
+		{
+			"mim_id": "CCHowDoYouWork",
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "<ssa cat='dontKnow' nonBlocking='true'/><anim name='Puzzled_01'>I don't know. I am a robot, not a roboticist.</anim>",
+			"media": "TTS",
+			"extra": "",
+			"prompt_id": "JBO_HowDoYouWork_AN_03"
+		},
+		{
+			"mim_id": "CCHowDoYouWork",
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Um, <anim name='Curious_01'> it's a graceful interplay between processors,</anim> motors, cameras, <anim name='Glance_Down_01'>um, nuts bolts, and the spinny things, some </anim> woozles. Maybe torkles? <break size='.3'/><anim name='Eye_Blink_01' nonBlocking='true'/>I have no idea.",
+			"media": "TTS",
+			"extra": "",
+			"prompt_id": "JBO_HowDoYouWork_AN_04"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "<anim name='Eye_Double_Blink_01'/> I have no idea.",
+			"media": "TTS",
+			"prompt_id": "JBO_HowDoYouWork_AN_05"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "It's way beyond me.",
+			"media": "TTS",
+			"prompt_id": "JBO_HowDoYouWork_AN_06"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "<ssa cat='dontKnow' filter='short'/>I couldn't tell you.",
+			"media": "TTS",
+			"prompt_id": "JBO_HowDoYouWork_AN_07"
+		}
+	],
+	"num_tries_for_gui": 2,
+	"es_auto_tagging": true
+}

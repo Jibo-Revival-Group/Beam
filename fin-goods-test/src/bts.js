@@ -1,0 +1,21 @@
+export default {
+    "asr-test": require('./behaviors/asr-test'),
+    "audio-tracking": require('./behaviors/audio-tracking'),
+    "body": require('./behaviors/body'),
+    "fullBodyAnimation": require('./behaviors/fullBodyAnimation'),
+    "head-CCW-pelvis-CW": require('./behaviors/head-CCW-pelvis-CW'),
+    "idle": require('./behaviors/idle'),
+    "lifecycle": require('./behaviors/lifecycle'),
+    "main": require('./behaviors/main'),
+    "neck-spin-360-CW": require('./behaviors/neck-spin-360-CW'),
+    "neck-spin-360-CCW": require('./behaviors/neck-spin-360-CCW'),
+    "neck-spin-both": require('./behaviors/neck-spin-both'),
+    "pelvis-spin-360-CCW": require('./behaviors/pelvis-spin-360-CCW'),
+    "pelvis-spin-360-CW": require('./behaviors/pelvis-spin-360-CW'),
+    "pelvis-spin-both": require('./behaviors/pelvis-spin-both'),
+    "torso-spin-360-CCW": require('./behaviors/torso-spin-360-CCW'),
+    "torso-spin-360-CW": require('./behaviors/torso-spin-360-CW'),
+    "torso-spin-both": require('./behaviors/torso-spin-both'),
+    "tracking": require('./behaviors/tracking'),
+    "WarmUpMovements": require('./behaviors/WarmUpMovements')
+};

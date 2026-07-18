@@ -1,0 +1,74 @@
+{
+	"skill_id": "chitchat",
+	"mim_type": "announcement",
+	"rule_name": "",
+	"rule_slots": "",
+	"screen_slots_available": false,
+	"timeout": 2,
+	"max_tries": null,
+	"force_confirmation": false,
+	"barge_in": false,
+	"photo_quality_light": false,
+	"notes": "Thanks-Ignore",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I don't think I know that about myself.",
+			"media": "TTS",
+			"extra": "",
+			"prompt_id": "CC_Deflector_ReferToJibo_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I wish I knew that about me.",
+			"media": "TTS",
+			"prompt_id": "CC_Deflector_ReferToJibo_AN_02",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "That is one question about me that I don't have an answer to.",
+			"media": "TTS",
+			"prompt_id": "CC_Deflector_ReferToJibo_AN_03",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I don't think I know enough about that to answer.",
+			"media": "TTS",
+			"prompt_id": "CC_Deflector_ReferToJibo_AN_04",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Honestly I think I don't know myself well enough to answer that.",
+			"media": "TTS",
+			"prompt_id": "CC_Deflector_ReferToJibo_AN_05",
+			"weight": 1,
+			"auto_rule_override": null
+		}
+	],
+	"es_auto_tagging": true,
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"ignore_no_match": false,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore"
+}

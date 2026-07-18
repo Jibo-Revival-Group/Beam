@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "allowJs": false,
+        "lib": ["es2016.array.include", "es6"],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "typeRoots": ["./node_modules/@types", "../../node_modules/@types"],
+        "types": ["node"]
+    },
+    "compileOnSave": false,
+    "include": [
+        "src/**/*.ts",
+        "typings/index.d.ts"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+  "path": "./assets/oobe/audio/",
+  "preload": true,
+  "sounds": [
+    {"id": "jiboBumperIn", "src": "hullo"},
+    {"id": "downloadDone", "src": "SFX_ConfigInstallClose"},
+    {"id": "error", "src": "error"},
+    {"id": "okDone", "src": "SFX_WiFiConnect"},
+    {"id": "pluggedIn", "src": "pluggedIn"},
+    {"id": "plugIn", "src": "plugIn"},
+    {"id": "searchingToots", "src": "SFX_QRScan"},
+    {"id": "searching", "src": "searching"},
+    {"id": "sayWhat", "src": "sayWhat"},
+    {"id": "updaterOpen", "src": "SFX_ConfigInstallOpen"}
+  ]
+}

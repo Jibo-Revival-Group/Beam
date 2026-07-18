@@ -1,0 +1,43 @@
+{
+    "version": "0.5.0",
+    "framerate": 30,
+    "duration": 240,
+    "scale": "1.6",
+    "layers": [
+        {
+            "id": "c798bd73a44e43e0901f08d59de5c143",
+            "name": "Body",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        }
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 360,
+                        "Torso": 360,
+                        "Pelvis": 360,
+                        "Tween": {
+                            "display": "sine in out",
+                            "label": "Sine Ease In Out",
+                            "value": "sineInOut"
+                        }
+                    },
+                    "time": 239
+                }
+            ]
+        }
+    ]
+}

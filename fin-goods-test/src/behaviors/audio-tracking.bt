@@ -1,0 +1,121 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "args": [],
+        "children": [
+            5,
+            6
+        ],
+        "decorators": []
+    },
+    "5": {
+        "id": 5,
+        "class": "ExecuteScript",
+        "name": "",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            [
+                "() => { ",
+                "  notepad.position = {x:.5, y:.1, z:.3};",
+                "}"
+            ]
+        ]
+    },
+    "6": {
+        "id": 6,
+        "class": "Sequence",
+        "name": "",
+        "args": [],
+        "children": [
+            7,
+            9
+        ],
+        "decorators": [
+            8
+        ],
+        "parent": 1
+    },
+    "7": {
+        "id": 7,
+        "class": "LookAt",
+        "name": "follow my voice",
+        "asset-pack": "core",
+        "parent": 6,
+        "args": [
+            [
+                "() => {",
+                "\tlet jibo = require('jibo');\t",
+                "\tlet entity = jibo.lps.getClosestAudibleEntity();",
+                "\t",
+                "\t// valid if we have data and confidence is at least 0.6",
+                "\tlet valid = (entity !== undefined && entity.confidence >= 0.6);",
+                "\t\t",
+                "\tif (valid) {",
+                "\t\tlet pos = entity.position;",
+                "\t\tpos = new jibo.animate.THREE.Vector3(pos.x, pos.y, pos.z);",
+                "\t\tpos.normalize();",
+                "\t\t",
+                "\t\tlet newZ = pos.z;",
+                "\t\tif (newZ > 0.5) {",
+                "\t\t\tnewZ = 0.5;",
+                "\t\t}",
+                "\t\tif (newZ < 0.2) {",
+                "\t\t\tnewZ = 0.2;",
+                "\t\t}",
+                "\t\t",
+                "\t\tnotepad.position\t= {x: pos.x, y:pos.y, z: newZ};",
+                "\t\t",
+                "\t\tdocument.getElementById('test-label').innerHTML = `Heard you with ${entity.confidence} at ${notepad.position.x.toPrecision(3)}, ${notepad.position.y.toPrecision(3)}, ${notepad.position.z.toPrecision(3)}`;\t",
+                "\t\treturn notepad.position;",
+                "\t}",
+                "\telse {",
+                "\t\tlet confid = undefined;",
+                "\t\tif (entity) {",
+                "\t\t\tconfid = entity.confidence;",
+                "\t\t}",
+                "\t\t",
+                "\t\tdocument.getElementById('test-label').innerHTML = `Conf=${confid} Can't hear you :(`;",
+                "\t\treturn notepad.position;",
+                "\t}",
+                "}"
+            ]
+        ]
+    },
+    "8": {
+        "id": 8,
+        "class": "WhileCondition",
+        "name": "",
+        "asset-pack": "core",
+        "args": [
+            [
+                "() => {",
+                "",
+                "}"
+            ],
+            [
+                "() => {",
+                "  return true;",
+                "}"
+            ]
+        ],
+        "parent": null
+    },
+    "9": {
+        "id": 9,
+        "class": "TimeoutJs",
+        "name": "wait a bit",
+        "asset-pack": "core",
+        "parent": 6,
+        "args": [
+            [
+                "() => {",
+                "  // anywhere from 1-2 seconds",
+                "   return 1000 + 1000 * Math.random();",
+                "}"
+            ]
+        ]
+    }
+}

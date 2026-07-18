@@ -1,0 +1,227 @@
+{
+    "framerate": 30,
+    "duration": 302,
+    "layers": [
+        {
+            "id": "61341727fb26475e8da98458f41a596d",
+            "name": "Head",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": -180,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 60
+                },
+                {
+                    "value": {
+                        "Head": -180,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 80
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 140
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 160
+                },
+                {
+                    "value": {
+                        "Head": 180,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 220
+                },
+                {
+                    "value": {
+                        "Head": 180,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 240
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 300
+                }
+            ]
+        },
+        {
+            "id": "40643acc473f49359edc7a4f92e332b5",
+            "name": "Torso",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 180,
+                        "Pelvis": 0
+                    },
+                    "time": 60
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 180,
+                        "Pelvis": 0
+                    },
+                    "time": 80
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 140
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 160
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": -180,
+                        "Pelvis": 0
+                    },
+                    "time": 220
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": -180,
+                        "Pelvis": 0
+                    },
+                    "time": 240
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 300
+                }
+            ]
+        },
+        {
+            "id": "2ffa43f106db4abb9715ec58ab23503a",
+            "name": "Pelvis",
+            "type": "Body",
+            "visible": true,
+            "locked": false,
+            "keyframes": [
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 0
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": -180
+                    },
+                    "time": 60
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": -180
+                    },
+                    "time": 80
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 140
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 160
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 180
+                    },
+                    "time": 220
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 180
+                    },
+                    "time": 240
+                },
+                {
+                    "value": {
+                        "Head": 0,
+                        "Torso": 0,
+                        "Pelvis": 0
+                    },
+                    "time": 300
+                }
+            ]
+        }
+    ],
+    "version": "0.5.0",
+    "scale": 1
+}

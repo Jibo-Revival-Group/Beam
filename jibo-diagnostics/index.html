@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diagnostics Skill</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles.css" />
+</head>
+<body>
+    <div id="container">
+        <div id="other-menus">
+            <img id="background"/>
+            <div id="touch-screen"></div>
+            <div id="math-results"></div>
+            <div id="misc-log"></div>
+            <span id="warning-label"> SHUTDOWN NOTIFICATION </span>
+            <span id="test-label"></span>
+            <span id="test-label2"></span>
+            <span id="test-label3"></span>
+        </div>
+        <!-- The value names must match the (js) file name -->
+        <ul id="select-menu" name="select-menu">
+            <li value="NoTest">None</li>
+            <li value="BodyTest">Body Movement</li>
+            <li value="LEDTest">LED</li>
+            <li value="TTSTest">TTS</li>
+            <li value="TrackingTest">Face Tracking</li>
+            <li value="AudioTrackingTest">Audio Tracking</li>
+            <li value="ASRTest">ASR</li>
+            <li value="PhotoTest">Take Photo</li>
+            <li value="AudioTest">Play Sound</li>
+            <li value="OTATest">OTA Test</li>
+            <li value="LifeCycleTest">Life Cycle Test</li>
+            <!-- take this out for now <li value="webgl-test">WebGL Test</li>-->
+            <li value="MathTest">Math</li>
+        </ul>
+        <div id="face"></div>
+        <iframe id="webgl" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+        <div id="menu-button" class="menu-button">Menu</div>
+        <script>
+            require('./index');
+        </script>
+    </div>
+</body>
+</html>

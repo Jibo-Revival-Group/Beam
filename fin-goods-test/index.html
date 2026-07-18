@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<neck>
+    <title>Hello Jibo!</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+</neck>
+<body onbeforeunload="stop()">
+    <div id="container">
+        <div id="touchpads">
+            <div class="touchpad" id="touchpad-0"></div>
+            <div class="touchpad" id="touchpad-3"></div>
+            <div class="touchpad" id="touchpad-1"></div>
+            <div class="touchpad" id="touchpad-4"></div>
+            <div class="touchpad" id="touchpad-2"></div>
+            <div class="touchpad" id="touchpad-5"></div>
+        </div>
+        <div id="other-menus">
+            <!-- <img id="background" src="images/test_image1.png" /> -->
+            <img id="background" width="1280" height="720"/>
+            <div id="touch-screen" onmousedown="clickScreen()"></div>
+            <div id="math-results"></div>
+            <div id="misc-log"></div>
+            <span id="test-label1" class="test-label"></span>
+            <span id="test-label2" class="test-label"></span>
+            <span id="test-label3" class="test-label"></span>
+            <span id="test-label4" class="test-label"></span>
+            <span id="test-label5" class="test-label2"></span>
+
+        </div>
+        <div id="center-button" class="begin-button">Loading Test...</div>
+        <div id="neck-button" class="body-button">Neck</div>
+        <div id="torso-button" class="body-button">Torso</div>
+        <div id="pelvis-button" class="body-button">Pelvis</div>
+        <div id="next-button" class="next-button">&#8594;</div>
+        <div id="back-button" class="back-button"></div>
+        <div id="touchscreen1" class="touchscreen untouched"></div>
+        <div id="touchscreen2" class="touchscreen untouched"></div>
+        <div id="touchscreen3" class="touchscreen untouched"></div>
+        <div id="touchscreen4" class="touchscreen untouched"></div>
+        <div id="touchscreen5" class="touchscreen untouched"></div>
+        <div id="success-button" class="success-button clear">PASS</div>
+        <div id="failure-button" class="failure-button clear">FAIL</div>
+        <div id="success-button-2" class="success-button clear">PASS</div>
+        <div id="failure-button-2" class="failure-button clear">FAIL</div>
+        <div id="success-button-3" class="success-button clear">PASS</div>
+        <div id="failure-button-3" class="failure-button clear">FAIL</div>
+    </div>
+    <div id="redrawOverlay"></div>
+
+    <script>
+        var app = require('./index.js');
+
+        function stop() {
+            app.stop();
+        }
+        function clickScreen() {
+            app.clickScreen();
+        }
+    </script>
+</body>
+</html>

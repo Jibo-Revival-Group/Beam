@@ -1,0 +1,29 @@
+{
+  "name": "@jibo/chitchat-mims",
+  "main": "index.js",
+  "version": "3.0.18",
+  "description": "All MIMs used by the chitchat skill are here, to share some with GQA",
+  "repository": {
+    "type": "git",
+    "url": "git@github.jibo.com:sdk/sdk.git"
+  },
+  "monorailConfig": {
+    "output": [
+      "animdb-manifest.json",
+      "index.js",
+      "index.js.map"
+    ]
+  },
+  "devDependencies": {
+    "minimist": "^1.2.0",
+    "jibo-anim-db-animations": "19.0.2",
+    "jibo-cai-utils": "^6.0.0",
+    "jibo-dev": "^5.0.0"
+  },
+  "scripts": {
+    "build": "jibo-dev build"
+  },
+  "license": "UNLICENSED",
+  "distribution": "PROPRIETARY AND CONFIDENTIAL - NOT FOR DISTRIBUTION",
+  "copyright": "Copyright (c) 2014-2018 Jibo, Inc. All Rights Reserved"
+}

@@ -1,0 +1,167 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 2,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "Thanks-RespondThenKill",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I can't seem to find what this is. Sorry.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I'm not finding anything about this. I tried.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_02",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Turns out I can't find what this is.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_03",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Seems I can't find this info for you.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_04",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I’m sorry, I couldn’t find anything in my searches.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_05",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I looked this up but didn’t find anything.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_08",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I looked this up, but didn't find anything.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_09",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I checked for you, but didn't find anything.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_10",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Well I checked for you, but I couldn't find this.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_11",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Well I searched, but my search was fruitless.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_12",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "My searches didn't turn anything up.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_13",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I turned over a few stones, but didn't find anything, sorry.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_14",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I did some looking, but couldn't find the answer for you.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_15",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I searched around a bit, but couldn't seem to find an answer.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_16",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I searched my sources, but didn't find what you're looking for.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_what_AN_17",
+			"weight": 1
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false,
+	"parse_yes_no": false
+}

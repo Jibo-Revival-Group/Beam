@@ -1,0 +1,25 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "args": [],
+        "children": [
+            2
+        ]
+    },
+    "2": {
+        "id": 2,
+        "class": "PlayAnimation",
+        "name": "Spin torso 360 degrees CW",
+        "asset-pack": "core",
+        "parent": 1,
+        "args": [
+            "torso360CW.keys",
+            [
+                "(animation) => {",
+                "}"
+            ]
+        ]
+    }
+}

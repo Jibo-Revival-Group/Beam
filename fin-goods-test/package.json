@@ -1,0 +1,88 @@
+{
+  "name": "fin-goods-test",
+  "version": "3.0.0",
+  "description": "",
+  "main": "index.js",
+  "jibo": {
+    "main": "index.html"
+  },
+  "dependencies": {
+    "jibo": "^5.0.0"
+  },
+  "license": "UNLICENSED",
+  "config": {
+    "watch": "src",
+    "src": "src/**.{ts,js}",
+    "rules": "rules",
+    "rules_src": "src/rules",
+    "app": "src/index.ts",
+    "bundle": "index.js",
+    "tslint": "tslint.json"
+  },
+  "scripts": {
+    "start": "npm run watch",
+    "clean": "cross-conf-env rimraf npm_package_config_behaviors npm_package_config_rules npm_package_config_bundle",
+    "lint": "cross-conf-env tslint -c npm_package_config_tslint npm_package_config_app || exit 0",
+    "prebuild": "npm run lint",
+    "build": "npm run build:ts && npm run build:rules",
+    "build:ts": "cross-conf-env browserify --extension=bt --extension=flow -s npm_package_name npm_package_config_app -o npm_package_config_bundle -p [tsify -p=\"tsconfig.json\"] -t [preprocessify --contextFile build/debug.json] --no-bundle-external --debug",
+    "build:rules": "cross-conf-env rulify -o npm_package_config_rules -i npm_package_config_rules_src",
+    "watch:lint": "cross-conf-env watch 'npm run lint' npm_package_config_watch || exit 0",
+    "watch:ts": "cross-conf-env watchify  --extension=bt --extension=flow -s npm_package_name npm_package_config_app -o npm_package_config_bundle -p [tsify -p=\"tsconfig.json\"] -t [preprocessify --contextFile build/debug.json] --no-bundle-external --debug -dv",
+    "watch:rules": "cross-conf-env watch 'npm run build:rules' npm_package_config_rules_src",
+    "watch": "parallelshell 'npm run watch:ts' 'npm run watch:lint' 'npm run watch:rules'",
+    "prerelease": "npm run clean && npm run build:rules && npm run lint",
+    "release": "cross-conf-env browserify --extension=bt --extension=flow -s npm_package_name npm_package_config_app -o npm_package_config_bundle -p [tsify --removeComments -p=\"tsconfig.json\"] -t [preprocessify --contextFile build/release.json] --no-bundle-external",
+    "prepublish:release": "npm run release",
+    "prepublish:debug": "npm run build",
+    "publish:debug": "npm publish",
+    "publish:release": "npm publish",
+    "postpublish": "git push && git push --tags",
+    "sync": "sync $npm_package_name || exit 0",
+    "addsshkey": "addsshkey || exit 0"
+  },
+  "browserify": {
+    "transform": [
+      "jibo-dev/browserify-transform"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "rules": {
+      "no-console": 0,
+      "no-debugger": 1
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "globals": {
+      "jibo": true,
+      "PIXI": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.jibo.com:skills/fin-goods-test.git"
+  },
+  "publishConfig": {
+    "registry": "http://npm.jibo.com:8080"
+  },
+  "devDependencies": {
+    "browserify": "latest",
+    "cross-conf-env": "latest",
+    "jibo-dev": "latest",
+    "parallelshell": "latest",
+    "preprocessify": "latest",
+    "rimraf": "latest",
+    "tsify": "^1.0.9",
+    "tslint": "latest",
+    "typescript": "^2.0.0",
+    "watch": "latest",
+    "watchify": "latest"
+  }
+}

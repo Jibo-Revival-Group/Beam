@@ -1,0 +1,57 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 2,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "Thanks-RespondThenKill",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I can't seem to find which. I tried.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_which_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I looked this up but couldn't find which.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_which_AN_02",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Turns out I can't find out which. Your guess is as good as mine.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_which_AN_03",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I guess I can't find out which after all. Sorry.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_which_AN_04",
+			"weight": 1
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false,
+	"parse_yes_no": false
+}

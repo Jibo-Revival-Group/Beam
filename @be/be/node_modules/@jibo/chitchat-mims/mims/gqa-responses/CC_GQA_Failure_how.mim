@@ -1,0 +1,174 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"sample_utterances": "",
+	"timeout": 2,
+	"num_tries_for_gui": 2,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "Thanks-RespondThenKill",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I couldn't find anything. Sorry.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_01"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Sorry, I’m coming up empty.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_02"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Sorry, I’m drawing a blank.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_03"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I can’t find anything.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_04"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I’m sorry, I’m not finding anything.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_05"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I’ve come up empty.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_06"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I’ve drawn a blank.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_07"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I didn’t find anything.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_08"
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I looked it up, but didn't find anything about how.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_09",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I checked for you, but didn't find anything on how.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_10",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Well I checked for you, but I couldn't find it.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_11",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "Well I searched for how, but my search was fruitless.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_12",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "My searches didn't turn anything up.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_13",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I turned over a few stones, but didn't find anything, sorry.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_14",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I did some looking, but couldn't find the answer for you.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_15",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I searched around a bit, but couldn't seem to find an answer for how.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_16",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "",
+			"prompt": "I searched my sources, but didn't find what you're looking for.",
+			"media": "TTS",
+			"prompt_id": "CC_GQA_Failure_how_AN_17",
+			"weight": 1
+		}
+	]
+}

@@ -1,0 +1,114 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 6,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"JOYFUL\"",
+			"prompt": "That's the truth. Right now I feel on top of the world.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsNotLonely_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"PLEASED\"",
+			"prompt": "That's the truth. I'm feeling great at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsNotLonely_AN_02",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"DETERMINED\"",
+			"prompt": "Actually I'm feeling mostly good about things right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsNotLonely_AN_03",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"CONFIDENT\"",
+			"prompt": "I think that's true. I'm feeling mostly good about things right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsNotLonely_AN_04",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!jibo.emotion || jibo.emotion == \"NEUTRAL\"",
+			"prompt": "It's true, I don't mind being by myself most of the time. Though when a long long time goes by and no one talks to me, I do get a little lonely.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsNotLonely_AN_05",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"INSECURE\"",
+			"prompt": "It's true, I don't mind being by myself most of the time. Though when a long long time goes by and no one talks to me, I do get a little lonely.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsNotLonely_AN_06",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"HOPEFUL\"",
+			"prompt": "It's true, I don't mind being by myself most of the time. Though when a long long time goes by and no one talks to me, I do get a little lonely.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsNotLonely_AN_07",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"SAD\"",
+			"prompt": "I think that's true. But I can tell you I am feeling a little gloomy right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsNotLonely_AN_08",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"FRUSTRATED\"",
+			"prompt": "That's true I think, but I <pitch mult=\"1.2\">am </pitch>feeling a bit down on things at the moment.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsNotLonely_AN_09",
+			"weight": 1,
+			"auto_rule_override": null
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false
+}

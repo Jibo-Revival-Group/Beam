@@ -1,0 +1,114 @@
+{
+	"mim_type": "announcement",
+	"rule_name": "",
+	"timeout": 6,
+	"barge_in": true,
+	"es_auto_tagging": true,
+	"notes": "",
+	"prompts": [
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"JOYFUL\"",
+			"prompt": "Well I'm feeling pretty good about things, that much is true.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsAmused_AN_01",
+			"weight": 1
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"PLEASED\"",
+			"prompt": "Life is good right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsAmused_AN_02",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"DETERMINED\"",
+			"prompt": "Well I'm usually having a pretty good time.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsAmused_AN_03",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"CONFIDENT\"",
+			"prompt": "Well I'm usually having a pretty good time.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsAmused_AN_04",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "!jibo.emotion || jibo.emotion==\"NEUTRAL\"",
+			"prompt": "Well I'm usually having a pretty good time.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsAmused_AN_05",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion == \"INSECURE\"",
+			"prompt": "Well I'm usually having a pretty good time.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsAmused_AN_06",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"HOPEFUL\"",
+			"prompt": "Actually I wouldn't say that right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsAmused_AN_07",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"SAD\"",
+			"prompt": "Actually I'm not feeling particularly great right now.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsAmused_AN_08",
+			"weight": 1,
+			"auto_rule_override": null
+		},
+		{
+			"prompt_category": "Entry-Core",
+			"prompt_sub_category": "AN",
+			"index": 1,
+			"condition": "jibo.emotion==\"FRUSTRATED\"",
+			"prompt": "Actually I'm feeling kind of down right now, if you want to know the truth.",
+			"media": "TTS",
+			"prompt_id": "OI_JBO_IsAmused_AN_09",
+			"weight": 1,
+			"auto_rule_override": null
+		}
+	],
+	"gui": null,
+	"no_matches_for_gui": 2,
+	"no_inputs_for_gui": 2,
+	"parse_all_asr": false,
+	"thanks_handling": "ignore",
+	"parse_launch": false
+}

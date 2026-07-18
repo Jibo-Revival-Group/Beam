@@ -1,0 +1,10 @@
+gulpfile.js
+.gitignore
+node_modules
+test
+tests
+src
+.idea
+.DS_Store
+*.log
+*~
